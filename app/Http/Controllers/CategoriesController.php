@@ -12,8 +12,11 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('categories');
+        return view('categories', [
+            'title' => $id,
+            'content' => 'content',
+            ]);
     }
 }

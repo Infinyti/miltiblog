@@ -1,11 +1,11 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/post', 'PostController@index');
-Route::get('/categories', 'CategoriesController@index');
+Route::get('/', 'HomeController@index');
+
+Route::get('/post/{id}', 'PostController@index');
+
+Route::get('/categories/{id}', 'CategoriesController@index');
 
 Route::get('/authors', function () {
     return view('authors');

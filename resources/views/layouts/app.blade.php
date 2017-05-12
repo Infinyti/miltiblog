@@ -3,39 +3,39 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home</title>
+        <title>{{ isset($title) ? $title : 'Заголовок' }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico in the root directory -->
-        <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="http://{{$_SERVER['HTTP_HOST']}}/img/icon/favicon.ico">
 
         <!-- all css here -->
         <!-- bootstrap v3.3.6 css -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/bootstrap.min.css">
         <!-- animate css -->
-        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/animate.css">
         <!-- meanmenu css -->
-        <link rel="stylesheet" href="css/meanmenu.min.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/meanmenu.min.css">
         <!-- owl.carousel css -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/owl.carousel.css">
         <!-- icofont css -->
-        <link rel="stylesheet" href="css/icofont.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/icofont.css">
         <!-- Nivo css -->
-        <link rel="stylesheet" href="css/nivo-slider.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/nivo-slider.css">
         <!-- animaton text css -->
-        <link rel="stylesheet" href="css/animate-text.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/animate-text.css">
         <!-- Metrial iconic fonts css -->
-        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/material-design-iconic-font.min.css">
         <!-- style css -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/style.css">
         <!-- responsive css -->
-        <link rel="stylesheet" href="css/responsive.css">        
+        <link rel="stylesheet" href="http://{{$_SERVER['HTTP_HOST']}}/css/responsive.css">        
         <!-- color css -->
-        <link href="css/color/skin-default.css" rel="stylesheet">
+        <link href="http://{{$_SERVER['HTTP_HOST']}}/css/color/skin-default.css" rel="stylesheet">
 
         <!-- modernizr css -->
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/modernizr-2.8.3.min.js"></script>
 
     </head>
     <body>
