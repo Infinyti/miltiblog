@@ -1,9 +1,12 @@
 <?php
 
-Route::get('/', function ($id = NULL) {
+Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/post', function ($id = NULL) {
+    return view('post');
+});
 
 Route::get('/categories', function ($id = NULL) {
     return view('categories');
