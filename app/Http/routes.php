@@ -1,16 +1,11 @@
 <?php
 
+
 Route::get('/', function () {
     return view('home');
 });
-
-Route::get('/post', function ($id = NULL) {
-    return view('post');
-});
-
-Route::get('/categories', function ($id = NULL) {
-    return view('categories');
-});
+Route::get('/post', 'PostController@index');
+Route::get('/categories', 'CategoriesController@index');
 
 Route::get('/authors', function () {
     return view('authors');
