@@ -116,9 +116,6 @@
             </div>
             <!--slider header area are end-->
             <!-- main blog area start-->
-            <div class="main-blog-area ptb100 fix">
-                <div class="container">
-                    <div class="row">
                         <!--Контентная часть-->
                         @yield('content')<!-- подключает блок контент -->
                         <div class="col-md-3 col-md-offset-1 col-sm-5 col-xs-12">
@@ -182,6 +179,7 @@
                     </div>
                 </div>
             </div>
+</div>
 
 
             <!--footer area are start-->

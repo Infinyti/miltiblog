@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+ <div class="main-blog-area ptb100 fix">
+               <div class="container">
+                   <div class="row">
            <div class="col-md-8 col-sm-7 col-xs-12">
                            <div class="blog-body">
                                <div class="row">
