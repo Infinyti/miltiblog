@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', ['uses' => 'HomeComtroller@index', 'as' => 'home']);
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 
 Route::get('/categories', function ($id = NULL) {
     return view('categories');
