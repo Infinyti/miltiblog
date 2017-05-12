@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', ['uses' => 'HomeComtroller@index', 'as' => 'home']);
+//Route::get('/', ['uses' => 'HomeComtroller@index', 'as' => 'home']);
+Route::get('/', function ($id = NULL) {
+    return view('home');
+});
 
 Route::get('/categories', function ($id = NULL) {
     return view('categories');
