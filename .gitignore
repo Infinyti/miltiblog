@@ -2,6 +2,5 @@
 /Sparrk v1.0
 Homestead.json
 .env
-composer.lock.gitignore
 /nbproject
 composer.lock
