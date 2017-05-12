@@ -2,5 +2,6 @@
 
 Homestead.json
 .env
+composer.lock
 
 /nbproject
