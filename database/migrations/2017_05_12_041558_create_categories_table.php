@@ -3,19 +3,19 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Users extends Migration {
-
+class CreateCategoriesTable extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up() {
-	Schema::create('users', function (Blueprint $table) {
+    public function up()
+    {
+        Schema::create('categories', function (Blueprint $table) {
 	    $table->increments('id');
-	    $table->string('name')->unique();
+	    $table->string('name');
 	    $table->text('description');
-	    $table->rememberToken();
 	    $table->timestamps();
 	});
     }
@@ -25,8 +25,8 @@ class Users extends Migration {
      *
      * @return void
      */
-    public function down() {
-	Schema::drop('users');
+    public function down()
+    {
+        Schema::drop('categories');
     }
-
 }

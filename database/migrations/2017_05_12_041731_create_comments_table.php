@@ -3,18 +3,20 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Users extends Migration {
-
+class CreateCommentsTable extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up() {
-	Schema::create('users', function (Blueprint $table) {
+    public function up()
+    {
+        Schema::create('comments', function (Blueprint $table) {
 	    $table->increments('id');
-	    $table->integer('author_id');
-	    $table->text('comment_text');
+	    $table->string('nick');
+	    $table->text('text');
+            $table->integer('note_id');
 	    $table->timestamps();
 	});
     }
@@ -24,8 +26,8 @@ class Users extends Migration {
      *
      * @return void
      */
-    public function down() {
-	Schema::drop('users');
+    public function down()
+    {
+        Schema::drop('comments');
     }
-
 }

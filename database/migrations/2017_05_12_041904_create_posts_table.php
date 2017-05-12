@@ -3,24 +3,22 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Users extends Migration {
-
+class CreatePostsTable extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up() {
-	Schema::create('users', function (Blueprint $table) {
+    public function up()
+    {
+        Schema::create('posts', function (Blueprint $table) {
 	    $table->increments('id');
-	    $table->integer('category_id');
 	    $table->string('title');
 	    $table->string('content');
-	    $table->string('url');
-	    $table->string('photo');
+	    $table->string('img');
 	    $table->integer('author_id');
-	    $table->integer('likes');
-	    $table->integer('comment_id');
+	    $table->integer('category_id');
 	    $table->timestamps();
 	});
     }
@@ -30,8 +28,8 @@ class Users extends Migration {
      *
      * @return void
      */
-    public function down() {
-	Schema::drop('users');
+    public function down()
+    {
+        Schema::drop('posts');
     }
-
 }
