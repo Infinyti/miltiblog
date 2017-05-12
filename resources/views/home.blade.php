@@ -1,1 +1,1 @@
-home
+@extends('layouts.app')

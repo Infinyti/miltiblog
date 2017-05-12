@@ -1,6 +1,6 @@
 /vendor
-
+/Sparrk v1.0
 Homestead.json
 .env
-
+.gitignore
 /nbproject
