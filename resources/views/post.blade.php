@@ -81,51 +81,6 @@
 		    </div>
 		</div>
 		<!--sidebar-->
-		<div class="col-md-3 col-md-offset-1 col-sm-5 col-xs-12">
-		    <div class="total-widget">
-			<div class="single-widget search-widget mb30">
-			    <form action="#">
-				<div class="input-box">
-				    <input type="search" placeholder="Search" class="info" name="serch">
-				    <button class="search-btn"><i class="zmdi zmdi-search"></i></button>
-				</div>
-			    </form>
-			</div>
-			<div class="single-widget catagory-widget">
-			    <h3 class="aside-title uppercase">Categories</h3>
-			    <ul>
-				<li><a href="#">Web Design</a></li>
-				<li><a href="#">UI / Ux Design</a></li>
-				<li><a href="#">PhotoShop</a></li>
-				<li><a href="#">Illustrator</a></li>
-				<li><a href="#">Indesign</a></li>
-				<li><a href="#">Document</a></li>
-				<li><a href="#">Web Design</a></li>
-			    </ul>
-			</div>
-			<div class="single-widget recent-post mt100">
-			    <h3 class="aside-title uppercase">Recent Post</h3>
-			    <div class="rec-blog-content">
-				<img src="img/blog/recent-01.jpg" alt="">
-				<h4><a href="#">Breaf With PhotoShop Layers</a></h4>
-				<p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>13 feb 2016</p>
-				<p>There are many variations of sages of Lorem Ipsum.</p>
-			    </div>
-			    <div class="rec-blog-content">
-				<img src="img/blog/recent-02.jpg" alt="">
-				<h4><a href="#">Breaf With PhotoShop Layers</a></h4>
-				<p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>13 feb 2016</p>
-				<p>There are many variations of sages of Lorem Ipsum.</p>
-			    </div>
-			    <div class="rec-blog-content hidden-md">
-				<img src="img/blog/recent-03.jpg" alt="">
-				<h4><a href="#">Breaf With PhotoShop Layers</a></h4>
-				<p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>13 feb 2016</p>
-				<p>There are many variations of sages of Lorem Ipsum.</p>
-			    </div>
-			</div>
-		    </div>
-		</div>
 	    </div>
 	</div>
     </div>
