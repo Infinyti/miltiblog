@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
-            <!-- main blog area start-->
-            <div class="main-blog-area ptb100 fix">
+ <div class="main-blog-area ptb100 fix">
                <div class="container">
                    <div class="row">
-                       <div class="col-md-8 col-sm-7 col-xs-12">
+           <div class="col-md-8 col-sm-7 col-xs-12">
                            <div class="blog-body">
                                <div class="row">
                                     <div class="col-md-6 col-sm-12 col-xs-12">
@@ -106,39 +105,7 @@
                                 </div>
                            </div>
                        </div>
-                   </div>
-               </div>
-           </div>
-    
 		
-		<!--==== all js here====-->
-		<!-- jquery latest version -->
-        <script src="js/vendor/jquery-3.1.1.min.js"></script>
-		<!-- bootstrap js -->
-        <script src="js/bootstrap.min.js"></script>
-		<!-- owl.carousel js -->
-        <script src="js/owl.carousel.min.js"></script>
-		<!-- meanmenu js -->
-        <script src="js/jquery.meanmenu.js"></script>
-		<!-- Nivo js -->
-        <script src="js/nivo-slider/jquery.nivo.slider.pack.js"></script>
-        <script src="js/nivo-slider/nivo-active.js"></script>
-		<!-- wow js -->
-        <script src="js/wow.min.js"></script>
-        <!-- Youtube Background JS -->
-        <script src="js/jquery.mb.YTPlayer.min.js"></script>
-		<!-- datepicker js -->
-        <script src="js/bootstrap-datepicker.js"></script>
-		<!-- waypoint js -->
-        <script src="js/waypoints.min.js"></script>
-		<!-- onepage nav js -->
-        <script src="js/jquery.nav.js"></script>
-        <!-- animate text JS -->
-        <script src="js/animate-text.js"></script>
-		<!-- plugins js -->
-        <script src="js/plugins.js"></script>
-        <!-- main js -->
-        <script src="js/main.js"></script>
 @endsection
 
 
