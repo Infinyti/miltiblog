@@ -1,14 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 2897ababb9d299e86589f64c65a5633a442e15bf
-Route::get('/', function ($id = NULL) {
-=======
 Route::get('/', function () {
->>>>>>> 706e9399d5b5d4303e29e5c54ef54f6a2632b3b5
     return view('home');
 });
 
