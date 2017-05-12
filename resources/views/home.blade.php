@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('home')
+@section('content')
             <!-- main blog area start-->
             <div class="main-blog-area ptb100 fix">
                <div class="container">
