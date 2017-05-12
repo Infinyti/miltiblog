@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', ['uses' => 'HomeComtroller@index', 'as' => 'home']);
 
-Route::get('/categories{id?}', function ($id = NULL) {
+Route::get('/categories', function ($id = NULL) {
     return view('categories');
 });
 
