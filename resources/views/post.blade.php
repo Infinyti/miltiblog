@@ -13,7 +13,7 @@
                                 <h3 class="aside-title uppercase">{{ isset($title) ? $title : 'Заголовок' }}</h3>
                                 <div class="blog-meta">
                                    <ul>
-                                       <li><a href="#"><i class="zmdi zmdi-calendar-note"></i>Feb 13, 2050</a></li>
+                                       <li><a href="#"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($date)) }}</a></li>
                                        <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a></li>
                                        <li><a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a></li>
                                        <li><a href="#">Post By : {{ isset($author) ? $author : 'author' }}</a></li>

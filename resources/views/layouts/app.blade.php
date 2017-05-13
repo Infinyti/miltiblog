@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="logo">
-                                        <a href="index.html"><img src="img/logo.png" alt=""></a>
+                                        <a href="index.html"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo.png" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-9">
@@ -69,7 +69,7 @@
                                         </nav>
                                     </div>
                                 </div>
-                                <div class="col-md-2 hidden-sm">
+                                <!--<div class="col-md-2 hidden-sm">
                                     <div class="search-account">
                                         <ul>
                                             <li>
@@ -83,13 +83,13 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div><!--logo menu area end-->
                         <!-- mobile-menu-area start -->
                         <div class="mobile-menu-area">
                             <div class="container">
                                 <div class="logo-02">
-                                    <a href="index.html"><img src="img/logo-02.png" alt=""></a>
+                                    <a href="index.html"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -120,14 +120,14 @@
                         @yield('content')<!-- подключает блок контент -->
                         <div class="col-md-3 col-md-offset-1 col-sm-5 col-xs-12">
                             <div class="total-widget">
-                                <div class="single-widget search-widget mb30">
+                                <!--<div class="single-widget search-widget mb30">
                                     <form action="#">
                                         <div class="input-box">
                                             <input type="search" placeholder="Search" class="info" name="serch">
                                             <button class="search-btn"><i class="zmdi zmdi-search"></i></button>
                                         </div>
                                     </form>
-                                </div>
+                                </div>-->
                                 <div class="single-widget catagory-widget">
                                     <h3 class="aside-title uppercase">Categories</h3>
                                     <ul>
@@ -140,9 +140,9 @@
                                     <h3 class="aside-title uppercase">Recent Post</h3>
                                     @foreach($newposts as $newpost)
                                     <div class="rec-blog-content hidden-md">
-                                        <img src="{{ $newpost->img }}" alt="">
-                                        <h4><a href="#">{{ $newpost->title }}</a></h4>
-                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>{{ $newpost->created_at }}</p>
+                                        <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
+                                        <h4><a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}">{{ $newpost->title }}</a></h4>
+                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($newpost->created_at)) }}</p>
                                         <p>There are many variations of sages of Lorem Ipsum.</p>
                                     </div>
                                     @endforeach
@@ -187,10 +187,10 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="payment-area">
                                 <ul>
-                                    <li><a href=""><img src="img/icon/pay-01.jpg" alt=""></a></li>
-                                    <li><a href=""><img src="img/icon/pay-02.jpg" alt=""></a></li>
-                                    <li><a href=""><img src="img/icon/pay-03.jpg" alt=""></a></li>
-                                    <li><a href=""><img src="img/icon/pay-04.jpg" alt=""></a></li>
+                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-01.jpg" alt=""></a></li>
+                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-02.jpg" alt=""></a></li>
+                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-03.jpg" alt=""></a></li>
+                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-04.jpg" alt=""></a></li>
                                 </ul>
                             </div>                            
                         </div>
@@ -202,31 +202,31 @@
             <!--body-wraper-are-end-->
         </div>
 
-        <script src="js/vendor/jquery-3.1.1.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/jquery-3.1.1.min.js"></script>
         <!-- bootstrap js -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/bootstrap.min.js"></script>
         <!-- owl.carousel js -->
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/owl.carousel.min.js"></script>
         <!-- meanmenu js -->
-        <script src="js/jquery.meanmenu.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.meanmenu.js"></script>
         <!-- Nivo js -->
-        <script src="js/nivo-slider/jquery.nivo.slider.pack.js"></script>
-        <script src="js/nivo-slider/nivo-active.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/nivo-slider/jquery.nivo.slider.pack.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/nivo-slider/nivo-active.js"></script>
         <!-- wow js -->
-        <script src="js/wow.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/wow.min.js"></script>
         <!-- Youtube Background JS -->
-        <script src="js/jquery.mb.YTPlayer.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.mb.YTPlayer.min.js"></script>
         <!-- datepicker js -->
-        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/bootstrap-datepicker.js"></script>
         <!-- waypoint js -->
-        <script src="js/waypoints.min.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/waypoints.min.js"></script>
         <!-- onepage nav js -->
-        <script src="js/jquery.nav.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.nav.js"></script>
         <!-- animate text JS -->
-        <script src="js/animate-text.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/animate-text.js"></script>
         <!-- plugins js -->
-        <script src="js/plugins.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/plugins.js"></script>
         <!-- main js -->
-        <script src="js/main.js"></script>
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/main.js"></script>
     </body>
 </html>

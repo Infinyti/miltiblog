@@ -15,10 +15,11 @@ class AuthorsController extends Controller{
     public function index()
     {
         $categories = DB::table('categories')->select('id','name')->get();
-
+        $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         return view('authors', [
             'title' => 'authors',
-            'categories' => $categories
+            'categories' => $categories,
+            'newposts' => $newposts
             ]);
     }
 
