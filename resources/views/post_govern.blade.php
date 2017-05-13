@@ -13,7 +13,7 @@
         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
         @endforeach
     </select><br>
-    
+
     <input type="file" name="img"><br>
 
     <input type="submit" value="Добавить задачу"><br>
@@ -24,9 +24,21 @@
 <br><br>
 
 @foreach($posts as $key => $post)
+<tr>
+    <td class="table-text">
+        <div>{{ $post->title }}</div>
+    </td>
+    <td>
+        <!-- TODO: Кнопка Удалить -->
+        <form action="{{ url('admin/post/del/'.$post->id) }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
 
-{{ $key }}){{ $post->title }}<br>
-
+            <button type="submit" class="btn btn-danger">
+                <i class="fa fa-trash"></i> Удалить
+            </button>
+        </form>
+    </td>
+</tr>
 @endforeach
-
 @endsection

@@ -7,6 +7,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/post/{id}', 'PostController@index');
 
+Route::get('/authors', 'AuthorsController@index');
+
 Route::get('/categories/{id}', 'CategoriesController@index');
 
 Route::get('/authors', function () {
