@@ -19,9 +19,13 @@ class HomeController extends Controller{
     public function index()
     {
          $categories = DB::table('categories')->select('id','name')->get();
-                
+        $posts = DB::table('posts')
+                ->leftjoin('users', 'posts.author_id','=','users.id')
+                ->select('posts.*', 'users.name')
+                ->get();
         return view('home', [
-            'categories' => $categories
+            'categories' => $categories,
+            'posts' => $posts,
             ]);
     }
 
