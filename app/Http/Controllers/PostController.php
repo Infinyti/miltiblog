@@ -18,7 +18,7 @@ class PostController extends Controller
     {
         $chek_id = DB::table('posts')->where('id', $id)->first();
         if(empty($chek_id)){
-            $id = 1;
+            return redirect('/');
         }
         $post = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
