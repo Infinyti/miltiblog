@@ -10,47 +10,18 @@
                                 <div class="sb-img mb50">
                                    <img src="img/blog/sb-01.jpg" alt="">
                                </div>
-                                <h3 class="aside-title uppercase">With the increasing complexity of today’s society</h3>
+                                <h3 class="aside-title uppercase">{{ isset($title) ? $title : 'Заголовок' }}</h3>
                                 <div class="blog-meta">
                                    <ul>
                                        <li><a href="#"><i class="zmdi zmdi-calendar-note"></i>Feb 13, 2050</a></li>
                                        <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a></li>
                                        <li><a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a></li>
-                                       <li><a href="#">Post By : Admin</a></li>
+                                       <li><a href="#">Post By : {{ isset($author) ? $author : 'author' }}</a></li>
                                    </ul>
                                 </div>
                                 <div class="sb-text">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use passage of Lorem Ipsum, you need to be sure there anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary. </p>
+                                    <p>{{ isset($content) ? $content : 'content' }}</p>
                                 </div>
-                                <div class="blockqot mtb50">
-                                    <blockquote><p>There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majorit.</p></blockquote>
-                                </div>
-                                <div class="support-team">
-                                    <div class="row">
-                                        <div class="col-md-7 col-sm-12 col-xs-12">
-                                            <h3 class="aside-title uppercase">Support Team</h3>
-                                            <p>There are many variations of passages Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour,</p>
-                                            <br>
-                                            <p>There are many variations of passages Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                        </div>
-                                        <div class="col-md-5 col-sm-12 col-xs-12">
-                                            <img src="img/team/Single_Blog_Post.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p class="mtb50">There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera tion in some form, by injected humour,There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                </div>
-                                <div class="subject">
-                                   <h3 class="aside-title uppercase">Subject</h3> 
-                                   <ul>
-                                       <li><a href="#">Design Concept</a></li>
-                                       <li><a href="#">Google Material Design</a></li>
-                                       <li><a href="#">Web Template Design</a></li>
-                                       <li><a href="#">Themeforest Submit</a></li>
-                                       <li><a href="#">Documantation Creation</a></li>
-                                       <li><a href="#">Image Selection</a></li>
-                                   </ul>
-                                </div>
-                                <p class="mtb50">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
                                 <div class="social-area single-blog-social mtb50">
                                     <ul>
                                         <li><a href="#"><i class="zmdi zmdi-facebook-box"></i></a></li>
@@ -59,49 +30,6 @@
                                         <li><a href="#"><i class="zmdi zmdi-linkedin-box"></i></a></li>
                                         <li><a href="#"><i class="zmdi zmdi-outlook"></i></a></li>
                                     </ul>
-                                </div>
-                                <div class="related-post">
-                                   <h3 class="aside-title uppercase">Related Post</h3> 
-                                       <div class="row">
-                                        <div class="total-related-post">
-                                            <div class="col-xs-12">
-                                                <div class="single-news single-news-02">
-                                                    <div class="news-img animate-eff">
-                                                        <a href="#"><img src="img/blog/blog-06.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="news-contant">
-                                                        <h3 class="uppercase"><a href="#">Design & Develop concept fot new Designer</a></h3>
-                                                        <p>Post-by :<a href="#"> Admin</a> </p>
-                                                        <div class="news-bottom shadow-box"> <a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a> <a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a> <a class="read-more" href="single-blog.html">Read More</a> </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12">
-                                                <div class="single-news single-news-02">
-                                                    <div class="news-img animate-eff">
-                                                        <a href="#"><img src="img/blog/blog-07.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="news-contant">
-                                                        <h3 class="uppercase"><a href="#">Design & Develop concept fot new Designer</a></h3>
-                                                        <p>Post-by :<a href="#"> Admin</a> </p>
-                                                        <div class="news-bottom shadow-box"> <a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a> <a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a> <a class="read-more" href="single-blog.html">Read More</a> </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12">
-                                                <div class="single-news single-news-02">
-                                                    <div class="news-img animate-eff">
-                                                        <a href="#"><img src="img/blog/news-01.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="news-contant">
-                                                        <h3 class="uppercase"><a href="#">Design & Develop concept fot new Designer</a></h3>
-                                                        <p>Post-by :<a href="#"> Admin</a> </p>
-                                                        <div class="news-bottom shadow-box"> <a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a> <a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a> <a class="read-more" href="single-blog.html">Read More</a> </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                     </div>
                                 </div>
                                 <div class="comments-area">
                                    <h3 class="aside-title uppercase">02 Comments</h3> 
