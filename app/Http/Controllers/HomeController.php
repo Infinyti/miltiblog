@@ -20,7 +20,6 @@ class HomeController extends Controller{
     {
         $categories = DB::table('categories')->select('id','name')->get();
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
-        dump($newposts);
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
                 ->select('posts.*', 'users.name')
