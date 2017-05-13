@@ -1,27 +1,32 @@
 @extends('layouts.admin') <!-- views/layouts/admin.blade.php -->
 
 @section('content') 
-   <div>
-    <!-- Отображение ошибок проверки ввода -->
-    {{--@include('common.errors')--}}
 
-    <!-- Форма новой задачи -->
-    <form action="{{ route('addpost') }}" method="POST" class="form-horizontal">
+<form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data">
 
-	<input type="text" name="name" id="task-name" class="form-control">
-	
-	<input type="text" name="content" id="task-name" class="form-control">
-	
-	<input type="text" name="url" id="task-name" class="form-control">
+    <input type="text" name="title"><br>
 
-	<!-- Кнопка добавления задачи -->
-	<div class="form-group">
-	    <div class="col-sm-offset-3 col-sm-6">
-		<button type="submit" class="btn btn-default">
-		    <i class="fa fa-plus"></i> Добавить задачу
-		</button>
-	    </div>
-	</div>
-    </form>
-</div>
+    <input type="text" name="content"><br>
+
+    <select name="category_id">
+        @foreach($cats as $cat)
+        <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+        @endforeach
+    </select><br>
+    
+    <input type="file" name="img"><br>
+
+    <input type="submit" value="Добавить задачу"><br>
+
+    {{ csrf_field() }}
+
+</form>
+<br><br>
+
+@foreach($posts as $key => $post)
+
+{{ $key }}){{ $post->title }}<br>
+
+@endforeach
+
 @endsection

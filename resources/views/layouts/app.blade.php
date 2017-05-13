@@ -132,7 +132,7 @@
                                     <h3 class="aside-title uppercase">Categories</h3>
                                     <ul>
                                         @foreach($categories as $category)
-                                        <li><a href="categories/{{$category->id }}">{{ $category->name }}</a></li>
+                                        <li><a href="http://{{$_SERVER['HTTP_HOST']}}/categories/{{$category->id }}">{{ $category->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
