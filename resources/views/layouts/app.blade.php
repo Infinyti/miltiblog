@@ -51,20 +51,20 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="logo">
-                                        <a href="index.html"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo.png" alt=""></a>
+                                        <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo.png" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-9">
                                     <div class="main-menu text-center">
                                         <nav>
                                             <ul id="nav">
-                                                <li><a class="smooth-scroll" href="#home">Home</a></li>
-                                                <li><a class="smooth-scroll" href="#timeline">Timeline</a></li>                                             
-                                                <li><a class="smooth-scroll" href="#speakers">Speakers</a></li>
-                                                <li><a class="smooth-scroll" href="#news">News</a></li>
-                                                <li><a class="smooth-scroll" href="#inst-feed">Feed</a></li>   
-                                                <li><a href="event-schedule.html">Schedule</a></li>
-                                                <li><a class="smooth-scroll" href="#contact">Contact</a></li>
+                                                <li><a class="smooth-scroll" href="/">Home</a></li>
+                                                <li><a class="smooth-scroll" href="/">Timeline</a></li>                                             
+                                                <li><a class="smooth-scroll" href="/">Speakers</a></li>
+                                                <li><a class="smooth-scroll" href="/">News</a></li>
+                                                <li><a class="smooth-scroll" href="/">Feed</a></li>   
+                                                <li><a href="/authors">Our Team</a></li>
+                                                <li><a class="smooth-scroll" href="/">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -89,19 +89,19 @@
                         <div class="mobile-menu-area">
                             <div class="container">
                                 <div class="logo-02">
-                                    <a href="index.html"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
+                                    <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <nav id="dropdown">
                                             <ul>
-                                                <li><a href="#home">Home</a></li>
-                                                <li><a href="#about-event">About</a></li>
-                                                <li><a href="#happen">Happen</a></li>
-                                                <li><a href="#speakers">Speakers</a></li>
-                                                <li><a href="#news">News</a></li>
-                                                <li><a href="event-schedule.html">Schedule</a></li>
-                                                <li><a href="#contact">Contact</a></li>
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/">About</a></li>
+                                                <li><a href="/">Happen</a></li>
+                                                <li><a href="/">Speakers</a></li>
+                                                <li><a href="/">News</a></li>
+                                                <li><a href="/authors">Our Team</a></li>
+                                                <li><a href="/">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
