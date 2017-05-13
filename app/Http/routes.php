@@ -46,7 +46,14 @@ Route::post('/admin/post', function(Request $request) {
     return redirect('/admin/post');
 });
 
+/**
+ * Удалить задачу
+ */
+Route::delete('/admin/post/del/{post}', function (Post $post) {
+    $post->delete();
 
+    return redirect('/admin/post');
+});
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
