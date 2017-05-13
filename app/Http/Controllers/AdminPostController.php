@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Validator;
 use App\Http\Controllers\Controller;
 
 class AdminPostController extends Controller {
@@ -15,29 +16,18 @@ class AdminPostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('post_govern');
-
-        }
-
-    public function add(Request $request) {
-        $validator = Validator::make($request->all(), [
-                    'name' => 'required|max:255',
-                    'content' => 'required',
-                    'url' => 'required|max:255',
+        
+        $posts = DB::table('posts')
+                ->leftjoin('users', 'posts.author_id','=','users.id')
+                ->select('posts.*', 'users.name')
+               // ->where('posts.id', $id)
+                ->get();
+        $categories = DB::table('categories')->get();
+        return view('post_govern', [
+            'posts' => $posts,
+            'cats' => $categories,
         ]);
 
-        if ($validator->fails()) {
-            return redirect('/admin/post')
-                            ->withInput()
-                            ->withErrors($validator);
-        }
-        $post = new Post;
-        $post->name = $request->name;
-        $post->content = $request->content;
-        $post->url = $request->url;
-        $post->save();
-
-        return redirect('/admin/post');
     }
-
+        
 }

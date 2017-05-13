@@ -1,4 +1,5 @@
 <?php
+
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,33 @@ Route::get('/admin/post', 'AdminPostController@index');
 /**
  * Добавить новый пост
  */
-Route::post('/admin/post', 'AdminPostController@add')->name('addpost');
+Route::post('/admin/post', function(Request $request) {
+    $request->file('img')->move(public_path('images/posts/'), $request->file('img')->getClientOriginalName());
+    $data = $request->except(['img']);
+    $data['img'] = 'images/posts/' . $request->file('img')->getClientOriginalName();
+
+    $validator = Validator::make($request->all(), [
+                'title' => 'required|max:255',
+                'content' => 'required',
+                'category_id' => 'required',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect('/admin/post')
+                        ->withInput()
+                        ->withErrors($validator);
+    }
+    $post = new Post;
+    $post->title = $request->title;
+    $post->content = $request->content;
+    $post->img = $data['img'];
+    $post->category_id = $request->category_id;
+    $post->save();
+
+    return redirect('/admin/post');
+});
+
+
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

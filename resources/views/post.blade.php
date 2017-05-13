@@ -8,7 +8,7 @@
 		<div class="col-md-8 col-sm-7">
                            <div class="single-blog-body">
                                 <div class="sb-img mb50">
-                                   <img src="img/blog/sb-01.jpg" alt="">
+                                   <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $img }}" alt="">
                                </div>
                                 <h3 class="aside-title uppercase">{{ isset($title) ? $title : 'Заголовок' }}</h3>
                                 <div class="blog-meta">

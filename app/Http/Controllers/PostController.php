@@ -30,6 +30,7 @@ class PostController extends Controller
             'title' => $post->title,
             'content' => $post->content,
             'author' => $post->name,
+            'img' => $post->img,
         ]);
 
     }
