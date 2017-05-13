@@ -14,8 +14,8 @@ class AuthorsController extends Controller{
      */
     public function index()
     {
-         $categories = DB::table('categories')->select('id','name')->get();
-        dump($categories);
+        $categories = DB::table('categories')->select('id','name')->get();
+
         return view('authors', [
             'categories' => $categories
             ]);
