@@ -25,12 +25,13 @@ class PostController extends Controller
                 ->select('posts.*', 'users.name')
                 ->where('posts.id', $id)
                 ->first();
-
+        $categories = DB::table('categories')->select('id','name')->get();
         return view('post', [
             'title' => $post->title,
             'content' => $post->content,
             'author' => $post->name,
             'img' => $post->img,
+            'categories' => $categories,
         ]);
 
     }
