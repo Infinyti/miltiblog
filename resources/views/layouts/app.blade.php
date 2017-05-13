@@ -131,13 +131,9 @@
                                 <div class="single-widget catagory-widget">
                                     <h3 class="aside-title uppercase">Categories</h3>
                                     <ul>
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">UI / Ux Design</a></li>
-                                        <li><a href="#">PhotoShop</a></li>
-                                        <li><a href="#">Illustrator</a></li>
-                                        <li><a href="#">Indesign</a></li>
-                                        <li><a href="#">Document</a></li>
-                                        <li><a href="#">Web Design</a></li>
+                                        @foreach($categories as $category)
+                                        <li><a href="categories/{{$category->id }}">{{ $category->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="single-widget recent-post mt100">
