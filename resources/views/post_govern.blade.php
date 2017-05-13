@@ -7,7 +7,7 @@
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-            <legend class="text-center">Добавление категории</legend>
+            <legend class="text-center">Добавление нового поста</legend>
 
             <!-- Name input-->
             <div class="form-group">
