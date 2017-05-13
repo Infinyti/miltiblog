@@ -16,7 +16,7 @@
 
     <input type="file" name="img"><br>
 
-    <input type="submit" value="Добавить задачу"><br>
+    <input type="submit" value="Добавить пост"><br>
 
     {{ csrf_field() }}
 
