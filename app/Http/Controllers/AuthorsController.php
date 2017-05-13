@@ -17,6 +17,7 @@ class AuthorsController extends Controller{
         $categories = DB::table('categories')->select('id','name')->get();
 
         return view('authors', [
+            'title' => 'authors',
             'categories' => $categories
             ]);
     }

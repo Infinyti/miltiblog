@@ -11,10 +11,6 @@ Route::get('/authors', 'AuthorsController@index');
 
 Route::get('/categories/{id}', 'CategoriesController@index');
 
-Route::get('/authors', function () {
-    return view('authors');
-});
-
 Route::get('/admin/post', 'AdminPostController@index');
 
 /**
