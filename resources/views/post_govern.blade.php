@@ -22,14 +22,13 @@
 
 </form>
 <br><br>
-
+<table>
 @foreach($posts as $key => $post)
 <tr>
     <td class="table-text">
         <div>{{ $post->title }}</div>
     </td>
     <td>
-        <!-- TODO: Кнопка Удалить -->
         <form action="{{ url('admin/post/del/'.$post->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
@@ -41,4 +40,5 @@
     </td>
 </tr>
 @endforeach
+</table>
 @endsection
