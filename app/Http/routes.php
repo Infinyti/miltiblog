@@ -12,44 +12,12 @@ Route::get('/authors', 'AuthorsController@index');
 Route::get('/categories/{id}', 'CategoriesController@index');
 
 Route::get('/admin/post', 'AdminPostController@index');
+Route::post('/admin/post', 'AdminPostController@add');
+Route::delete('/admin/post/del/{post}', 'AdminPostController@del');
 
-/**
- * Добавить новый пост
- */
-Route::post('/admin/post', function(Request $request) {
-    $request->file('img')->move(public_path('images/posts/'), $request->file('img')->getClientOriginalName());
-    $data = $request->except(['img']);
-    $data['img'] = 'images/posts/' . $request->file('img')->getClientOriginalName();
-
-    $validator = Validator::make($request->all(), [
-                'title' => 'required|max:255',
-                'content' => 'required',
-                'category_id' => 'required',
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/admin/post')
-                        ->withInput()
-                        ->withErrors($validator);
-    }
-    $post = new Post;
-    $post->title = $request->title;
-    $post->content = $request->content;
-    $post->img = $data['img'];
-    $post->category_id = $request->category_id;
-    $post->save();
-
-    return redirect('/admin/post');
-});
-
-/**
- * Удалить задачу
- */
-Route::delete('/admin/post/del/{post}', function (Post $post) {
-    $post->delete();
-
-    return redirect('/admin/post');
-});
+Route::get('/admin/cat', 'AdminCatController@index');
+Route::post('/admin/cat', 'AdminCatController@add');
+Route::delete('/admin/cat/del/{cat}', 'AdminCatController@del');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
