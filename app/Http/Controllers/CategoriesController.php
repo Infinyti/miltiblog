@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use DB;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -14,9 +15,24 @@ class CategoriesController extends Controller
      */
     public function index($id)
     {
+        $chek_id = DB::table('posts')->where('category_id', $id)->first();
+        if(empty($chek_id)){
+            return redirect('/');
+        }
+        $categories = DB::table('categories')->select('id','name')->get();
+        $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
+        $posts = DB::table('posts')
+                ->where('category_id', $id)
+                ->orderBy('created_at', 'desc')
+                ->get();
+        $categoryName=DB::table('categories')
+                ->where('categories.id', $id)
+                ->get();
         return view('categories', [
-            'title' => $id,
-            'content' => 'content',
+            'posts' => $posts,
+            'categories'=>$categories,
+            'newposts' => $newposts,
+            'categoryName'=>$categoryName,
             ]);
     }
 }
