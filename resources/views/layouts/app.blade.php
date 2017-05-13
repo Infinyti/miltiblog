@@ -138,24 +138,14 @@
                                 </div>
                                 <div class="single-widget recent-post mt100">
                                     <h3 class="aside-title uppercase">Recent Post</h3>
-                                    <div class="rec-blog-content">
-                                        <img src="img/blog/recent-01.jpg" alt="">
-                                        <h4><a href="#">Breaf With PhotoShop Layers</a></h4>
-                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>13 feb 2016</p>
-                                        <p>There are many variations of sages of Lorem Ipsum.</p>
-                                    </div>
-                                    <div class="rec-blog-content">
-                                        <img src="img/blog/recent-02.jpg" alt="">
-                                        <h4><a href="#">Breaf With PhotoShop Layers</a></h4>
-                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>13 feb 2016</p>
-                                        <p>There are many variations of sages of Lorem Ipsum.</p>
-                                    </div>
+                                    @foreach($newposts as $newpost)
                                     <div class="rec-blog-content hidden-md">
-                                        <img src="img/blog/recent-03.jpg" alt="">
-                                        <h4><a href="#">Breaf With PhotoShop Layers</a></h4>
-                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>13 feb 2016</p>
+                                        <img src="{{ $newpost->img }}" alt="">
+                                        <h4><a href="#">{{ $newpost->title }}</a></h4>
+                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>{{ $newpost->created_at }}</p>
                                         <p>There are many variations of sages of Lorem Ipsum.</p>
                                     </div>
+                                    @endforeach
                                 </div>
                                 <div class="single-widget tag-widget mt100">
                                     <h3 class="aside-title uppercase">Tags</h3>
