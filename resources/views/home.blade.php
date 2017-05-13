@@ -10,7 +10,7 @@
                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                         <div class="single-news single-news-02"> 
                                             <div class="news-img animate-eff">
-                                                <a href="#"><img src="{{ $post->img }}" alt=""></a>
+                                                <a href="/post/{{ $post->id }}"><img src="{{ $post->img }}" alt=""></a>
                                             </div>
                                             <div class="news-contant">
                                                 <h3 class="uppercase"><a href="#">{{ $post->title }}</a></h3>
