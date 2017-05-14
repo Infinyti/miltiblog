@@ -22,14 +22,13 @@ class AdminCatController extends Controller {
         return view('cat_govern', [
             'cats' => $categories,
         ]);
-
     }
-    
+
     /**
      * Добавить новую категорию
      */
     public function add(Request $request) {
-        
+
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
                     'description' => 'required',
@@ -47,7 +46,7 @@ class AdminCatController extends Controller {
 
         return redirect('/admin/cat');
     }
-    
+
     /**
      * Удалить категорию
      */
@@ -55,5 +54,18 @@ class AdminCatController extends Controller {
         $cat->delete();
         return redirect('/admin/cat');
     }
-        
+
+    public function update(Categories $cat) {
+
+        $cat->id = filter_input(INPUT_POST, 'id');
+      
+        $cat->name = filter_input(INPUT_POST, 'newname');
+        $cat->description = filter_input(INPUT_POST, 'newdescription');
+        DB::table('categories')
+                ->where('id', $cat->id)
+                ->update( array('name'=> $cat->name,'description' => $cat->description,));
+        $cat->save();
+    return redirect('/admin/cat');
+    }
+
 }
