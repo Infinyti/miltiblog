@@ -33,3 +33,16 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::any('admin/post', ['middleware' => 'auth', function () {
+    return redirect('/');
+    // Только аутентифицированные пользователи могут зайти...
+}]);
+Route::any('admin/cat', ['middleware' => 'auth', function () {
+    return redirect('/');
+    // Только аутентифицированные пользователи могут зайти...
+}]);
