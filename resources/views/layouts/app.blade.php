@@ -69,6 +69,8 @@
                                         </nav>
                                     </div>
                                 </div>
+                                <a href="/auth/login" class="btn btn-danger square-btn-adjust" style="float: right">LogIn</a>
+                                <a href="/auth/register" class="btn btn-success square-btn-adjust" style="float: right">Register</a>
                                 <!--<div class="col-md-2 hidden-sm">
                                     <div class="search-account">
                                         <ul>
