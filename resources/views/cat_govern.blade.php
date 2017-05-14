@@ -24,14 +24,14 @@
 
         <td class="table-text">
             <div>{{ $cat->name }}</div>
-            <input class="hide" type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
+            <input type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
 
         </td>
         <td class="table-text">
             <input type="hidden" value="{{ $cat->id }}" name="id"><br>
             <div>{{ $cat->description }}</div>
-            <textarea class="hide"  value="" id="newdescription" name="newdescription">{{ $cat->description }}</textarea><br>
-            <button type="submit" id="save" class="btn hide ">
+            <textarea c  value="" id="newdescription" name="newdescription">{{ $cat->description }}</textarea><br>
+            <button type="submit" id="save" class="btn  ">
                 <i class="fa fa-"></i> сохранить
             </button>
         </td>
