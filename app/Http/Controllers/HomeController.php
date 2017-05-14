@@ -23,11 +23,12 @@ class HomeController extends Controller{
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
                 ->select('posts.*', 'users.name')
+                ->orderBy('created_at', 'desc')
                 ->get();
         return view('home', [
             'categories' => $categories,
             'posts' => $posts,
-            'newposts' => $newposts
+            'newposts' => $newposts,
             ]);
     }
 

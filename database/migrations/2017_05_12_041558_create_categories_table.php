@@ -16,7 +16,7 @@ class CreateCategoriesTable extends Migration
 	    $table->increments('id');
 	    $table->string('name');
 	    $table->text('description');
-            $table->string('logo');
+            $table->integer('author_id');
 	    $table->timestamps();
 	});
     }
