@@ -51,39 +51,46 @@
 <table>
     @foreach($cats as $cat)
     <tr>
+        <td class="table-text">
+            <div>{{ $cat->name }}</div>
+        </td>
+        <td class="table-text">
+            <div>{{ $cat->description }}</div>
+        </td>
+        <td>
+            <form action="{{ url('admin/cat/del/'.$cat->id) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+
+                <button type="submit" id="del" name="del" class="btn btn-danger">
+                    <i class="fa fa-trash"></i> Удалить
+                </button>
+            </form>
+        </td>
+    </tr>  
+    <tr>
     <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('POST') }}
 
         <td class="table-text">
-            <div>{{ $cat->name }}</div>
             <input class="form-control" type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
         </td>
 
         <td class="table-text">
             <input type="hidden" value="{{ $cat->id }}" name="id"><br>
-            <div>{{ $cat->description }}</div>
+
             <textarea class="form-control" value="" id="newdescription" name="newdescription">{{ $cat->description }}</textarea><br>
 
+        </td>
+        <td class="table-text">
             <button type="submit" id="save" class="btn  ">
                 <i class="fa fa-"></i> сохранить
             </button>
 
             <input type="button" class="btn" value="Редактировать">
-
         </td>
-
     </form>
-    <td>
-        <form action="{{ url('admin/cat/del/'.$cat->id) }}" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('DELETE') }}
-
-            <button type="submit" id="del" name="del" class="btn btn-danger">
-                <i class="fa fa-trash"></i> Удалить
-            </button>
-        </form>
-    </td>
 </tr>
 @endforeach
 </table>

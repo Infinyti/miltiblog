@@ -74,5 +74,14 @@ class AdminPostController extends Controller {
         $post->delete();
         return redirect('/admin/post');
     }
+    
+    public function update(Post $post) {
+        //DB::update('UPDATE posts SET title = '.$_POST[title].', content = '.$_POST[content].', category_id = '.$_POST[category_id].' WHERE id ='.$_POST[id]);
+        
+        DB::table('posts')
+                ->where('id', $post->id)
+                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id,));
+    return redirect('/admin/post');
+    }
 
 }
