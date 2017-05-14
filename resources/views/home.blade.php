@@ -8,7 +8,7 @@
                                <div class="row">
                                    @foreach($posts as $post)
                                     <div class="col-md-6 col-sm-12 col-xs-12">
-                                        <div class="single-news single-news-02"> 
+                                        <div class="single-news single-news-02">
                                             <div class="news-img animate-eff">
                                                 <a href="#"><img src="{{ $post->img }}" alt=""></a>
                                             </div>
@@ -27,7 +27,7 @@
                                 </div>
                            </div>
                        </div>
-		
+
 @endsection
 
 
