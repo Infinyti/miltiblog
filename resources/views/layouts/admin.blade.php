@@ -40,14 +40,14 @@
                             <img src="http://{{$_SERVER['HTTP_HOST']}}/img/find_user.png" class="user-image img-responsive"/>
                         </li>
                         <li>
-                            <a class="active-menu" href="#"><i class="fa fa-book "></i>Посты</a>
+                            <a class="active-menu" href="/admin/post"><i class="fa fa-book "></i>Посты</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bars "></i>Категории</a>
+                            <a href="/admin/cat"><i class="fa fa-bars "></i>Категории</a>
                         </li>
                         
                         <li>
-                            <a  href="#"><i class="fa fa-users "></i>Пользователи</a>
+                            <a  href="/admin/user"><i class="fa fa-users "></i>Пользователи</a>
                         </li>
                     </ul>
 
