@@ -7,7 +7,8 @@
     <input type="text" name="name"><br>
 
     <input type="text" name="description"><br>
-
+    
+    <input type="hidden" name="author_id" value="{{ $userid }}">
     <input type="submit" value="Добавить категорию"><br>
 
     {{ csrf_field() }}
@@ -46,8 +47,6 @@
                 <i class="fa fa-trash"></i> Удалить
             </button>
         </form>
-
-
 
         <input type="button" class="hider" value="edit">
 

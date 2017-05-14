@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 use Validator;
 use App\Post;
 use App\Http\Controllers\Controller;
@@ -17,16 +18,17 @@ class AdminPostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
+        $userid = Auth::id();
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id', '=', 'users.id')
                 ->select('posts.*', 'users.name')
-                // ->where('posts.id', $id)
+                ->where('posts.author_id', $userid)
                 ->get();
-        $categories = DB::table('categories')->get();
+        $categories = DB::table('categories')->where('author_id', $userid)->get();
         return view('post_govern', [
             'posts' => $posts,
             'cats' => $categories,
+            'userid' => $userid
         ]);
     }
 
@@ -59,6 +61,7 @@ class AdminPostController extends Controller {
         $post->content = $request->content;
         $post->img = $data['img'];
         $post->category_id = $request->category_id;
+        $post->author_id = $request->author_id;
         $post->save();
 
         return redirect('/admin/post');
