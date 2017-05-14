@@ -62,6 +62,29 @@
 
 <table>
     @foreach($posts as $key => $post)
+ 
+    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('POST') }}
+
+
+        <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="title"><br>
+        <input type="hidden" value="{{ $post->id }}" name="id"><br>
+        <textarea class="form-control" value="" id="newdescription" name="content">{{ $post->content }}</textarea><br>
+        <select name="category_id" required>
+            @foreach($cats as $cat)
+            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+            @endforeach
+        </select><br>
+        <input type="file" name="new_img">
+        <input type="hidden" name="img" value="{{ $post->img }}"/>
+        <button type="submit" id="save" class="btn " >
+            <i class="fa fa-"></i> сохранить
+        </button>
+    </form>
+
+    
+    
     <tr>
         <td class="table-text">
             <div>{{ $post->title }}</div>
@@ -80,32 +103,6 @@
             <input type="button" class="btn" value="Редактировать">
         </td>
     </tr>
-    <tr>
-    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST">
-        {{ csrf_field() }}
-        {{ method_field('POST') }}
-
-
-        <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="title"><br>
-
-
-
-        <input type="hidden" value="{{ $post->id }}" name="id"><br>
-
-        <textarea class="form-control" value="" id="newdescription" name="content">{{ $post->content }}</textarea><br>
-
-        <select name="category_id" required>
-            @foreach($cats as $cat)
-            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-            @endforeach
-        </select><br>
-
-        <button type="submit" id="save" class="btn  ">
-            <i class="fa fa-"></i> сохранить
-        </button>
-
-    </form>
-</tr>
 @endforeach
 </table>
 
