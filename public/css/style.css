@@ -1736,15 +1736,15 @@ blockquote {
     transition: all 0.3s ease 0s;
 }
 .shedule-head h4:hover { color: #ff004d }
-.panel:before {
-    background: #dddddd none repeat scroll 0 0;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 330px;
-    position: absolute;
-    width: 840px;
-}
+/*.panel:before {*/
+    /*background: #dddddd none repeat scroll 0 0;*/
+    /*bottom: 0;*/
+    /*content: "";*/
+    /*height: 2px;*/
+    /*left: 330px;*/
+    /*position: absolute;*/
+    /*width: 840px;*/
+/*}*/
 .shedule-head {
     float: left;
     margin-top: -20px;

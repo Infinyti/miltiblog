@@ -13,8 +13,8 @@
                         </div>
                         <div class="panel-body">
                             @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{ session('status') }}
+                                <div class="alert alert-success" style="text-align: center;">
+                                    <i>{{ session('status') }}</i>
                                 </div>
                             @endif
 
@@ -39,7 +39,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-danger">
                                             <i class="fa fa-btn fa-envelope"></i> Получить ссылку на сброс пароля
                                         </button>
                                     </div>
