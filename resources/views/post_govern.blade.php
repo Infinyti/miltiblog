@@ -62,8 +62,10 @@
 
 <table>
     @foreach($posts as $key => $post)
- 
-    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST">
+<div id="poup-post-{{ $post->id }}" class="modalDialog">
+   <div>
+      <a href="#close" title="Close" class="close">X</a>
+      <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('POST') }}
 
@@ -76,14 +78,14 @@
             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
             @endforeach
         </select><br>
-        <input type="file" name="new_img">
-        <input type="hidden" name="img" value="{{ $post->img }}"/>
+        <!--<input type="file" name="new_img">
+        <input type="hidden" name="img" value="{{ $post->img }}"/>-->
         <button type="submit" id="save" class="btn " >
             <i class="fa fa-"></i> сохранить
         </button>
     </form>
-
-    
+   </div>
+</div>
     
     <tr>
         <td class="table-text">
@@ -100,10 +102,14 @@
                 </button>
 
             </form>
-            <input type="button" class="btn" value="Редактировать">
+        </td>
+        <td>
+            <a href="#poup-post-{{ $post->id }}" class="btn"><input type="button" class="btn" value="Редактировать"></a>
         </td>
     </tr>
 @endforeach
 </table>
-
+<style>
+    
+</style>
 @endsection

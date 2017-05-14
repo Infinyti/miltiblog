@@ -14,6 +14,8 @@
         <link href="http://{{$_SERVER['HTTP_HOST']}}/css/custom.css" rel="stylesheet" />
         <!-- GOOGLE FONTS-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+        <!-- My poup-up-->
+        <link href="http://{{$_SERVER['HTTP_HOST']}}/css/poup-up.css" rel="stylesheet" />
     </head>
     <body>
         <div id="wrapper">

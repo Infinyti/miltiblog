@@ -36,8 +36,6 @@ class AdminPostController extends Controller {
      * Добавить новый пост
      */
     public function add(Request $request) {
-        dump($request);
-        exit();
         if ($request->file('img') !== NULL) {
             $request->file('img')->move(public_path('images/posts/'), $request->file('img')->getClientOriginalName());
             $data = $request->except(['img']);
@@ -77,21 +75,16 @@ class AdminPostController extends Controller {
         return redirect('/admin/post');
     }
     
-    public function update(Request $request) {
-        $post = $request->request;
-        dump($request);
-        exit();
-        if($request->file('new_img') !== NULL){
-            $request->file('new_img')->move(public_path('images/posts/'), $request->file('new_img')->getClientOriginalName());
-            $data = $request->except(['new_img']);
-            $data['new_img'] = 'images/posts/' . $request->file('new_img')->getClientOriginalName();
-            $post->img =$data['new_img'];
-        } else {
-            $post->img = filter_input(INPUT_POST, 'img');
-        }
+    public function update(Post $post) {
+
+        $post->id = filter_input(INPUT_POST, 'id');
+        $post->title = filter_input(INPUT_POST, 'title');
+        $post->content = filter_input(INPUT_POST, 'content');
+        $post->category_id = filter_input(INPUT_POST, 'category_id');
+        
         DB::table('posts')
                 ->where('id', $post->id)
-                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id, 'img' => $post->img));
+                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id));
     return redirect('/admin/post');
     }
 
