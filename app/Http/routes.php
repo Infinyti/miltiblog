@@ -11,6 +11,10 @@ Route::get('/authors', 'AuthorsController@index');
 
 Route::get('/categories/{id}', 'CategoriesController@index');
 
+Route::get('/contact', function(){
+  return View::make('contact');
+});
+
 Route::get('/admin/post', 'AdminPostController@index');
 Route::post('/admin/post', 'AdminPostController@add');
 Route::delete('/admin/post/del/{post}', 'AdminPostController@del');

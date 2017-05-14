@@ -20,6 +20,9 @@
     <td class="table-text">
         <div>{{ $cat->name }}</div>
     </td>
+    <td class="table-text">
+        <div>{{ $cat->description }}</div>
+    </td>
     <td>
         <form action="{{ url('admin/cat/del/'.$cat->id) }}" method="POST">
             {{ csrf_field() }}
