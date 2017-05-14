@@ -25,12 +25,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Admin panel</a> 
+                    <a class="navbar-brand" href="#">Админ панель</a> 
                 </div>
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
                      float: right;
-                     font-size: 16px;"> Сегодя : <?php echo date("d.m.Y");?> &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+                     font-size: 16px;"> Сегодя : <?php echo date("d.m.Y"); ?> &nbsp;
+                    <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust">На сайт</a>
+                    <a href="#" class="btn btn-danger square-btn-adjust">Выйти</a>    
+                </div>
             </nav>   
             <!-- /. NAV TOP  -->
             <nav class="navbar-default navbar-side" role="navigation">
@@ -45,7 +48,7 @@
                         <li>
                             <a href="/admin/cat"><i class="fa fa-bars "></i>Категории</a>
                         </li>
-                        
+
                         <li>
                             <a  href="/admin/user"><i class="fa fa-users "></i>Пользователи</a>
                         </li>
@@ -59,8 +62,8 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Admin ...</h2>   
-                            <h5>Welcome ... , Love to see you back. </h5>
+                            <h2>*имя юзера*</h2>   
+                            <h5>Здравствуй, *имя юзера*! Рады Вас снова видеть. </h5>
                         </div>
                     </div>              
                     <!-- /. ROW  -->
