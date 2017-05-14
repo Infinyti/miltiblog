@@ -58,13 +58,13 @@
                                     <div class="main-menu text-center">
                                         <nav>
                                             <ul id="nav">
-                                                <li><a class="smooth-scroll" href="/">Home</a></li>
+                                                <li><a class="smooth-scroll" href="/">Главная</a></li>
                                                 <li><a class="smooth-scroll" href="/">Timeline</a></li>                                             
                                                 <li><a class="smooth-scroll" href="/">Speakers</a></li>
                                                 <li><a class="smooth-scroll" href="/">News</a></li>
                                                 <li><a class="smooth-scroll" href="/">Feed</a></li>   
-                                                <li><a href="/authors">Our Team</a></li>
-                                                <li><a class="smooth-scroll" href="/contact">Contact</a></li>
+                                                <li><a href="/authors">О Нас</a></li>
+                                                <li><a class="smooth-scroll" href="/contact">Контакты</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -84,149 +84,149 @@
                                     </div>
                                 </div>
                             </div>-->
-                        </div><!--logo menu area end-->
-                        <!-- mobile-menu-area start -->
-                        <div class="mobile-menu-area">
-                            <div class="container">
-                                <div class="logo-02">
-                                    <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <nav id="dropdown">
-                                            <ul>
-                                                <li><a href="/">Home</a></li>
-                                                <li><a href="/">About</a></li>
-                                                <li><a href="/">Happen</a></li>
-                                                <li><a href="/">Speakers</a></li>
-                                                <li><a href="/">News</a></li>
-                                                <li><a href="/authors">Our Team</a></li>
-                                                <li><a href="/contact">Contact</a></li>
-                                            </ul>
-                                        </nav>
+                            </div><!--logo menu area end-->
+                            <!-- mobile-menu-area start -->
+                            <div class="mobile-menu-area">
+                                <div class="container">
+                                    <div class="logo-02">
+                                        <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--mobile menu area end-->
-                    </div> 
-                </div>
-                <!-- header End-->
-            </div>
-            <!--slider header area are end-->
-            <!-- main blog area start-->
-                        <!--Контентная часть-->
-                        @yield('content')<!-- подключает блок контент -->
-                        <div class="col-md-3 col-md-offset-1 col-sm-5 col-xs-12">
-                            <div class="total-widget">
-                                <!--<div class="single-widget search-widget mb30">
-                                    <form action="#">
-                                        <div class="input-box">
-                                            <input type="search" placeholder="Search" class="info" name="serch">
-                                            <button class="search-btn"><i class="zmdi zmdi-search"></i></button>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <nav id="dropdown">
+                                                <ul>
+                                                    <li><a href="/">Главная</a></li>
+                                                    <li><a href="/">Timeline</a></li>
+                                                    <li><a href="/">Speakers</a></li>
+                                                    <li><a href="/">News</a></li>
+                                                    <li><a href="/">Feed</a></li> 
+                                                    <li><a href="/authors">О нас</a></li>
+                                                    <li><a href="/contact">Контакты</a></li>
+                                                </ul>
+                                            </nav>
                                         </div>
-                                    </form>
-                                </div>-->
-                                <div class="single-widget catagory-widget">
-                                    <h3 class="aside-title uppercase">Categories</h3>
-                                    <ul>
-                                        @foreach($categories as $key => $category)
-                                        <li><a href="http://{{$_SERVER['HTTP_HOST']}}/categories/{{$category->id }}">{{ $category->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <div class="single-widget recent-post mt100">
-                                    <h3 class="aside-title uppercase">Recent Post</h3>
-                                    @foreach($newposts as $newpost)
-                                    <div class="rec-blog-content hidden-md">
-                                        <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
-                                        <h4><a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}">{{ $newpost->title }}</a></h4>
-                                        <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($newpost->created_at)) }}</p>
-                                        <p>There are many variations of sages of Lorem Ipsum.</p>
                                     </div>
-                                    @endforeach
                                 </div>
-                                <!--<div class="single-widget tag-widget mt100">
-                                    <h3 class="aside-title uppercase">Tags</h3>
-                                    <ul>
-                                        <li><a href="#">Event</a></li>
-                                        <li><a href="#">Design</a></li>
-                                        <li><a href="#">WebTemp</a></li>
-                                        <li><a href="#">UI/UX</a></li>
-                                        <li><a href="#">Web</a></li>
-                                        <li><a href="#">Photoshop</a></li>
-                                        <li><a href="#">Illestrator</a></li>
-                                        <li><a href="#">Indesign</a></li>
-                                    </ul>
-                                </div>-->
                             </div>
+
+                            <!--mobile menu area end-->
+                        </div> 
+                    </div>
+                    <!-- header End-->
+                </div>
+                <!--slider header area are end-->
+                <!-- main blog area start-->
+                <!--Контентная часть-->
+                @yield('content')<!-- подключает блок контент -->
+                <div class="col-md-3 col-md-offset-1 col-sm-5 col-xs-12">
+                    <div class="total-widget">
+                        <!--<div class="single-widget search-widget mb30">
+                            <form action="#">
+                                <div class="input-box">
+                                    <input type="search" placeholder="Search" class="info" name="serch">
+                                    <button class="search-btn"><i class="zmdi zmdi-search"></i></button>
+                                </div>
+                            </form>
+                        </div>-->
+                        <div class="single-widget catagory-widget">
+                            <h3 class="aside-title uppercase">Категории</h3>
+                            <ul>
+                                @foreach($categories as $key => $category)
+                                <li><a href="http://{{$_SERVER['HTTP_HOST']}}/categories/{{$category->id }}">{{ $category->name }}</a></li>
+                                @endforeach
+                            </ul>
                         </div>
+                        <div class="single-widget recent-post mt100">
+                            <h3 class="aside-title uppercase">Недавние посты</h3>
+                            @foreach($newposts as $newpost)
+                            <div class="rec-blog-content hidden-md">
+                                <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
+                                <h4><a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}">{{ $newpost->title }}</a></h4>
+                                <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($newpost->created_at)) }}</p>
+                                <p>There are many variations of sages of Lorem Ipsum.</p>
+                            </div>
+                            @endforeach
+                        </div>
+                        <!--<div class="single-widget tag-widget mt100">
+                            <h3 class="aside-title uppercase">Tags</h3>
+                            <ul>
+                                <li><a href="#">Event</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">WebTemp</a></li>
+                                <li><a href="#">UI/UX</a></li>
+                                <li><a href="#">Web</a></li>
+                                <li><a href="#">Photoshop</a></li>
+                                <li><a href="#">Illestrator</a></li>
+                                <li><a href="#">Indesign</a></li>
+                            </ul>
+                        </div>-->
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </div>
 
 
-            <!--footer area are start-->
-            <div class="footer-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="social-area">
-                                <ul>
-                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="payment-area">
-                                <ul>
-                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-01.jpg" alt=""></a></li>
-                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-02.jpg" alt=""></a></li>
-                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-03.jpg" alt=""></a></li>
-                                    <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-04.jpg" alt=""></a></li>
-                                </ul>
-                            </div>                            
-                        </div>
-                    </div>
+<!--footer area are start-->
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="social-area">
+                    <ul>
+                        <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
+                    </ul>
                 </div>
 
             </div>
-            <!--footer area are finish-->
-            <!--body-wraper-are-end-->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="payment-area">
+                    <ul>
+                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-01.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-02.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-03.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-04.jpg" alt=""></a></li>
+                    </ul>
+                </div>                            
+            </div>
         </div>
+    </div>
 
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/jquery-3.1.1.min.js"></script>
-        <!-- bootstrap js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/bootstrap.min.js"></script>
-        <!-- owl.carousel js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/owl.carousel.min.js"></script>
-        <!-- meanmenu js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.meanmenu.js"></script>
-        <!-- Nivo js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/nivo-slider/jquery.nivo.slider.pack.js"></script>
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/nivo-slider/nivo-active.js"></script>
-        <!-- wow js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/wow.min.js"></script>
-        <!-- Youtube Background JS -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.mb.YTPlayer.min.js"></script>
-        <!-- datepicker js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/bootstrap-datepicker.js"></script>
-        <!-- waypoint js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/waypoints.min.js"></script>
-        <!-- onepage nav js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.nav.js"></script>
-        <!-- animate text JS -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/animate-text.js"></script>
-        <!-- plugins js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/plugins.js"></script>
-        <!-- main js -->
-        <script src="http://{{$_SERVER['HTTP_HOST']}}/js/main.js"></script>
-    </body>
+</div>
+<!--footer area are finish-->
+<!--body-wraper-are-end-->
+</div>
+
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/jquery-3.1.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/bootstrap.min.js"></script>
+<!-- owl.carousel js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/owl.carousel.min.js"></script>
+<!-- meanmenu js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.meanmenu.js"></script>
+<!-- Nivo js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/nivo-slider/jquery.nivo.slider.pack.js"></script>
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/nivo-slider/nivo-active.js"></script>
+<!-- wow js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/wow.min.js"></script>
+<!-- Youtube Background JS -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.mb.YTPlayer.min.js"></script>
+<!-- datepicker js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/bootstrap-datepicker.js"></script>
+<!-- waypoint js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/waypoints.min.js"></script>
+<!-- onepage nav js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/jquery.nav.js"></script>
+<!-- animate text JS -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/animate-text.js"></script>
+<!-- plugins js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/plugins.js"></script>
+<!-- main js -->
+<script src="http://{{$_SERVER['HTTP_HOST']}}/js/main.js"></script>
+</body>
 </html>
