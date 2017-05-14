@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Название:</label>
                 <div class="col-md-9">
-                    <input name="name" type="text" required class="form-control">
+                    <input name="title" type="text" required class="form-control">
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <input name="text" type="text" required class="form-control">
+                    <input name="content" type="text" required class="form-control">
                 </div>
             </div>
 

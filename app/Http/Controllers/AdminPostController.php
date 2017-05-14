@@ -34,10 +34,14 @@ class AdminPostController extends Controller {
      * Добавить новый пост
      */
     public function add(Request $request) {
-        $request->file('img')->move(public_path('images/posts/'), $request->file('img')->getClientOriginalName());
-        $data = $request->except(['img']);
-        $data['img'] = 'images/posts/' . $request->file('img')->getClientOriginalName();
-
+        if ($request->file('img') !== NULL) {
+            $request->file('img')->move(public_path('images/posts/'), $request->file('img')->getClientOriginalName());
+            $data = $request->except(['img']);
+            $data['img'] = 'images/posts/' . $request->file('img')->getClientOriginalName();
+        } else {
+            $data = $request->except(['img']);
+            $data['img'] = 'images/posts/no_image.png';
+        }
         $validator = Validator::make($request->all(), [
                     'title' => 'required|max:255',
                     'content' => 'required',
@@ -49,6 +53,7 @@ class AdminPostController extends Controller {
                             ->withInput()
                             ->withErrors($validator);
         }
+
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
