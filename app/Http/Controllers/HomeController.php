@@ -28,7 +28,7 @@ class HomeController extends Controller{
         return view('home', [
             'categories' => $categories,
             'posts' => $posts,
-            'newposts' => $newposts
+            'newposts' => $newposts,
             ]);
     }
 
