@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 use Validator;
 use App\Categories;
 use App\Http\Controllers\Controller;
@@ -17,19 +18,19 @@ class AdminCatController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
-        $categories = DB::table('categories')->get();
+        $userid = Auth::id();
+        $categories = DB::table('categories')->where('author_id', $userid)->get();
         return view('cat_govern', [
             'cats' => $categories,
+            'userid' => $userid,
         ]);
-
     }
-    
+
     /**
      * Добавить новую категорию
      */
     public function add(Request $request) {
-        
+
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
                     'description' => 'required',
@@ -43,11 +44,12 @@ class AdminCatController extends Controller {
         $cat = new Categories;
         $cat->name = $request->name;
         $cat->description = $request->description;
+        $cat->author_id = $request->author_id;
         $cat->save();
 
         return redirect('/admin/cat');
     }
-    
+
     /**
      * Удалить категорию
      */
@@ -55,5 +57,18 @@ class AdminCatController extends Controller {
         $cat->delete();
         return redirect('/admin/cat');
     }
-        
+
+    public function update(Categories $cat) {
+
+        $cat->id = filter_input(INPUT_POST, 'id');
+      
+        $cat->name = filter_input(INPUT_POST, 'newname');
+        $cat->description = filter_input(INPUT_POST, 'newdescription');
+        DB::table('categories')
+                ->where('id', $cat->id)
+                ->update( array('name'=> $cat->name,'description' => $cat->description,));
+        $cat->save();
+    return redirect('/admin/cat');
+    }
+
 }

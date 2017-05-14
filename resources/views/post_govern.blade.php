@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Название:</label>
                 <div class="col-md-9">
-                    <input name="name" type="text" required class="form-control">
+                    <input name="title" type="text" required class="form-control">
                 </div>
             </div>
 
@@ -21,14 +21,14 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <input name="text" type="text" required class="form-control">
+                    <input name="content" type="text" required class="form-control">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-3 control-label">Категория:</label>
                 <div class="col-md-9">
-                    <select name="category_id">
+                    <select name="category_id" required>
                         @foreach($cats as $cat)
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                         @endforeach
@@ -42,7 +42,7 @@
                     <input type="file" name="img"><br>
                 </div>
             </div>
-
+            <input type="hidden" name="author_id" value="{{ $userid }}">
             <!-- Form actions -->
             <div class="form-group">
                 <div class="col-md-3"></div>
