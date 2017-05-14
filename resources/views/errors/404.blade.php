@@ -70,20 +70,9 @@
                                         </nav>
                                     </div>
                                 </div>
-                                <div class="col-md-2 hidden-sm">
-                                    <div class="search-account">
-                                        <ul>
-                                            <li>
-                                                <form action="#">
-                                                    <div class="search-bar">
-                                                        <button type="button" class="search"><i class="zmdi zmdi-search"></i></button>
-                                                        <input type="search" name="search" placeholder="Search..."> </div>
-                                                </form>
-                                            </li>
-                                            <li><a class="" href="#"><i class="zmdi zmdi-accounts"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <a href="auth/login" class="btn btn-danger square-btn-adjust" style="float: right">LogIn</a>
+                                <a href="auth/register" class="btn btn-success square-btn-adjust" style="float: right">Register</a>
+                               
                             </div>
                         </div><!--logo menu area end-->
                         <!-- mobile-menu-area start -->
@@ -124,7 +113,7 @@
                     <div class="row">
                         <div class="col-xs-12 text-center">
                             <img src="img/404.png" alt="">
-                            <h4><a href="/">Return to main page</a></h4>
+                            <h4><a href="/" style="border: 1px solid gray; padding: 5px;border-radius: 15px">Пощёл домой!!!!!НАСЯЛЬНИКААААААААА</a></h4>
                         </div>
                     </div>
                 </div>
