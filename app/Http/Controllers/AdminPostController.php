@@ -76,11 +76,15 @@ class AdminPostController extends Controller {
     }
     
     public function update(Post $post) {
-        //DB::update('UPDATE posts SET title = '.$_POST[title].', content = '.$_POST[content].', category_id = '.$_POST[category_id].' WHERE id ='.$_POST[id]);
+
+        $post->id = filter_input(INPUT_POST, 'id');
+        $post->title = filter_input(INPUT_POST, 'title');
+        $post->content = filter_input(INPUT_POST, 'content');
+        $post->category_id = filter_input(INPUT_POST, 'category_id');
         
         DB::table('posts')
                 ->where('id', $post->id)
-                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id,));
+                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id));
     return redirect('/admin/post');
     }
 

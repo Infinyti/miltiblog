@@ -39,7 +39,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 // Только аутентифицированные пользователи могут зайти:
-Route::any('admin/post', ['middleware' => 'auth', function () {
+/*Route::any('admin/post', ['middleware' => 'auth', function () {
     return redirect('/');
 }]);
 Route::any('admin/cat', ['middleware' => 'auth', function () {
@@ -60,3 +60,4 @@ Route::any('/admin/cat/update/{cat}', ['middleware' => 'auth', function () {
 Route::any('/admin/user', ['middleware' => 'auth', function () {
     return redirect('/');
 }]);
+*/
