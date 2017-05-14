@@ -26,6 +26,7 @@ class HomeController extends Controller{
                 ->orderBy('created_at', 'desc')
                 ->get();
         return view('home', [
+            'title' => 'Главная',
             'categories' => $categories,
             'posts' => $posts,
             'newposts' => $newposts,
