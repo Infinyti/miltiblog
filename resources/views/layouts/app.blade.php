@@ -131,7 +131,7 @@
                                 <div class="single-widget catagory-widget">
                                     <h3 class="aside-title uppercase">Categories</h3>
                                     <ul>
-                                        @foreach($categories as $category)
+                                        @foreach($categories as $key => $category)
                                         <li><a href="http://{{$_SERVER['HTTP_HOST']}}/categories/{{$category->id }}">{{ $category->name }}</a></li>
                                         @endforeach
                                     </ul>
@@ -147,7 +147,7 @@
                                     </div>
                                     @endforeach
                                 </div>
-                                <div class="single-widget tag-widget mt100">
+                                <!--<div class="single-widget tag-widget mt100">
                                     <h3 class="aside-title uppercase">Tags</h3>
                                     <ul>
                                         <li><a href="#">Event</a></li>
@@ -159,7 +159,7 @@
                                         <li><a href="#">Illestrator</a></li>
                                         <li><a href="#">Indesign</a></li>
                                     </ul>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
