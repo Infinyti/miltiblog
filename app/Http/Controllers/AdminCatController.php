@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 use Validator;
 use App\Categories;
 use App\Http\Controllers\Controller;
@@ -17,10 +18,11 @@ class AdminCatController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
-        $categories = DB::table('categories')->get();
+        $userid = Auth::id();
+        $categories = DB::table('categories')->where('author_id', $userid)->get();
         return view('cat_govern', [
             'cats' => $categories,
+            'userid' => $userid,
         ]);
     }
 
@@ -42,6 +44,7 @@ class AdminCatController extends Controller {
         $cat = new Categories;
         $cat->name = $request->name;
         $cat->description = $request->description;
+        $cat->author_id = $request->author_id;
         $cat->save();
 
         return redirect('/admin/cat');
