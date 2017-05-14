@@ -214,7 +214,7 @@ body { }
 /*----------------------------------------*/
 ul li { display: inline-block }
 .main-menu ul li a { color: #ddd }
-.logo-menu-area { padding: 35px 0 }
+.logo-menu-area { padding: 20px 0 }
 .main-menu ul li { margin-right: 40px }
 .main-menu ul li:last-child { margin: 0 }
 .header-area {
@@ -341,6 +341,9 @@ a.btn-def.bnt-2.big {
 /*----------------------------------------*/
 /* 6. about-section
 /*----------------------------------------*/
+.text-desc{
+    margin: 35px 0 0 0;
+}
 .section-title {
     color: #555555;
     font-size: 33px;

@@ -17,7 +17,7 @@ class AuthorsController extends Controller{
         $categories = DB::table('categories')->select('id','name')->get();
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         return view('authors', [
-            'title' => 'authors',
+            'title' => 'О команде',
             'categories' => $categories,
             'newposts' => $newposts
             ]);

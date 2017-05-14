@@ -20,6 +20,7 @@ class ContactController extends Controller {
         $categories = DB::table('categories')->select('id','name')->get();
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         return view('contact', [
+            'title' => 'Контакты',
             'categories'=>$categories,
             'newposts' => $newposts,
         ]);
