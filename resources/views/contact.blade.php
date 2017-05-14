@@ -70,8 +70,8 @@
                                         </nav>
                                     </div>
                                 </div>
-                                <a href="auth/login" class="btn btn-danger square-btn-adjust" style="float: right">LogIn</a>
-                                <a href="auth/register" class="btn btn-success square-btn-adjust" style="float: right">Register</a>
+                                <a href="/auth/login" class="btn btn-danger square-btn-adjust" style="float: right">LogIn</a>
+                                <a href="/auth/register" class="btn btn-success square-btn-adjust" style="float: right">Register</a>
                                 
                             </div>
                         </div><!--logo menu area end-->
