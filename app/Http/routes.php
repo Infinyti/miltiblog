@@ -16,6 +16,7 @@ Route::get('/contact', 'ContactController@index');
 Route::get('/admin/post', 'AdminPostController@index');
 Route::post('/admin/post', 'AdminPostController@add');
 Route::delete('/admin/post/del/{post}', 'AdminPostController@del');
+Route::post('/admin/post/update/{cat}', 'AdminPostController@update');
 
 Route::get('/admin/cat', 'AdminCatController@index');
 Route::post('/admin/cat', 'AdminCatController@add');

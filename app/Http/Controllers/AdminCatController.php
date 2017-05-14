@@ -57,7 +57,9 @@ class AdminCatController extends Controller {
         $cat->delete();
         return redirect('/admin/cat');
     }
-
+    /**
+     * Редактировать категорию
+     */
     public function update(Categories $cat) {
 
         $cat->id = filter_input(INPUT_POST, 'id');
