@@ -145,7 +145,7 @@
                                 <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
                                 <h4><a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}">{{ $newpost->title }}</a></h4>
                                 <p class="blog-date"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($newpost->created_at)) }}</p>
-                                <p>There are many variations of sages of Lorem Ipsum.</p>
+                                <!--<p>There are many variations of sages of Lorem Ipsum.</p>-->
                             </div>
                             @endforeach
                         </div>
