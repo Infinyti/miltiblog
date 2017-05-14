@@ -64,7 +64,7 @@
                                                 <li><a class="smooth-scroll" href="/">News</a></li>
                                                 <li><a class="smooth-scroll" href="/">Feed</a></li>   
                                                 <li><a href="/authors">Our Team</a></li>
-                                                <li><a class="smooth-scroll" href="/">Contact</a></li>
+                                                <li><a class="smooth-scroll" href="/contact">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -101,7 +101,7 @@
                                                 <li><a href="/">Speakers</a></li>
                                                 <li><a href="/">News</a></li>
                                                 <li><a href="/authors">Our Team</a></li>
-                                                <li><a href="/">Contact</a></li>
+                                                <li><a href="/contact">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>

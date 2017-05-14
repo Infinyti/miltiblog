@@ -52,7 +52,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="logo">
-                                        <a href="index.html"><img src="img/logo.png" alt=""></a>
+                                        <a href="/"><img src="img/logo.png" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-9">
@@ -90,7 +90,7 @@
                         <div class="mobile-menu-area">
                             <div class="container">
                                 <div class="logo-02">
-                                    <a href="index.html"><img src="img/logo-02.png" alt=""></a>
+                                    <a href="/"><img src="img/logo-02.png" alt=""></a>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -116,21 +116,45 @@
             </div>
             <!--slider header area are end-->
 
-
-
-            <!--404 area start-->
+            <!-- main blog area start-->
             <div class="area-404 ptb100 fix">
-                <div class="container ptb100">
+                <div class="container ptb100">                  
                     <div class="row">
                         <div class="col-xs-12 text-center">
-                            <img src="img/404.png" alt="">
-                            <h4><a href="/">Return to main page</a></h4>
-                        </div>
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10583.539581943789!2d35.0404627!3d48.458738!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb4637f658c8cf549!2z0KPRh9C10LHQvdGL0LkgSVQt0YbQtdC90YLRgCBMZXZlbCBVUA!5e0!3m2!1sru!2sua!4v1494726283181" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>                       
                     </div>
+                    <h2 style="margin-top: 20px">По какому графику работает офис?</h2>
+                    <h4>Приемная работает ежедневно с 9:00 до 18:00.</h4>
                 </div>
             </div>
-            <!--404 area end-->
+           <!-- Add Google Maps -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl_YC4rjpCObXVO0GrcEVu6rqvbl-lcxU&callback=myMap"></script>
 
+            <script>
+            // Google Map Location
+            var myCenter = new google.maps.LatLng(48.46637695, 35.05218029);
+
+            function initialize() {
+            var mapProp = {
+              center: myCenter,
+              zoom: 14,
+              scrollwheel: false,
+              draggable: false,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            var marker = new google.maps.Marker({
+              position: myCenter,
+            });
+
+            marker.setMap(map);
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
             <!--information area are start-->
             <div class="information-area off-white ptb100">
                 <div class="container">
