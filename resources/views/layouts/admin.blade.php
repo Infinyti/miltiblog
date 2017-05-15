@@ -32,7 +32,7 @@
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
                      float: right;
-                     font-size: 16px;"> Сегодя : <?php echo date("d.m.Y"); ?> &nbsp;
+                     font-size: 16px;"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
                     <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust" target="_blank">На сайт</a>
                     <a href="{{ url('/logout') }}" class="btn btn-danger square-btn-adjust">Выйти</a>    
                 </div>

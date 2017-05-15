@@ -22,7 +22,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <input name="content" type="text" required class="form-control">
+                    <textarea name="content" required class="form-control"></textarea>
                 </div>
             </div>
 

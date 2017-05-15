@@ -18,11 +18,7 @@ class AdminController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-	
-	#Route::get('/admin', 'AdminController@index');
-	
-	
-        return redirect()->action('App\Http\Controllers\AdminPostController@index');
+        return redirect('/admin/cat');
     }
 
 }
