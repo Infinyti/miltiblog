@@ -67,7 +67,7 @@
                 <a href="#close" title="Close" class="close">X</a>
                 <fieldset>
                     <legend class="text-center">Редактировать пост</legend>
-                    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST">
+                    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('POST') }}
 
