@@ -40,15 +40,15 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 //Ограничение доступа в админку:
-Route::any('/admin/post', [
-    'middleware' => 'auth:web',
-    'uses' => 'AdminPostController@index'
-]);
-Route::any('/admin/cat', [
-    'middleware' => 'auth:web',
-    'uses' => 'AdminCatController@index'
-]);
-Route::any('/admin/user', [
-    'middleware' => 'auth:web',
-    'uses' => 'AdminUserController@index'
-]);
+//Route::any('/admin/post', [
+//    'middleware' => 'auth:web',
+//    'uses' => 'AdminPostController@index'
+//]);
+//Route::any('/admin/cat', [
+//    'middleware' => 'auth:web',
+//    'uses' => 'AdminCatController@index'
+//]);
+//Route::any('/admin/user', [
+//    'middleware' => 'auth:web',
+//    'uses' => 'AdminUserController@index'
+//]);
