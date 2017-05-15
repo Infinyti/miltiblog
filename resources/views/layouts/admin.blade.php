@@ -32,9 +32,9 @@
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
                      float: right;
-                     font-size: 16px;"> Сегодя : <?php echo date("d.m.Y"); ?> &nbsp;
+                     font-size: 16px;"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
                     <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust" target="_blank">На сайт</a>
-                    <a href="#" class="btn btn-danger square-btn-adjust">Выйти</a>    
+                    <a href="{{ url('/logout') }}" class="btn btn-danger square-btn-adjust">Выйти</a>    
                 </div>
             </nav>   
             <!-- /. NAV TOP  -->
@@ -58,14 +58,14 @@
 
                 </div>
 
-            </nav>  
+            </nav>
             <!-- /. NAV SIDE  -->
             <div id="page-wrapper" >
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>*имя юзера*</h2>   
-                            <h5>Здравствуй, *имя юзера*! Рады Вас снова видеть. </h5>
+                            <h2>{{ $userinfo->name }}</h2>   
+                            <h5>Здравствуй, {{ $userinfo->name }}! Рады Вас снова видеть. </h5>
                         </div>
                     </div>              
                     <!-- /. ROW  -->

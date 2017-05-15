@@ -45,9 +45,104 @@
 
     <!--slider header area are start-->
     <div id="home" class="header-slider-area">
-        <!--header start-->
+	<!--header start-->
+	<div class="header-area header-2">
+	    <!--logo menu area start-->
+	    <div id="sticker" class="logo-menu-area header-area-2">
+		<div class="container hidden-xs">
+		    <div class="row">
+			<div class="col-md-2 col-sm-3">
+			    <div class="logo">
+				<a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo.png" alt=""></a>
+			    </div>
+			</div>
+			<div class="col-md-8 col-sm-9">
+			    <div class="main-menu text-center">
+				<nav>
+				    <ul id="nav">
+					<li><a class="smooth-scroll" href="/">Главная</a></li>
+                                        <li><a href="/authors">О Нас</a></li>
+                                        <li><a class="smooth-scroll" href="/contact">Контакты</a></li>
+
+					<ul class="navbar-right">
+					    <!--Authentication Links-->
+					    @if (Auth::guest())
+					    <li><a style="color: #DB0630;" href="{{ url('/login') }}"><i class="zmdi zmdi-account"></i> Войти</a></li>
+					    <li><a style="color: #DB0630;" href="{{ url('/register') }}"><i class="zmdi zmdi-accounts-add"></i> Регистрация</a></li>
+					    @else
+					    <li class="dropdown">
+						<a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						    {{ Auth::user()->name }} <span class="caret"></span>
+						</a>
+
+						<ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
+						    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
+						    <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i> Панель</a></li>
+						</ul>
+					    </li>
+					    @endif
+					</ul>
+
+				    </ul>
+				</nav>
+			    </div>
+			</div>
+		    </div>
+		</div><!--logo menu area end-->
+		<!-- mobile-menu-area start -->
+		<div class="mobile-menu-area">
+		    <div class="container">
+			<div class="logo-02">
+			    <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
+			</div>
+			<div class="row">
+			    <div class="col-xs-12">
+				<nav id="dropdown">
+				    <ul>
+					<li><a href="/">Главная</a></li>
+					<li><a href="/authors">О нас</a></li>
+					<li><a href="/contact">Контакты</a></li>
+					
+					<li>
+					    <!--Authentication Links-->
+					    @if (Auth::guest())
+					    <li><a style="color: #DB0630;" href="{{ url('/login') }}"><i class="zmdi zmdi-account"></i> Войти</a></li>
+					    <li><a style="color: #DB0630;" href="{{ url('/register') }}"><i class="zmdi zmdi-accounts-add"></i> Регистрация</a></li>
+					    @else
+					    <li class="dropdown">
+						<a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						    {{ Auth::user()->name }} <span class="caret"></span>
+						</a>
+
+						<ul class="dropdown-menu nav" role="menu">
+						    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
+						    <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i> Панель</a></li>
+						</ul>
+					    </li>
+					    @endif
+					</li>
+					
+				    </ul>
+				</nav>
+			    </div>
+			</div>
+		    </div>
+		</div>
+		<!--mobile menu area end-->
+	    </div> 
+	</div>
+	<!-- header End-->
+    </div>
+    <!--slider header area are end-->
+    
+    
+<!--  OLD VERSION!!!  
+
+slider header area are start
+    <div id="home" class="header-slider-area">
+        header start
         <div class="header-area header-2">
-            <!--logo menu area start-->
+            logo menu area start
             <div id="sticker" class="logo-menu-area">
                 <div class="container hidden-xs">
                     <div class="row">
@@ -72,24 +167,24 @@
                             </div>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
-                            <!-- Authentication Links -->
+                             Authentication Links 
                             @if (Auth::guest())
                                 <li><a style="color: #DB0630;" href="{{ url('/login') }}">Войти |</a></li>
                                 <li><a style="color: #DB0630;" href="{{ url('/register') }}">| Регистрация</a></li>
                             @else
                                 <li class="dropdown">
-                                    <a  style="color: #DB0630;max-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
-                                    <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;max-width: 85px">
+                                    <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
                                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
-                                        <li><a href="{{ url('/admin') }}"><i class="fa fa-btn fa-sign-in"></i>Панель</a></li>
+                                        <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i>Панель</a></li>
                                     </ul>
                                 </li>
                             @endif
                         </ul>
-                        <!--<div class="col-md-2 hidden-sm">
+                        <div class="col-md-2 hidden-sm">
                             <div class="search-account">
                                 <ul>
                                     <li>
@@ -103,9 +198,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>-->
-                    </div><!--logo menu area end-->
-                    <!-- mobile-menu-area start -->
+                    </div>
+                    </div>logo menu area end
+                     mobile-menu-area start 
                     <div class="mobile-menu-area">
                         <div class="container">
                             <div class="logo-02">
@@ -129,12 +224,15 @@
                         </div>
                     </div>
 
-                    <!--mobile menu area end-->
+                    mobile menu area end
                 </div>
             </div>
-            <!-- header End-->
+             header End
         </div>
-        <!--slider header area are end-->
+        slider header area are end
+     OLD VERSION!!!    -->
+
+
         <!-- main blog area start-->
         <!--Контентная часть-->
     @yield('content')<!-- подключает блок контент -->
@@ -162,7 +260,7 @@
                     <h3 class="aside-title uppercase">Недавние посты</h3>
                     @foreach($newposts as $newpost)
                         <div class="rec-blog-content hidden-md">
-                            <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
+                            <img class="img-responsive" src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
                             <h4>
                                 <a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}">{{ $newpost->title }}</a>
                             </h4>
