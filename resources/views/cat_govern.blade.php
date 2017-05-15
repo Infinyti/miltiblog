@@ -50,14 +50,34 @@
 
 <table>
     @foreach($cats as $cat)
+
+    <div id="poup-cat-{{ $cat->id }}" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('POST') }}
+
+
+                <input class="form-control" type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
+
+
+
+                <input type="hidden" value="{{ $cat->id }}" name="id"><br>
+
+                <textarea class="form-control" value="" id="newdescription" name="newdescription">{{ $cat->description }}</textarea><br>
+
+                <button type="submit" id="save" class="btn  ">
+                    <i class="fa fa-"></i> сохранить
+                </button>        
+            </form>
+        </div>
+    </div>
     <tr>
         <td class="table-text">
             <div>{{ $cat->name }}</div>
         </td>
         <td class="table-text">
-            <div>{{ $cat->description }}</div>
-        </td>
-        <td>
             <form action="{{ url('admin/cat/del/'.$cat->id) }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
@@ -67,32 +87,12 @@
                 </button>
             </form>
         </td>
+        <td class="table-text">
+            <a href="#poup-cat-{{ $cat->id }}" class="btn"><input type="button" class="btn" value="Редактировать"></a>
+        </td>
     </tr>  
-    <tr>
-    <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
-        {{ csrf_field() }}
-        {{ method_field('POST') }}
 
-        <td class="table-text">
-            <input class="form-control" type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
-        </td>
-
-        <td class="table-text">
-            <input type="hidden" value="{{ $cat->id }}" name="id"><br>
-
-            <textarea class="form-control" value="" id="newdescription" name="newdescription">{{ $cat->description }}</textarea><br>
-
-        </td>
-        <td class="table-text">
-            <button type="submit" id="save" class="btn  ">
-                <i class="fa fa-"></i> сохранить
-            </button>
-
-            <input type="button" class="btn" value="Редактировать">
-        </td>
-    </form>
-</tr>
-@endforeach
+    @endforeach
 </table>
 @endsection
 
