@@ -43,7 +43,13 @@
                             <input name="email" type="text" required class="form-control" value="{{ $userinfo->email }}">
                         </div>
                     </div>
-
+                    
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Пароль:</label>
+                        <div class="col-md-9">
+                            <input name="password" type="password" required class="form-control" value="{{ $userinfo->password }}">
+                        </div>
+                    </div>
                     <input type="hidden" name="id" value="{{ $userinfo->id }}">
                     <!-- Form actions -->
                     <div class="form-group">
