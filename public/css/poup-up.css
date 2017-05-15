@@ -33,7 +33,7 @@ and open the template in the editor.
  width: 400px;
  position: relative;
  margin: 10% auto;
- padding: 5px 20px 13px 20px;
+ /*padding: 5px 20px 13px 20px;*/
  border-radius: 10px;
  background: #fff;
  background: -moz-linear-gradient(#fff, #999);
@@ -60,3 +60,12 @@ and open the template in the editor.
 }
  
 .close:hover { background: #00d9ff; }
+
+a.table_edit{
+    float: left;
+}
+
+form.table_delete{
+        float: left;
+    margin-right: 5px;
+}
