@@ -224,6 +224,17 @@ ul li { display: inline-block }
     width: 100%;
     z-index: 999;
 }
+.navbar-right{
+    margin-right: -110px; 
+}
+.block-img{
+    margin: 25px 0 0 0
+}
+.img-size-fix{
+    height: 370px;
+    width: auto;
+    overflow: hidden;
+}
 .main-menu ul li a:hover { color: #ff004d }
 .main-menu li.current a { color: #ff004d }
 /* slider */

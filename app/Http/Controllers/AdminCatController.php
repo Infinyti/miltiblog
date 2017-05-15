@@ -33,10 +33,13 @@ class AdminCatController extends Controller {
      */
     public function add(Request $request) {
 
+
 	$validator = Validator::make($request->all(), [
 		    'name' => 'required|max:255|unique:categories',
 		    'description' => 'required|max:500',
 	]);
+
+
 
 	if ($validator->fails()) {
 	    return redirect('/admin/cat')
@@ -63,16 +66,15 @@ class AdminCatController extends Controller {
     /**
      * Редактировать категорию
      */
-    public function update(Request $request,Categories $cat) {
+    public function update(Request $request, Categories $cat) {
 
 	$validator = Validator::make($request->all(), [
-		
-		    'newname' => 'required|max:255|unique:categories',
+		    'newname' => 'required|max:255',
 		    'newdescription' => 'required|max:500',
 	]);
 
 	if ($validator->fails()) {
-	    return redirect('/admin/cat#poup-cat-'.$_POST['id'])
+	    return redirect('/admin/cat#poup-cat-' . $_POST['id'])
 			    ->withInput()
 			    ->withErrors($validator);
 	}
