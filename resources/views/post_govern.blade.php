@@ -72,9 +72,9 @@
                         {{ method_field('POST') }}
 
 
-                        <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="title"><br>
+                        <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                         <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" value="" id="newdescription" name="content">{{ $post->content }}</textarea><br>
+                        <textarea class="form-control" value="" id="newdescription" name="newcontent">{{ $post->content }}</textarea><br>
                         <select name="category_id" required>
                             @foreach($cats as $cat)
                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
