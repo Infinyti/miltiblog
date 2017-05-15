@@ -2,19 +2,21 @@
 
 @section('content') 
 <div class="well well-sm">
-    <fieldset>
-        <legend class="text-center">Ваши данные</legend>
-        <div class="form-group">
-            <label class="col-md-3 control-label">Ваш логин:</label>
+    <fieldset>       
+        <legend class="text-center">Ваши данные</legend> 
+        <div class="row" style="display: grid">
+            <div class="form-group" style="margin: 0">
+            <label class="col-md-3">Ваш логин:</label>
             <div class="col-md-9">
-                {{ $userinfo->name }}
+                <label class="col-md-3 control-label"><big>{{ $userinfo->name }}</big></label>
             </div>
         </div>
-        <div class="form-group">
-            <label class="col-md-3 control-label">Ваш email:</label>
+            <div class="form-group" style="margin: 0">
+            <label class="col-md-3">Ваш email:</label>
             <div class="col-md-9">
-                {{ $userinfo->email }}
+                <label class="col-md-3 control-label"><big>{{ $userinfo->email }}</big></label>
             </div>
+        </div>  
         </div>
     </fieldset>
 </div>
@@ -43,7 +45,7 @@
                             <input name="email" type="text" required class="form-control" value="{{ $userinfo->email }}">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label class="col-md-3 control-label">Пароль:</label>
                         <div class="col-md-9">
