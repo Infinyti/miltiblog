@@ -9,7 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 
 class AuthController extends Controller
@@ -34,6 +33,7 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected $username = 'name';
     /**
      * Create a new authentication controller instance.
      *

@@ -38,26 +38,16 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-// Только аутентифицированные пользователи могут зайти:
-/*Route::any('admin/post', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-Route::any('admin/cat', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-Route::any('/admin/post/del/{post}', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-Route::any('/admin/post/update/{cat}', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-Route::any('/admin/cat/del/{cat}', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-Route::any('/admin/cat/update/{cat}', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-Route::any('/admin/user', ['middleware' => 'auth', function () {
-    return redirect('/');
-}]);
-*/
+//Ограничение доступа в админку:
+Route::any('/admin/post', [
+    'middleware' => 'auth:web',
+    'uses' => 'AdminPostController@index'
+]);
+Route::any('/admin/cat', [
+    'middleware' => 'auth:web',
+    'uses' => 'AdminCatController@index'
+]);
+Route::any('/admin/user', [
+    'middleware' => 'auth:web',
+    'uses' => 'AdminUserController@index'
+]);
