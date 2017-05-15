@@ -7,13 +7,13 @@
         <div class="form-group">
             <label class="col-md-3 control-label">Ваш логин:</label>
             <div class="col-md-9">
-                {{ $userinfo->name }}
+                <label class="col-md-3 control-label"><big>{{ $userinfo->name }}</big></label>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-3 control-label">Ваш email:</label>
             <div class="col-md-9">
-                {{ $userinfo->email }}
+                <label class="col-md-3 control-label"><big>{{ $userinfo->email }}</big></label>
             </div>
         </div>
     </fieldset>
@@ -43,7 +43,7 @@
                             <input name="email" type="text" required class="form-control" value="{{ $userinfo->email }}">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label class="col-md-3 control-label">Пароль:</label>
                         <div class="col-md-9">
