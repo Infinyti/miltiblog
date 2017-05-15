@@ -20,9 +20,11 @@ class AdminCatController extends Controller {
     public function index() {
         $userid = Auth::id();
         $categories = DB::table('categories')->where('author_id', $userid)->get();
+        $userinfo = DB::table('users')->where('id', $userid)->first();
         return view('cat_govern', [
             'cats' => $categories,
             'userid' => $userid,
+            'userinfo' => $userinfo
         ]);
     }
 

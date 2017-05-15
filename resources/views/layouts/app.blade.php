@@ -84,7 +84,7 @@
 
                                     <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
                                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
-                                        <li><a href="{{ url('/admin/post') }}"><i class="fa fa-btn fa-sign-in"></i>Панель</a></li>
+                                        <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i>Панель</a></li>
                                     </ul>
                                 </li>
                             @endif
