@@ -8,10 +8,6 @@
         <fieldset>
             <legend class="text-center">Добавление новой категории</legend>
 
-
-
-            <form action="{{ url('admin/cat') }}" method="POST" enctype="multipart/form-data">
-
                 <div class="form-group">
                     <label class="col-md-3 control-label">Название:</label>
                     <div class="col-md-9">
@@ -35,7 +31,6 @@
                 </div>
                 {{ csrf_field() }}
 
-            </form>
 
 
 
