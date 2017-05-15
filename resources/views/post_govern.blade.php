@@ -78,7 +78,7 @@
                         <textarea class="form-control" value="" id="newdescription" name="newcontent">{{ $post->content }}</textarea><br>
                         <select name="category_id" required>
                             @foreach($cats as $cat)
-                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                            <option  value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endforeach
                         </select>
 			<div class="form-group">
