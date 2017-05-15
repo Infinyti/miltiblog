@@ -24,6 +24,7 @@ Route::delete('/admin/cat/del/{cat}', 'AdminCatController@del');
 Route::post('/admin/cat/update/{cat}', 'AdminCatController@update');
 
 Route::get('/admin/user', 'AdminUserController@index');
+Route::post('/admin/user/update/{user}', 'AdminUserController@update');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
