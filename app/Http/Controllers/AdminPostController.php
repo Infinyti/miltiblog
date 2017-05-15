@@ -25,10 +25,13 @@ class AdminPostController extends Controller {
                 ->where('posts.author_id', $userid)
                 ->get();
         $categories = DB::table('categories')->where('author_id', $userid)->get();
+        $username = DB::table('users')->where('id', $userid)->first();
+
         return view('post_govern', [
             'posts' => $posts,
             'cats' => $categories,
-            'userid' => $userid
+            'userid' => $userid,
+            'username' => $username
         ]);
     }
 

@@ -87,7 +87,7 @@
                 </button>
             </form>
         </td>
-        <td class="table-text">
+        <td>
             <a href="#poup-cat-{{ $cat->id }}" class="btn"><input type="button" class="btn" value="Редактировать"></a>
         </td>
     </tr>  

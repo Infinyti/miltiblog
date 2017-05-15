@@ -58,7 +58,7 @@
 
                 </div>
 
-            </nav>  
+            </nav>
             <!-- /. NAV SIDE  -->
             <div id="page-wrapper" >
                 <div id="page-inner">
