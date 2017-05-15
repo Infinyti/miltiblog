@@ -60,3 +60,12 @@ and open the template in the editor.
 }
  
 .close:hover { background: #00d9ff; }
+
+a.table_edit{
+    float: left;
+}
+
+form.table_delete{
+        float: left;
+    margin-right: 5px;
+}

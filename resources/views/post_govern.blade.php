@@ -7,7 +7,7 @@
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-	    @include('common.errors')
+            @include('common.errors')
             <legend class="text-center">Добавление нового поста</legend>
 
             <!-- Name input-->
@@ -60,14 +60,19 @@
 <br><br>
 
 
-<table>
+<table class="table table-striped">
+    <tr>
+        <th>Название</th>
+        <th>Категория</th>
+        <th>Действие</th>
+    </tr>
     @foreach($posts as $key => $post)
     <div id="poup-post-{{ $post->id }}" class="modalDialog">
         <div class="well well-sm">
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <fieldset>
-		      @include('common.errors')
+                    @include('common.errors')
                     <legend class="text-center">Редактировать пост</legend>
                     <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -82,15 +87,15 @@
                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endforeach
                         </select>
-			<div class="form-group">
-                <label class="col-md-3 control-label">Картинка:</label>
-                <div class="col-md-9">
-                    <input type="file" name="img"><br>
-                </div>
-            </div>
-			<br><br>
-                        <!--<input type="file" name="new_img">
-                        <input type="hidden" name="img" value="{{ $post->img }}"/>-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Картинка:</label>
+                            <div class="col-md-9">
+                                <input type="file" name="img"><br>
+                            </div>
+                        </div>
+                        <br><br>
+                        <!--<input type="file" name="new_img">-->
+                        <input type="hidden" name="oldimg" value="{{ $post->img }}"/>
                         <button type="submit" id="save" class="btn " >
                             <i class="fa fa-"></i> сохранить
                         </button>
@@ -104,25 +109,27 @@
         <td class="table-text">
             <div>{{ $post->title }}</div>
         </td>
-        <td style="padding: 0 0 0 10em">
-            <form action="{{ url('admin/post/del/'.$post->id) }}" method="POST">
+        <td class="table-text">
+            <div>{{ $post->name_cat }}</div>
+        </td>
+        <td class="table-text">
+            <form action="{{ url('admin/post/del/'.$post->id) }}" method="POST" class="table_delete">
 
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
 
                 <button type="submit" class="btn btn-danger">
-                    <i class="fa fa-trash"></i> Удалить
+                    <i class="fa fa-trash"></i>
                 </button>
 
             </form>
-        </td>
-        <td>
-            <a href="#poup-post-{{ $post->id }}" class="btn"><input type="button" class="btn" value="Редактировать"></a>
+            <a href="#poup-post-{{ $post->id }}" class="table_edit">
+                <button type="submit" class="btn">
+                    <i class="fa fa-pencil"></i>
+                </button>
+            </a>
         </td>
     </tr>
     @endforeach
 </table>
-<style>
-
-</style>
 @endsection
