@@ -24,7 +24,7 @@ class AdminPostController extends Controller {
                 ->select('posts.*', 'users.name')
                 ->where('posts.author_id', $userid)
                 ->get();
-        $categories = DB::table('categories')->where('author_id', $userid)->get();
+        $categories = DB::table('categories')->get();
         $userinfo = DB::table('users')->where('id', $userid)->first();
 
         return view('post_govern', [
