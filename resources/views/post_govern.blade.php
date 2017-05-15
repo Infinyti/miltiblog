@@ -84,10 +84,16 @@
                         <textarea class="form-control" value="" id="newdescription" name="newcontent">{{ $post->content }}</textarea><br>
                         <select name="category_id" required>
                             @foreach($cats as $cat)
+                            @if($cat->id == $post->id_cat)
+                            <option value="{{ $cat->id }}" selected>{{ $cat->name }}</option>
+                            @else
                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                            @endif
                             @endforeach
                         </select>
                         <div class="form-group">
+                            
+                            <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
                             <label class="col-md-3 control-label">Картинка:</label>
                             <div class="col-md-9">
                                 <input type="file" name="img"><br>
@@ -118,12 +124,12 @@
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
 
-                <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger" title="Удалить">
                     <i class="fa fa-trash"></i>
                 </button>
 
             </form>
-            <a href="#poup-post-{{ $post->id }}" class="table_edit">
+            <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
                 <button type="submit" class="btn">
                     <i class="fa fa-pencil"></i>
                 </button>

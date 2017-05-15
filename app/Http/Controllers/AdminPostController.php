@@ -22,7 +22,7 @@ class AdminPostController extends Controller {
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id', '=', 'users.id')
                 ->leftjoin('categories', 'posts.category_id', '=', 'categories.id')
-                ->select('posts.*', 'users.name', 'categories.name as name_cat')
+                ->select('posts.*', 'users.name', 'categories.name as name_cat', 'categories.id as id_cat')
                 ->where('posts.author_id', $userid)
                 ->get();
         $categories = DB::table('categories')->get();

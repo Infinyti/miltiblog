@@ -28,13 +28,13 @@
         <div class="well well-sm">
             <form action="{{ url('admin/user/update/'.$userinfo->id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 <fieldset>
-                    <legend class="text-center">Ваши данные</legend>
+                    <legend class="text-center">Редактировать ваши данные</legend>
 
                     <!-- Name input-->
                     <div class="form-group">
                         <label class="col-md-3 control-label">Имя:</label>
                         <div class="col-md-9">
-                            <input name="name" type="text" required class="form-control" value="{{ $userinfo->name }}">
+                            <input name="name" type="text" required class="form-control" value="{{ $userinfo->name }}" placeholder="Имя">
                         </div>
                     </div>
 
@@ -42,14 +42,15 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Почта:</label>
                         <div class="col-md-9">
-                            <input name="email" type="text" required class="form-control" value="{{ $userinfo->email }}">
+                            <input name="email" type="text" required class="form-control" value="{{ $userinfo->email }}" placeholder="email">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-3 control-label">Пароль:</label>
                         <div class="col-md-9">
-                            <input name="password" type="password" required class="form-control" value="{{ $userinfo->password }}">
+                            <input name="newpassword" type="password" required class="form-control" value="" placeholder="Введите для смены пароля">
+                            <input type="hidden" name="password" value="{{ $userinfo->password }}"/>
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $userinfo->id }}">

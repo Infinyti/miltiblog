@@ -22,23 +22,27 @@ class AdminUserController extends Controller {
     public function index() {
         $userid = Auth::id();
         $userinfo = DB::table('users')->where('id', $userid)->first();
-        return view('user_govern',[
+        return view('user_govern', [
             'userinfo' => $userinfo
         ]);
     }
-    
+
     public function update(User $user) {
-        $pass = filter_input(INPUT_POST, 'password');
-        $pass = Hash::make($pass);
+        if (filter_input(INPUT_POST, 'newpassword') !== NULL) {
+            $pass = filter_input(INPUT_POST, 'newpassword');
+            $pass = Hash::make($pass);
+        } else {
+            $pass = filter_input(INPUT_POST, 'password');
+        }
         $user->id = filter_input(INPUT_POST, 'id');
         $user->name = filter_input(INPUT_POST, 'name');
         $user->email = filter_input(INPUT_POST, 'email');
         $user->password = $pass;
-        
+
         DB::table('users')
                 ->where('id', $user->id)
-                ->update( array('name'=> $user->name,'email' => $user->email,'password' => $user->password));
-    return redirect('/admin/user');
+                ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password));
+        return redirect('/admin/user');
     }
-    
+
 }
