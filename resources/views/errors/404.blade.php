@@ -52,7 +52,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="logo">
-                                        <a href="index.html"><img src="img/logo.png" alt=""></a>
+                                        <a href="/"><img src="img/logo.png" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-9">
@@ -79,7 +79,7 @@
                         <div class="mobile-menu-area">
                             <div class="container">
                                 <div class="logo-02">
-                                    <a href="index.html"><img src="img/logo-02.png" alt=""></a>
+                                    <a href="/"><img src="img/logo-02.png" alt=""></a>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
