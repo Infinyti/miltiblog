@@ -78,13 +78,13 @@
                                 <li><a style="color: #DB0630;" href="{{ url('/register') }}">| Регистрация</a></li>
                             @else
                                 <li class="dropdown">
-                                    <a  style="color: #DB0630;max-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
-                                    <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;max-width: 85px">
+                                    <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
                                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
-                                        <li><a href="{{ url('/admin') }}"><i class="fa fa-btn fa-sign-in"></i>Панель</a></li>
+                                        <li><a href="{{ url('/admin/post') }}"><i class="fa fa-btn fa-sign-in"></i>Панель</a></li>
                                     </ul>
                                 </li>
                             @endif
