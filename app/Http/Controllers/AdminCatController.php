@@ -32,6 +32,25 @@ class AdminCatController extends Controller {
      * Добавить новую категорию
      */
     public function add(Request $request) {
+<<<<<<< HEAD
+        $validator = Validator::make($request->all(), [
+                    'name' => 'required|max:255',
+                    'description' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/cat')
+                            ->withInput()
+                            ->withErrors($validator);
+        }
+        $cat = new Categories;
+        $cat->name = $request->name;
+        $cat->description = $request->description;
+        $cat->author_id = $request->author_id;
+        $cat->save();
+
+        return redirect('/admin/cat');
+=======
 
 
 	$validator = Validator::make($request->all(), [
@@ -53,6 +72,7 @@ class AdminCatController extends Controller {
 	$cat->save();
 
 	return redirect('/admin/cat');
+>>>>>>> 8084eeb819478803f8d3ade7d00cfe5ab952c200
     }
 
     /**

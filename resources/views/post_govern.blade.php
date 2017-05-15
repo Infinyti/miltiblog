@@ -7,7 +7,7 @@
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-	      @include('common.errors')
+	    @include('common.errors')
             <legend class="text-center">Добавление нового поста</legend>
 
             <!-- Name input-->
@@ -67,8 +67,9 @@
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <fieldset>
+		      @include('common.errors')
                     <legend class="text-center">Редактировать пост</legend>
-                    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST">
+                    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('POST') }}
 
@@ -90,7 +91,6 @@
 			<br><br>
                         <!--<input type="file" name="new_img">
                         <input type="hidden" name="img" value="{{ $post->img }}"/>-->
-			  @include('common.errors')
                         <button type="submit" id="save" class="btn " >
                             <i class="fa fa-"></i> сохранить
                         </button>

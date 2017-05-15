@@ -13,9 +13,9 @@ use App\Http\Controllers\Controller;
 class AdminPostController extends Controller {
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the application dashboard. 
+     * 
+     * @return \Illuminate\Http\Response 
      */
     public function index() {
 	$userid = Auth::id();
@@ -36,7 +36,7 @@ class AdminPostController extends Controller {
     }
 
     /**
-     * Добавить новый пост
+     * Добавить новый пост 
      */
     public function add(Request $request) {
 	if ($request->file('img') !== NULL) {
@@ -71,7 +71,7 @@ class AdminPostController extends Controller {
     }
 
     /**
-     * Удалить пост
+     * Удалить пост 
      */
     public function del(Post $post) {
 	$post->delete();
@@ -89,14 +89,16 @@ class AdminPostController extends Controller {
 			    ->withInput()
 			    ->withErrors($validator);
 	}
+	$uploaddir = 'images/posts/';
 	$post->id = filter_input(INPUT_POST, 'id');
 	$post->title = filter_input(INPUT_POST, 'newtitle');
 	$post->content = filter_input(INPUT_POST, 'newcontent');
 	$post->category_id = filter_input(INPUT_POST, 'category_id');
-	$post->img = filter_input(INPUT_POST, 'img');
+	$post->img = $uploaddir . basename($_FILES['img']['name']);
 	DB::table('posts')
 		->where('id', $post->id)
 		->update(array('title' => $post->title, 'content' => $post->content, 'category_id' => $post->category_id, 'img' => $post->img));
+	move_uploaded_file($_FILES['img']['tmp_name'], $post->img);
 	return redirect('/admin/post');
     }
 

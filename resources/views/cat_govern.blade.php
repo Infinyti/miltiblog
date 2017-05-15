@@ -6,7 +6,6 @@
 <div class="well well-sm">
     <form action="{{ url('admin/cat') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-	      @include('common.errors')
             <legend class="text-center">Добавление новой категории</legend>
 
                 <div class="form-group">
@@ -27,11 +26,8 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <input type="submit" value="Добавить категорию" class="btn btn-primary btn-md"><br>
-		
                     </div>
-		    
                     <div class="col-md-3"></div>
-		    	
                 </div>
                 {{ csrf_field() }}
 
@@ -68,7 +64,7 @@
                 <input type="hidden" value="{{ $cat->id }}" name="id"><br>
 
                 <input type="text" class="form-control" value="{{ $cat->description }}" id="newdescription" name="newdescription"><br>
-  @include('common.errors')
+
                 <button type="submit" id="save" class="btn  ">
                     <i class="fa fa-"></i> сохранить
                 </button>        
@@ -77,7 +73,7 @@
         </div>
     </div>
     <tr>
-        <td class="table-text" style="width:50%">
+        <td class="table-text">
             <div>{{ $cat->name }}</div>
         </td>
         <td class="table-text">
