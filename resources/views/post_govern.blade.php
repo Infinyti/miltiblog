@@ -79,7 +79,14 @@
                             @foreach($cats as $cat)
                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endforeach
-                        </select><br><br>
+                        </select>
+			<div class="form-group">
+                <label class="col-md-3 control-label">Картинка:</label>
+                <div class="col-md-9">
+                    <input type="file" name="img"><br>
+                </div>
+            </div>
+			<br><br>
                         <!--<input type="file" name="new_img">
                         <input type="hidden" name="img" value="{{ $post->img }}"/>-->
                         <button type="submit" id="save" class="btn " >

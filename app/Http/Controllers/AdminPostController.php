@@ -84,10 +84,10 @@ class AdminPostController extends Controller {
         $post->title = filter_input(INPUT_POST, 'title');
         $post->content = filter_input(INPUT_POST, 'content');
         $post->category_id = filter_input(INPUT_POST, 'category_id');
-        
+	$post->img= filter_input(INPUT_POST, 'img');
         DB::table('posts')
                 ->where('id', $post->id)
-                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id));
+                ->update( array('title'=> $post->title,'content' => $post->content,'category_id' => $post->category_id,'img'=> $post->img));
     return redirect('/admin/post');
     }
 
