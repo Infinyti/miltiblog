@@ -33,7 +33,8 @@
                 <label class="col-md-3 control-label">Категория:</label>
                 <div class="col-md-9">
                     <select name="category_id" required>
-                        @foreach($cats as $cat)
+                        <option value="" disabled selected>Выберите категорию</option>
+                        @foreach($cats as $cat)                       
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                         @endforeach
                     </select><br>
@@ -139,7 +140,7 @@
                 </button>
 
             </form>
-            <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
+            <a href="#poup-cat-{{ $post->id }}" class="table_edit" title="Редактировать">
                 <button type="submit" class="btn">
                     <i class="fa fa-pencil"></i>
                 </button>
