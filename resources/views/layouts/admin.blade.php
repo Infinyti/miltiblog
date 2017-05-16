@@ -4,6 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Admin</title>
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" type="image/x-icon" href="http://{{$_SERVER['HTTP_HOST']}}/img/favicon_admin.ico">
         <!-- BOOTSTRAP STYLES-->
         <link href="http://{{$_SERVER['HTTP_HOST']}}/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
