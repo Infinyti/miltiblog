@@ -30,7 +30,8 @@
                 <label class="col-md-3 control-label">Категория:</label>
                 <div class="col-md-9">
                     <select name="category_id" required>
-                        @foreach($cats as $cat)
+                        <option value="" disabled selected>Выберите категорию</option>
+                        @foreach($cats as $cat)                       
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                         @endforeach
                     </select><br>
