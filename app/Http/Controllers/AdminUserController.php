@@ -26,9 +26,11 @@ class AdminUserController extends Controller {
                 ->leftjoin('users_status', 'users.roles', '=', 'users_status.id')     
                 ->select('users.*', 'users_status.name as status')
                 ->get();
+        $status = DB::table('users_status')->get();
         return view('user_govern', [
             'userinfo' => $userinfo,
-            'users' => $users
+            'users' => $users,
+            'status' => $status
         ]);
     }
 
@@ -43,10 +45,11 @@ class AdminUserController extends Controller {
         $user->name = filter_input(INPUT_POST, 'name');
         $user->email = filter_input(INPUT_POST, 'email');
         $user->password = $pass;
+        $user->status = filter_input(INPUT_POST, 'status');
 
         DB::table('users')
                 ->where('id', $user->id)
-                ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password));
+                ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password, 'roles' => $user->status));
         return redirect('/admin/user');
     }
     

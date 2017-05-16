@@ -104,8 +104,20 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Пароль:</label>
                                 <div class="col-md-9">
-                                    <input name="newpassword" type="password" required class="form-control" value="" placeholder="Введите для смены пароля">
+                                    <input name="newpassword" type="password" class="form-control" value="" placeholder="Введите для смены пароля">
                                     <input type="hidden" name="password" value="{{ $user->password }}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Статус:</label>
+                                <div class="col-md-9">
+                                    <select name="status" required>
+                                        <option value="" disabled selected>Выберите статус</option>
+                                        <option value="NULL">На проверке</option>
+                                        @foreach($status as $stat)                       
+                                        <option value="{{ $stat->id }}">{{ $stat->name }}</option>
+                                        @endforeach
+                                    </select><br>
                                 </div>
                             </div>
                             <input type="hidden" name="id" value="{{ $user->id }}">
@@ -130,7 +142,7 @@
             <div>{{ $user->name }}</div>
         </td>
         <td class="table-text">
-            <div>{{ isset($user->status)?$user->status:'На проверке' }}</div>
+            <div>{{ isset($user->status) ? $user->status : 'На проверке' }}</div>
         </td>
         <td class="table-text">
             <form action="{{ url('admin/user/del/'.$user->id) }}" method="POST" class="table_delete">
