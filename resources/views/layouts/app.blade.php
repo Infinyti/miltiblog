@@ -38,7 +38,7 @@
 
     <!-- modernizr css -->
     <script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/modernizr-2.8.3.min.js"></script>
-
+    
 </head>
 <body>
 <div class="wrapper blog">
