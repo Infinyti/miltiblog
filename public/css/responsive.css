@@ -117,6 +117,9 @@
  
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+.social-area{
+    float: right;
+}    
 .container {width:750px}
 .mobile-menu-area{
 	display:none
@@ -284,8 +287,11 @@ a.btn-def {
 /* small mobile :320px. */
 @media (max-width: 767px) {
 .container {width:300px}
- .mobile-menu-area{
-	display:block
+.mobile-menu-area{
+    display:block;
+}
+.logo_hover{
+    margin: 15px 0 0 0;
 }
 .logo {
   text-align: center;
@@ -655,7 +661,9 @@ a.btn-def {
 .nivoSlider img {
   height: auto !important;
 }
-
+.social-area {
+    float: none;
+}
 }
  
 /* Large Mobile :480px. */

@@ -48,27 +48,18 @@
                 <!--header start-->
                 <div class="header-area header-2">
                     <!--logo menu area start-->
-                    <div id="sticker" class="logo-menu-area header-area-2">
-                        <div class="container hidden-xs">
+                    <div class="logo-menu-area">
+                        <div class="container">
                             <div class="row">
-                                <div class="col-md-2 col-sm-3"></div>
-                                <div class="col-md-8 col-sm-9 text-center">
+                                <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 text-center">
                                     <div class="logo">
-                                        <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo.png" alt=""></a>
+                                        <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo_main.png" class="logo_hover" alt=""></a>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-sm-3"></div>
+                                <div class="col-md-2 col-sm-2 col-xs-2"></div>
                             </div>
                         </div><!--logo menu area end-->
-                        <!-- mobile-menu-area start -->
-                        <div class="mobile-menu-area">
-                            <div class="container">
-                                <div class="logo-02">
-                                    <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--mobile menu area end-->
                     </div> 
                 </div>
                 <!-- header End-->
@@ -78,9 +69,11 @@
             <div class="area-404 fix">
                 <div class="container ptb100">
                     <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <img src="http://{{$_SERVER['HTTP_HOST']}}/img/404.png" alt="">
-                            <h4><a href="/" style="border: 1px solid gray; padding: 5px;border-radius: 15px">Пощёл домой!!!!!НАСЯЛЬНИКААААААААА</a></h4>
+                        <div class=" text-center">
+                            <img src="http://{{$_SERVER['HTTP_HOST']}}/img/404.png" class="responsive" alt=""></br>
+                            <div class="col-md-2 col-xs-1 col-sm-3"></div>
+                            <div class="col-md-8 col-xs-10 col-sm-6 text-center text-404"><a href="/">Пощёл домой!!!!!НАСЯЛЬНИКААААААААА</a></div>
+                            <div class="col-md-2 col-xs-1 col-sm-3"></div>
                         </div>
                     </div>
                 </div>
@@ -91,17 +84,17 @@
             <div class="footer-area">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="social-area">
-                                <ul>
-                                    <li><a href="https://www.facebook.com"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="https://www.google.com.ua"><i class="zmdi zmdi-google"></i></a></li>
-                                    <li><a href="https://twitter.com"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="https://linkedin.com/"><i class="zmdi zmdi-linkedin"></i></a></li>
-                                    <li><a href="https://pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-
+                        <div class="col-md-9 col-sm-6 col-xs-12">
+                            ©2017  |  Designed by <a href="/authors">DROSEL TEAM</a>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <ul class="social-area">
+                                <li><a href="https://www.facebook.com"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="https://www.google.com.ua"><i class="zmdi zmdi-google"></i></a></li>
+                                <li><a href="https://twitter.com"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="https://linkedin.com/"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                <li><a href="https://pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

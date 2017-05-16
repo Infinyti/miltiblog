@@ -1128,6 +1128,9 @@ p.error { color: red }
 .footer-area a:hover{
     color: #ff004d;
 }
+.social-area{
+    float: right;
+}
 .social-area li a {
     color: #fff;
     font-size: 20px;
@@ -1952,4 +1955,9 @@ blockquote {
     background: #fff none repeat scroll 0 0;
     border-color: #ff004d;
     color: #ff004d;
+}
+.text-404{
+    border: 1px solid gray; 
+    padding: 5px;
+    border-radius: 15px;
 }
