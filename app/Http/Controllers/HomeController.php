@@ -26,6 +26,14 @@ class HomeController extends Controller{
                 ->select('posts.*', 'users.name')
                 ->orderBy('created_at', 'desc')
                 ->get();
+        /**
+         * Paginate posts and categories on home.blade
+         */
+        $posts = DB::table('posts')
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);
+        $categories = DB::table('categories')
+                ->paginate(10);
         return view('home', [
             'title' => 'Главная',
             'categories' => $categories,

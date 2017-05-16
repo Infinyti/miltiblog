@@ -36,21 +36,21 @@
         <!-- color css -->
         <link href="http://{{$_SERVER['HTTP_HOST']}}/css/color/skin-default.css" rel="stylesheet">
 
-<<<<<<< HEAD
+
     <!-- modernizr css -->
     <script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/modernizr-2.8.3.min.js"></script>
     
 </head>
 <body>
 <div class="wrapper blog">
-=======
+
         <!-- modernizr css -->
         <script src="http://{{$_SERVER['HTTP_HOST']}}/js/vendor/modernizr-2.8.3.min.js"></script>
 
     </head>
     <body>
         <div class="wrapper blog">
->>>>>>> c916de8cb19fc7466e66c8f40a546bac11a84d7e
+
 
             <!--slider header area are start-->
             <div id="home" class="header-slider-area">

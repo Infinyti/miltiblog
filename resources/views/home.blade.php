@@ -61,8 +61,12 @@
                             </div>
                         </div>
                         @endforeach
+                    </div> 
+<!--                    Постраничная навигация-->
+                    <div class="col-md-12">                       
+                            {{ $posts->render() }}                     
                     </div>
-                </div>
+                </div>               
             </div>
 @endsection
 

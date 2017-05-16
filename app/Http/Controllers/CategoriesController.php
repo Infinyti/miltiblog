@@ -25,9 +25,9 @@ class CategoriesController extends Controller
                 ->where('category_id', $id)
                 ->orderBy('created_at', 'desc')
                 ->get();
-        $categoryName=DB::table('categories')
+        $categoryName=DB::table('categories')               
                 ->where('categories.id', $id)
-                ->get();
+                ->get();       
         return view('categories', [
             'posts' => $posts,
             'categories'=>$categories,
