@@ -107,6 +107,11 @@ ul {
     margin: 0;
     padding: 0;
 }
+.ulnav{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
 .clear { clear: both }
 body { }
 ::-moz-selection {
@@ -209,6 +214,9 @@ body { }
 }
 .header-top a { color: #ddd }
 .header-top a:hover { color: #ff004d }
+.carousel-inner{
+    height: 790px;
+}
 /*----------------------------------------*/
 /* 4. Main Menu
 /*----------------------------------------*/
@@ -224,8 +232,16 @@ ul li { display: inline-block }
     width: 100%;
     z-index: 999;
 }
-.navbar-right{
-    margin-right: -110px; 
+.navbar-right a{
+   color: #ff004d;
+}
+.slider_text{
+    background: none;
+    position: absolute;
+    top: 30%;
+}
+.navbar-right a:hover{
+   color: #ddd;
 }
 .block-img{
     margin: 25px 0 0 0

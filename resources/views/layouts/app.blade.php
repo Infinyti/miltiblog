@@ -53,47 +53,48 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="logo">
-                                        <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo.png" alt=""></a>
+                                        <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo_main.png" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-9">
                                     <div class="main-menu text-center">
                                         <nav>
-                                            <ul id="nav">
+                                            <ul id="nav" class="ulnav">
                                                 <li><a class="smooth-scroll" href="/">Главная</a></li>
                                                 <li><a href="/authors">О Нас</a></li>
                                                 <li><a class="smooth-scroll" href="/contact">Контакты</a></li>
-
-                                                <ul class="navbar-right">
-                                                    <!--Authentication Links-->
-                                                    @if (Auth::guest())
-                                                    <li><a style="color: #DB0630;" href="{{ url('/login') }}"><i class="zmdi zmdi-account"></i> Войти</a></li>
-                                                    <li><a style="color: #DB0630;" href="{{ url('/register') }}"><i class="zmdi zmdi-accounts-add"></i> Регистрация</a></li>
-                                                    @else
-                                                    <li class="dropdown">
-                                                        <a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                                        </a>
-
-                                                        <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
-                                                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
-                                                            <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i> Панель</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    @endif
-                                                </ul>
-
                                             </ul>
                                         </nav>
                                     </div>
                                 </div>
+                                <div class="col-md-2 col-sm-3 navbar-right">
+                                    <!--Authentication Links-->
+                                    @if (Auth::guest())
+                                    <a href="{{ url('/login') }}">Вход</a>
+                                    <b style="color: #ff004d;"> | </b>
+                                    <a href="{{ url('/register') }}">Регистрация</a>
+                                    @else
+                                    <ul>
+                                        <li class="dropdown">
+                                            <a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
+                                                <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i> Панель</a></li>
+                                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    @endif
+
+                                </div>    
                             </div>
                         </div><!--logo menu area end-->
                         <!-- mobile-menu-area start -->
                         <div class="mobile-menu-area">
                             <div class="container">
                                 <div class="logo-02">
-                                    <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo-02.png" alt=""></a>
+                                    <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo_main.png" alt=""></a>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -106,12 +107,12 @@
                                                 <li>
                                                     <!--Authentication Links-->
                                                     @if (Auth::guest())
-                                                <li><a style="color: #DB0630;" href="{{ url('/login') }}"><i class="zmdi zmdi-account"></i> Войти</a></li>
-                                                <li><a style="color: #DB0630;" href="{{ url('/register') }}"><i class="zmdi zmdi-accounts-add"></i> Регистрация</a></li>
+                                                <li><a style="color: #ff004d;" href="{{ url('/login') }}"><i class="zmdi zmdi-account"></i> Вход</a></li>
+                                                <li><a style="color: #ff004d;" href="{{ url('/register') }}"><i class="zmdi zmdi-accounts-add"></i> Регистрация</a></li>
                                                 @else
                                                 <li class="dropdown">
-                                                    <a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                                    <a  style="color: #ff004d;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                                        {{ Auth::user()->name }}
                                                     </a>
 
                                                     <ul class="dropdown-menu nav" role="menu">
@@ -128,8 +129,10 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <!--mobile menu area end-->
                     </div> 
+                    @yield('slider')<!-- подключает блок контент -->
                 </div>
                 <!-- header End-->
             </div>
@@ -313,27 +316,17 @@ _hcwp.push({widget: "Mixstream", widget_id: 90843, filter: "last", limit: 5});
 <div class="footer-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="social-area">
-                    <ul>
-                        <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                        <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
-                        <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                        <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                        <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                    </ul>
-                </div>
-
+            <div class="col-md-9 col-sm-6 col-xs-12">
+                ©2017  |  Designed by DROSEL TEAM
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="payment-area">
-                    <ul>
-                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-01.jpg" alt=""></a></li>
-                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-02.jpg" alt=""></a></li>
-                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-03.jpg" alt=""></a></li>
-                        <li><a href=""><img src="http://{{$_SERVER['HTTP_HOST']}}/img/icon/pay-04.jpg" alt=""></a></li>
-                    </ul>
-                </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <ul class="social-area">
+                    <li><a href="https://www.facebook.com"><i class="zmdi zmdi-facebook"></i></a></li>
+                    <li><a href="https://www.google.com.ua"><i class="zmdi zmdi-google"></i></a></li>
+                    <li><a href="https://twitter.com"><i class="zmdi zmdi-twitter"></i></a></li>
+                    <li><a href="https://linkedin.com/"><i class="zmdi zmdi-linkedin"></i></a></li>
+                    <li><a href="https://pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
