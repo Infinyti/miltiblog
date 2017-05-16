@@ -85,7 +85,7 @@
 
                         <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                         <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" value="" id="newdescription" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea><br>
+                        <textarea class="form-control" id="newdescription" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
                         <script>
                             CKEDITOR.replace('newcontent');
                         </script>
@@ -140,7 +140,7 @@
                 </button>
 
             </form>
-            <a href="#poup-cat-{{ $post->id }}" class="table_edit" title="Редактировать">
+            <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
                 <button type="submit" class="btn">
                     <i class="fa fa-pencil"></i>
                 </button>
