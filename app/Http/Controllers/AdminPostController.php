@@ -41,9 +41,11 @@ class AdminPostController extends Controller {
      */
     public function add(Request $request) {
         if ($request->file('img') !== NULL) {
-            $request->file('img')->move(public_path('images/posts/'), $request->file('img')->getClientOriginalName());
+            $img = $request->file('img');
+            #$img->resize(300, 200);
+            $img->move(public_path('images/posts/'), $img->getClientOriginalName());
             $data = $request->except(['img']);
-            $data['img'] = 'images/posts/' . $request->file('img')->getClientOriginalName();
+            $data['img'] = 'images/posts/' . $img->getClientOriginalName();
         } else {
             $data = $request->except(['img']);
             $data['img'] = 'images/posts/no_image.png';

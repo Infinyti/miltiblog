@@ -2,8 +2,6 @@
 
 @section('content') 
 
-
-
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
@@ -22,7 +20,12 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <textarea name="content" required class="form-control"></textarea>
+                    <textarea id="content" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace('content');
+                    </script>
                 </div>
             </div>
 
@@ -81,7 +84,11 @@
 
                         <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                         <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" value="" id="newdescription" name="newcontent">{{ $post->content }}</textarea><br>
+                        <textarea class="form-control" value="" id="newdescription" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea><br>
+                        <script>
+                            CKEDITOR.replace('newcontent');
+                        </script>
+                        <label class="col-md-3 control-label">Категория:
                         <select name="category_id" required>
                             @foreach($cats as $cat)
                             @if($cat->id == $post->id_cat)
@@ -91,11 +98,13 @@
                             @endif
                             @endforeach
                         </select>
+                        </label>
                         <div class="form-group">
-                            <br><br>
-                            <label class="col-md-3 control-label">Картинка:</label>
+                            <label class="col-md-3 control-label">
+                                Картинка:
+                            </label>
                             <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
-                            <br><br>
+                            <br>
                             <div class="col-md-9">
                                 <input type="file" name="img">
                             </div>
