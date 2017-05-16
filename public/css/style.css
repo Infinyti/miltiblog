@@ -1122,6 +1122,12 @@ p.error { color: red }
     height: 80px;
     line-height: 78px;
 }
+.footer-area a{
+    color: #ddd;
+}
+.footer-area a:hover{
+    color: #ff004d;
+}
 .social-area li a {
     color: #fff;
     font-size: 20px;
@@ -1826,6 +1832,10 @@ blockquote {
 /*----------------------------------------*/
 /* 29. sicky menu
 /*----------------------------------------*/
+.logo_hover:hover{
+    background: url('../img/logo_main_hover.png') no-repeat;
+}
+
 .logo-menu-area.stick {
     background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
     z-index: 999999999;

@@ -52,7 +52,7 @@
                         <div class="container hidden-xs">
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="logo">
+                                    <div class="logo logo_hover">
                                         <a href="/"><img src="http://{{$_SERVER['HTTP_HOST']}}/img/logo_main.png" alt=""></a>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                     @else
                                     <ul>
                                         <li class="dropdown">
-                                            <a  style="color: #DB0630;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            <a  style="color: #ff004d;min-width: 85px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                                 {{ Auth::user()->name }} <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu nav" role="menu" style="min-width: 0; padding: 0;min-width: 85px">
@@ -317,7 +317,7 @@ _hcwp.push({widget: "Mixstream", widget_id: 90843, filter: "last", limit: 5});
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-6 col-xs-12">
-                ©2017  |  Designed by DROSEL TEAM
+                ©2017  |  Designed by <a href="/authors">DROSEL TEAM</a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <ul class="social-area">
