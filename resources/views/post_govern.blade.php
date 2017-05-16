@@ -2,8 +2,6 @@
 
 @section('content') 
 
-
-
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
@@ -22,7 +20,12 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <textarea name="content" required class="form-control"></textarea>
+                    <textarea id="content" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace('content');
+                    </script>
                 </div>
             </div>
 
@@ -30,7 +33,8 @@
                 <label class="col-md-3 control-label">Категория:</label>
                 <div class="col-md-9">
                     <select name="category_id" required>
-                        @foreach($cats as $cat)
+                        <option value="" disabled selected>Выберите категорию</option>
+                        @foreach($cats as $cat)                       
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                         @endforeach
                     </select><br>
@@ -81,7 +85,11 @@
 
                         <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                         <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" value="" id="newdescription" name="newcontent">{{ $post->content }}</textarea><br>
+                        <textarea class="form-control" id="newdescription" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
+                        <script>
+                            CKEDITOR.replace('newcontent');
+                        </script>
+                        <label class="col-md-3 control-label">Категория:
                         <select name="category_id" required>
                             @foreach($cats as $cat)
                             @if($cat->id == $post->id_cat)
@@ -91,12 +99,15 @@
                             @endif
                             @endforeach
                         </select>
+                        </label>
                         <div class="form-group">
-                            
+                            <label class="col-md-3 control-label">
+                                Картинка:
+                            </label>
                             <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
-                            <label class="col-md-3 control-label">Картинка:</label>
+                            <br>
                             <div class="col-md-9">
-                                <input type="file" name="img"><br>
+                                <input type="file" name="img">
                             </div>
                         </div>
                         <br><br>

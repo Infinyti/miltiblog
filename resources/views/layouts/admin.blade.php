@@ -16,6 +16,8 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
         <!-- My poup-up-->
         <link href="http://{{$_SERVER['HTTP_HOST']}}/css/poup-up.css" rel="stylesheet" />
+
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/ckeditor/ckeditor.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="wrapper">

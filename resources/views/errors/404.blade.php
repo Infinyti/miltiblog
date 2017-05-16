@@ -43,6 +43,80 @@
 <body>
 <div class="wrapper blog">
 
+<<<<<<< HEAD
+    </head>
+    <body>
+        <!--body-wraper-are-start-->
+        <div class="wrapper waraper-404">
+
+            <!--slider header area are start-->
+            <div id="home" class="header-slider-area">
+                <!--header start-->
+                <div class="header-area header-2">
+                    <!--logo menu area start-->
+                    <div id="sticker" class="logo-menu-area">
+                        <div class="container hidden-xs">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="logo">
+                                        <a href="/"><img src="img/logo.png" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-9">
+                                    <div class="main-menu text-center">
+                                        <nav>
+                                            <ul id="nav">
+                                                <li><a class="smooth-scroll" href="/">Home</a></li>
+                                                <li><a class="smooth-scroll" href="/">Timeline</a></li>                                             
+                                                <li><a class="smooth-scroll" href="/">Speakers</a></li>
+                                                <li><a class="smooth-scroll" href="/">News</a></li>
+                                                <li><a class="smooth-scroll" href="/">Feed</a></li>   
+                                                <li><a href="/authors">Our Team</a></li>
+                                                <li><a class="smooth-scroll" href="/contact">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <a href="/auth/login" class="btn btn-danger square-btn-adjust" style="float: right">LogIn</a>
+                                <a href="/auth/register" class="btn btn-success square-btn-adjust" style="float: right">Register</a>
+                               
+                            </div>
+                        </div><!--logo menu area end-->
+                        <!-- mobile-menu-area start -->
+                        <div class="mobile-menu-area">
+                            <div class="container">
+                                <div class="logo-02">
+                                    <a href="/"><img src="img/logo-02.png" alt=""></a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <nav id="dropdown">
+                                            <ul>
+                                                <li><a class="smooth-scroll" href="/">Home</a></li>
+                                                <li><a class="smooth-scroll" href="/">Timeline</a></li>                                             
+                                                <li><a class="smooth-scroll" href="/">Speakers</a></li>
+                                                <li><a class="smooth-scroll" href="/">News</a></li>
+                                                <li><a class="smooth-scroll" href="/">Feed</a></li>   
+                                                <li><a href="/authors">Our Team</a></li>
+                                                <li><a class="smooth-scroll" href="/contact">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--mobile menu area end-->
+                    </div> 
+                </div>
+                <!-- header End-->
+            </div>
+            <!--slider header area are end-->
+
+
+
+            <!--404 area start-->
+            <div class="area-404 ptb100 fix">
+=======
     <!--slider header area are start-->
     <div id="home" class="header-slider-area">
 	<!--header start-->
@@ -76,6 +150,7 @@
     
 <!--404 area start-->
             <div class="area-404 fix">
+>>>>>>> d78b2e1a2037cd2167404b777904a3241ca864f2
                 <div class="container ptb100">
                     <div class="row">
                         <div class="col-xs-12 text-center">
