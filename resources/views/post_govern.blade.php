@@ -93,11 +93,12 @@
                             @endforeach
                         </select>
                         <div class="form-group">
-                            
-                            <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
+                            <br><br>
                             <label class="col-md-3 control-label">Картинка:</label>
+                            <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
+                            <br><br>
                             <div class="col-md-9">
-                                <input type="file" name="img"><br>
+                                <input type="file" name="img">
                             </div>
                         </div>
                         <br><br>
