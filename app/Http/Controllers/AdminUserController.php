@@ -22,8 +22,13 @@ class AdminUserController extends Controller {
     public function index() {
         $userid = Auth::id();
         $userinfo = DB::table('users')->where('id', $userid)->first();
+        $users = DB::table('users')
+                ->leftjoin('users_status', 'users.roles', '=', 'users_status.id')     
+                ->select('users.*', 'users_status.name as status')
+                ->get();
         return view('user_govern', [
-            'userinfo' => $userinfo
+            'userinfo' => $userinfo,
+            'users' => $users
         ]);
     }
 
@@ -42,6 +47,11 @@ class AdminUserController extends Controller {
         DB::table('users')
                 ->where('id', $user->id)
                 ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password));
+        return redirect('/admin/user');
+    }
+    
+    public function del(User $user) {
+        $user->delete();
         return redirect('/admin/user');
     }
 

@@ -1,7 +1,11 @@
 @extends('layouts.admin') <!-- views/layouts/admin.blade.php -->
 
 @section('content') 
-
+@if($userinfo->roles === NULL)
+<div class="well well-sm">
+    <h3 style="color: #B40101">Данный раздел вам не доступен.</h3>
+</div>
+@else
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
@@ -67,6 +71,9 @@
 <table class="table table-striped">
     <tr>
         <th>Название</th>
+        @if($userinfo->roles ===1)
+        <th>Автор</th>
+        @endif     
         <th>Категория</th>
         <th>Действие</th>
     </tr>
@@ -126,6 +133,11 @@
         <td class="table-text">
             <div>{{ $post->title }}</div>
         </td>
+        @if($userinfo->roles ===1)
+        <td class="table-text">
+            <div>{{ $post->username }}</div>
+        </td>
+        @endif
         <td class="table-text">
             <div>{{ $post->name_cat }}</div>
         </td>
@@ -149,4 +161,5 @@
     </tr>
     @endforeach
 </table>
+@endif
 @endsection
