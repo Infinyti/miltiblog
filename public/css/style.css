@@ -1286,7 +1286,12 @@ select {
 /*----------------------------------------*/
 .total-feed .news-img { margin: 0 }
 .total-feed .single-news { padding-bottom: 0 }
-.news-img img { width: 100% }
+.news-img img { 
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 /*----------------------------------------*/
 /* 21. testimonial-02 area
 /*----------------------------------------*/
