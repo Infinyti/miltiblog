@@ -10,6 +10,11 @@
 <div class="well well-sm">
     <form action="{{ url('admin/cat') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
+            @if (session('categorySuccess'))
+        <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ session('categorySuccess') }}
+        </div>
+    @endif
             <legend class="text-center">Добавление новой категории</legend>
             <!-- Name input-->
             <div class="form-group">

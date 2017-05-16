@@ -58,8 +58,8 @@ class AdminCatController extends Controller {
         $cat->description = $request->description;
         $cat->author_id = $request->author_id;
         $cat->save();
-
-        return redirect('/admin/cat');
+return redirect('/admin/cat')->with('categorySuccess', 'Категория успешно создана!');
+       
     }
 
     /**
