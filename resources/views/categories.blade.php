@@ -12,7 +12,7 @@
                                    @foreach($posts as $post)
                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                         <div class="single-news single-news-02"> 
-                                            <div class="news-img animate-eff">
+                                            <div class="news-img animate-eff img-size-fix">
                                                 <a href="/post/{{ $post->id }}"><img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" alt=""></a>
                                             </div>
                                             <div class="news-contant">

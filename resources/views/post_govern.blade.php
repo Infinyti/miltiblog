@@ -1,9 +1,11 @@
 @extends('layouts.admin') <!-- views/layouts/admin.blade.php -->
 
 @section('content') 
-
-
-
+@if($userinfo->roles === NULL)
+<div class="well well-sm">
+    <h3 style="color: #B40101">Данный раздел вам не доступен.</h3>
+</div>
+@else
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
@@ -22,7 +24,12 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <textarea name="content" required class="form-control"></textarea>
+                    <textarea id="content" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace('content');
+                    </script>
                 </div>
             </div>
 
@@ -48,7 +55,7 @@
             <div class="form-group">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <button type="submit" class="btn btn-primary btn-lg">Добавить</button>
+                    <button type="submit" class="btn btn-primary btn-md">Добавить</button>
                 </div>
                 <div class="col-md-3"></div>
             </div>
@@ -64,6 +71,9 @@
 <table class="table table-striped">
     <tr>
         <th>Название</th>
+        @if($userinfo->roles ===1)
+        <th>Автор</th>
+        @endif     
         <th>Категория</th>
         <th>Действие</th>
     </tr>
@@ -82,7 +92,11 @@
 
                         <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                         <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" value="" id="newdescription" name="newcontent">{{ $post->content }}</textarea><br>
+                        <textarea class="form-control" id="newdescription" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
+                        <script>
+                            CKEDITOR.replace('newcontent');
+                        </script>
+                        <label class="col-md-3 control-label">Категория:
                         <select name="category_id" required>
                             @foreach($cats as $cat)
                             @if($cat->id == $post->id_cat)
@@ -92,11 +106,13 @@
                             @endif
                             @endforeach
                         </select>
+                        </label>
                         <div class="form-group">
-                            <br><br>
-                            <label class="col-md-3 control-label">Картинка:</label>
+                            <label class="col-md-3 control-label">
+                                Картинка:
+                            </label>
                             <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
-                            <br><br>
+                            <br>
                             <div class="col-md-9">
                                 <input type="file" name="img">
                             </div>
@@ -117,6 +133,11 @@
         <td class="table-text">
             <div>{{ $post->title }}</div>
         </td>
+        @if($userinfo->roles ===1)
+        <td class="table-text">
+            <div>{{ $post->username }}</div>
+        </td>
+        @endif
         <td class="table-text">
             <div>{{ $post->name_cat }}</div>
         </td>
@@ -131,7 +152,7 @@
                 </button>
 
             </form>
-            <a href="#poup-cat-{{ $post->id }}" class="table_edit" title="Редактировать">
+            <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
                 <button type="submit" class="btn">
                     <i class="fa fa-pencil"></i>
                 </button>
@@ -140,4 +161,5 @@
     </tr>
     @endforeach
 </table>
+@endif
 @endsection

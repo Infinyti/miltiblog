@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                     <div class="sb-text">
-                        <p>{{ isset($content) ? $content : 'content' }}</p>
+                        {!! isset($content) ? $content : 'content' !!}
                     </div>
                     <div class="social-area single-blog-social mtb50">
                         <ul>
