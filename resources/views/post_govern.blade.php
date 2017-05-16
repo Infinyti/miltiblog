@@ -131,7 +131,7 @@
                 </button>
 
             </form>
-            <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
+            <a href="#poup-cat-{{ $post->id }}" class="table_edit" title="Редактировать">
                 <button type="submit" class="btn">
                     <i class="fa fa-pencil"></i>
                 </button>
