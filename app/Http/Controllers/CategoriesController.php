@@ -29,12 +29,13 @@ class CategoriesController extends Controller
                 ->paginate(10);
         $categoryName=DB::table('categories')               
                 ->where('categories.id', $id)
-                ->get();       
+                ->first();       
         return view('categories', [
             'posts' => $posts,
             'categories'=>$categories,
             'newposts' => $newposts,
             'categoryName'=>$categoryName,
+	    'title'=>$categoryName->name,
             ]);
     }
 }

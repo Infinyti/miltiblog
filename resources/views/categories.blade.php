@@ -6,9 +6,7 @@
             <div class="col-md-8 col-sm-7 col-xs-12">
                 <div class="blog-body">
                     <div class="row">
-                        @foreach($categoryName as $catname)
-                        <h1>{{$catname->name}}</h1>
-                        @endforeach
+                        <h1>{{$categoryName->name}}</h1>
                         @foreach($posts as $post)
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="single-news single-news-02"> 
