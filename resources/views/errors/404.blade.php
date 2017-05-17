@@ -72,7 +72,7 @@
                         <div class=" text-center">
                             <img src="http://{{$_SERVER['HTTP_HOST']}}/img/404.png" class="responsive" alt=""></br>
                             <div class="col-md-2 col-xs-1 col-sm-3"></div>
-                            <div class="col-md-8 col-xs-10 col-sm-6 text-center text-404"><a href="/">Пощёл домой!!!!!НАСЯЛЬНИКААААААААА</a></div>
+                         <a href="/">   <div class="col-md-8 col-xs-10 col-sm-6 text-center text-404">Пощёл домой!!!!!НАСЯЛЬНИКААААААААА</div></a>
                             <div class="col-md-2 col-xs-1 col-sm-3"></div>
                         </div>
                     </div>
