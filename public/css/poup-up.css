@@ -32,7 +32,7 @@ and open the template in the editor.
 .modalDialog > div {
  width: 400px;
  position: relative;
- margin: 10% auto;
+ margin: 10px auto;
  /*padding: 5px 20px 13px 20px;*/
  border-radius: 10px;
  background: #fff;
@@ -60,3 +60,13 @@ and open the template in the editor.
 }
  
 .close:hover { background: #00d9ff; }
+
+a.table_edit{
+    float: left;
+}
+
+form.table_delete{
+        float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}

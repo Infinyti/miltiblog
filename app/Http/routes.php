@@ -13,6 +13,8 @@ Route::get('/categories/{id}', 'CategoriesController@index');
 
 Route::get('/contact', 'ContactController@index');
 
+Route::get('/user/{id}', 'UserController@index');
+
 Route::get('/admin/post', 'AdminPostController@index');
 Route::post('/admin/post', 'AdminPostController@add');
 Route::delete('/admin/post/del/{post}', 'AdminPostController@del');
@@ -25,6 +27,7 @@ Route::post('/admin/cat/update/{cat}', 'AdminCatController@update');
 
 Route::get('/admin/user', 'AdminUserController@index');
 Route::post('/admin/user/update/{user}', 'AdminUserController@update');
+Route::delete('/admin/user/del/{user}', 'AdminUserController@del');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

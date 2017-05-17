@@ -19,13 +19,21 @@ class HomeController extends Controller{
      */
     public function index()
     {
-        $categories = DB::table('categories')->select('id','name')->get();
+        $categories = DB::select('select DISTINCT(categories.id), name from categories left join posts on categories.id = posts.category_id where categories.id = posts.category_id');
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
-                ->select('posts.*', 'users.name')
+                ->select('posts.*', 'users.name','users.id as userid')
                 ->orderBy('created_at', 'desc')
-                ->get();
+                ->paginate(10);
+        /**
+         * Paginate posts and categories on home.blade
+         */
+//        $posts = DB::table('posts')
+//                ->orderBy('created_at', 'desc')
+//                ->paginate(10);
+//        $categories = DB::table('categories')
+//                ->paginate(10);
         return view('home', [
             'title' => 'Главная',
             'categories' => $categories,

@@ -22,23 +22,40 @@ class AdminUserController extends Controller {
     public function index() {
         $userid = Auth::id();
         $userinfo = DB::table('users')->where('id', $userid)->first();
-        return view('user_govern',[
-            'userinfo' => $userinfo
+        $users = DB::table('users')
+                ->leftjoin('users_status', 'users.roles', '=', 'users_status.id')     
+                ->select('users.*', 'users_status.name as status')
+                ->get();
+        $status = DB::table('users_status')->get();
+        return view('user_govern', [
+            'userinfo' => $userinfo,
+            'users' => $users,
+            'status' => $status
         ]);
     }
-    
+
     public function update(User $user) {
-        $pass = filter_input(INPUT_POST, 'password');
-        $pass = Hash::make($pass);
+        if (filter_input(INPUT_POST, 'newpassword') !== NULL) {
+            $pass = filter_input(INPUT_POST, 'newpassword');
+            $pass = Hash::make($pass);
+        } else {
+            $pass = filter_input(INPUT_POST, 'password');
+        }
         $user->id = filter_input(INPUT_POST, 'id');
         $user->name = filter_input(INPUT_POST, 'name');
         $user->email = filter_input(INPUT_POST, 'email');
         $user->password = $pass;
-        
+        $user->status = filter_input(INPUT_POST, 'status');
+
         DB::table('users')
                 ->where('id', $user->id)
-                ->update( array('name'=> $user->name,'email' => $user->email,'password' => $user->password));
-    return redirect('/admin/user');
+                ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password, 'roles' => $user->status));
+        return redirect('/admin/user');
     }
     
+    public function del(User $user) {
+        $user->delete();
+        return redirect('/admin/user');
+    }
+
 }
