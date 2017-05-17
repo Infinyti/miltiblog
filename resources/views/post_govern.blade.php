@@ -9,22 +9,22 @@
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-	    <!-- Уведомление о добавлении поста -->
-	       @if (session('postSuccess'))
-        <div class="alert alert-success">
-	    <ul> 
-		<li>{{ session('postSuccess') }}</li>
-	    </ul>
-        </div>
-    @endif
-     <!-- Уведомление о редактировании постов -->  
-    @if (session('postUpdateSuccess'))
-        <div class="alert alert-success">
-	    <ul>
-	    <li>{{ session('postUpdateSuccess') }}</li>
-	    </ul>
-        </div>
-    @endif
+            <!-- Уведомление о добавлении поста -->
+            @if (session('postSuccess'))
+            <div class="alert alert-success">
+                <ul> 
+                    <li>{{ session('postSuccess') }}</li>
+                </ul>
+            </div>
+            @endif
+            <!-- Уведомление о редактировании постов -->  
+            @if (session('postUpdateSuccess'))
+            <div class="alert alert-success">
+                <ul>
+                    <li>{{ session('postUpdateSuccess') }}</li>
+                </ul>
+            </div>
+            @endif
             @include('common.errors')
             <legend class="text-center">Добавление нового поста</legend>
 
@@ -115,20 +115,22 @@
 
                         <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                         <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" id="newdescription" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
+                        <textarea class="form-control" id="newdescription{{ $post->id }}" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
                         <script>
-                            CKEDITOR.replace('newcontent');
+                            // Replace the <textarea id="newdescription"> with a CKEditor
+                            // instance, using default configuration.
+                            CKEDITOR.replace('newdescription{{ $post->id }}');
                         </script>
                         <label class="col-md-3 control-label">Категория:
-                        <select name="category_id" required>
-                            @foreach($cats as $cat)
-                            @if($cat->id == $post->id_cat)
-                            <option value="{{ $cat->id }}" selected>{{ $cat->name }}</option>
-                            @else
-                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                            @endif
-                            @endforeach
-                        </select>
+                            <select name="category_id" required>
+                                @foreach($cats as $cat)
+                                @if($cat->id == $post->id_cat)
+                                <option value="{{ $cat->id }}" selected>{{ $cat->name }}</option>
+                                @else
+                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                @endif
+                                @endforeach
+                            </select>
                         </label>
                         <div class="form-group">
                             <label class="col-md-3 control-label">
@@ -184,6 +186,8 @@
     </tr>
     @endforeach
 </table>
-{{ $posts->render() }}
+<div class="col-md-12" style="margin-top: 40px">
+    {{ $posts->render() }}
+</div>
 @endif
 @endsection
