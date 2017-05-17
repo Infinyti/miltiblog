@@ -1,43 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.4.15.7
--- http://www.phpmyadmin.net
---
--- Хост: 127.0.0.1:3306
--- Время создания: Май 17 2017 г., 16:57
--- Версия сервера: 5.5.50
--- Версия PHP: 7.0.8
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- База данных: `multiblog`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `categories`
---
-
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(10) unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `author_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп данных таблицы `categories`
---
 
 INSERT INTO `categories` (`id`, `name`, `description`, `author_id`, `created_at`, `updated_at`) VALUES
 (1, 'Laravel ', 'q', 1, NULL, '2017-05-15 17:25:17'),
@@ -49,36 +9,6 @@ INSERT INTO `categories` (`id`, `name`, `description`, `author_id`, `created_at`
 (14, 'dbzd', 'dzhbetdzbd', 1, '2017-05-16 14:58:21', '2017-05-16 14:58:21'),
 (15, 'eathsrt', 'jsrthrt', 1, '2017-05-16 14:58:28', '2017-05-16 14:58:28'),
 (16, 'htsrthsr', 'thjsrths', 1, '2017-05-16 14:58:31', '2017-05-16 14:58:31');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `comments`
---
-
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(10) unsigned NOT NULL,
-  `nick` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `text` text COLLATE utf8_unicode_ci NOT NULL,
-  `note_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `migrations`
---
-
-CREATE TABLE IF NOT EXISTS `migrations` (
-  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп данных таблицы `migrations`
---
 
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2014_10_12_000000_create_users_table', 1),
@@ -93,39 +23,6 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2017_05_12_041731_create_comments_table', 1),
 ('2017_05_12_041904_create_posts_table', 1),
 ('2017_05_16_182416_create_users_status', 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `password_resets`
---
-
-CREATE TABLE IF NOT EXISTS `password_resets` (
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `posts`
---
-
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(10) unsigned NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `content` text COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `author_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп данных таблицы `posts`
---
 
 INSERT INTO `posts` (`id`, `title`, `content`, `img`, `author_id`, `category_id`, `created_at`, `updated_at`) VALUES
 (1, 'Laravel', 'Laravel — бесплатный веб-фреймворк с открытым кодом, предназначенный для разработки с использованием архитектурной модели MVC (англ. Model View Controller — модель-представление-контроллер). Laravel выпущен под лицензией MIT. Исходный код проекта размещается на GitHub[1].  В результате опроса sitepoint.com в декабре 2013 года о самых популярных PHP-фреймворках Laravel занял место самого многообещающего проекта на 2014 год[2].', 'images/posts/LaravelLogo.png', 0, 1, '2017-05-12 21:26:27', '2017-05-12 21:26:27'),
@@ -144,123 +41,11 @@ INSERT INTO `posts` (`id`, `title`, `content`, `img`, `author_id`, `category_id`
 (19, 'test', '<p>Test</p>', 'images/posts/codeIgniter.jpg', 1, 1, '2017-05-15 17:31:07', '2017-05-15 17:31:07'),
 (20, 'ачияваиява', '<p>ияваияваияываи</p>', 'images/posts/58832_300x300.jpg', 2, 11, '2017-05-16 11:07:26', '2017-05-16 11:07:26');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(10) unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `roles` int(11) DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'images/avatars/find_user.jpg',
-  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп данных таблицы `users`
---
-
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `roles`, `avatar`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'admin1', 'admin1@gmail.com', '$2y$10$YZKQj7YPASP40laAPL39wOWlwKNkcq.pXENgmKGGEcA5i8g9Ghlvq', 1, 'images/avatars/office-small.jpg', 'LIdH11qbY2ikTVAAZ0TNeJ3CVyxHoY6LRHzG7pGHmElwx6QiUzUBZctdptns', '2017-05-15 05:45:38', '2017-05-17 10:16:57'),
 (2, 'bloger', 'bloger@gmail.com', '$2y$10$n4wKEWAn.tuUf1Xjlollw.icC.Z6.qt46KYcvpjuoKpGYAnd8eOzS', 2, 'images/avatars/find_user.jpg', 'Xt51i0CtqRYoArWPxAaWKRpnAFg04WkNlFVeP3zmToSRO0whFn71L7mVT0lQ', '2017-05-16 06:15:47', '2017-05-16 10:08:12'),
 (3, 'no_bloger', 'no_bloger@gmail.com', '$2y$10$2RGYKE2YqVCebtbXYg0Crukhd0NfkBpLGV5/DFiBPdoSV.4aiORxG', NULL, 'images/avatars/find_user.jpg', 'GfaoPCexL2VHSmwjx6GbPQZHOjSfJsXn9VM9O5N8kt1EUMRPG6fBIv65DDbP', '2017-05-16 10:09:21', '2017-05-16 10:23:44');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `users_status`
---
-
-CREATE TABLE IF NOT EXISTS `users_status` (
-  `id` int(10) unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп данных таблицы `users_status`
---
-
 INSERT INTO `users_status` (`id`, `name`) VALUES
 (1, 'admin'),
 (2, 'bloger');
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`),
-  ADD KEY `password_resets_token_index` (`token`);
-
---
--- Индексы таблицы `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- Индексы таблицы `users_status`
---
-ALTER TABLE `users_status`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT для таблицы `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT для таблицы `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT для таблицы `users_status`
---
-ALTER TABLE `users_status`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
