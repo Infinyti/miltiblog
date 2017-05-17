@@ -2,7 +2,7 @@
 
 @section('content') 
 
-@if($userinfo->roles === NULL)
+@if($userinfo->roles == NULL)
 <div class="well well-sm">
     <h3 style="color: #B40101">Данный раздел вам не доступен.</h3>
 </div>

@@ -61,8 +61,8 @@
 			    <input type="file" name="avatar"><br>
 			</div>
 		    </div>
+                    <input type="hidden" name="oldavatar" value="{{ $userinfo->avatar }}">
 		    <input type="hidden" name="author_id" value="{{ $userinfo->id }}">
-		    <input type="hidden" name="status" value="{{ $userinfo->roles }}"/>
                     <!-- Form actions -->
                     <div class="form-group">
                         <div class="col-md-3"></div>
@@ -132,7 +132,6 @@
                                 </div>
                             </div>
                             <input type="hidden" name="id" value="{{ $user->id }}">
-			    
 			    <div class="form-group">
 				<label class="col-md-3 control-label">Картинка:</label>
 				<div class="col-md-9">
@@ -140,8 +139,8 @@
 				    <input type="file" name="avatar"><br>
 				</div>
 			    </div>
-			    <input type="hidden" name="author_id" value="{{ $userinfo->id }}">
-			    
+			    <input type="hidden" name="author_id" value="{{ $user->id }}">
+			    <input type="hidden" name="oldavatar" value="{{ $user->avatar }}">
                             <!-- Form actions -->
                             <div class="form-group">
                                 <div class="col-md-3"></div>

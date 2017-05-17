@@ -35,7 +35,7 @@ class CategoriesController extends Controller
             'categories'=>$categories,
             'newposts' => $newposts,
             'categoryName'=>$categoryName,
-            
+            'title' => $categoryName->name
             ]);
     }
 }

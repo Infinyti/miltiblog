@@ -34,6 +34,7 @@ class UserController extends Controller
             'categories'=>$categories,
             'newposts' => $newposts,
             'userinfo'=>$userinfo,
+            'title' => $userinfo->name
             ]);
     }
 }
