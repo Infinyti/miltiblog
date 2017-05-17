@@ -17,7 +17,7 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $categories = DB::table('categories')->select('id','name')->get();
+        $categories = DB::select('select DISTINCT(categories.id), name from categories left join posts on categories.id = posts.category_id where categories.id = posts.category_id');
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         return view('contact', [
             'title' => 'Контакты',

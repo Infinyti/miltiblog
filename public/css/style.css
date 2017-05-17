@@ -107,6 +107,11 @@ ul {
     margin: 0;
     padding: 0;
 }
+.ulnav{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
 .clear { clear: both }
 body { }
 ::-moz-selection {
@@ -209,6 +214,9 @@ body { }
 }
 .header-top a { color: #ddd }
 .header-top a:hover { color: #ff004d }
+.carousel-inner{
+    height: 790px;
+}
 /*----------------------------------------*/
 /* 4. Main Menu
 /*----------------------------------------*/
@@ -224,8 +232,16 @@ ul li { display: inline-block }
     width: 100%;
     z-index: 999;
 }
-.navbar-right{
-    margin-right: -110px; 
+.navbar-right a{
+   color: #ff004d;
+}
+.slider_text{
+    background: none;
+    position: absolute;
+    top: 30%;
+}
+.navbar-right a:hover{
+   color: #ddd;
 }
 .block-img{
     margin: 25px 0 0 0
@@ -826,7 +842,7 @@ a.btn-def.bnt-2.big {
     -webkit-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
-.animate-eff:before {
+/*.animate-eff:before {
     background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
     bottom: 10px;
     content: "";
@@ -841,7 +857,7 @@ a.btn-def.bnt-2.big {
     transform: scaleX();
     -webkit-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
-}
+}*/
 .animate-eff:hover:before {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -851,7 +867,7 @@ a.btn-def.bnt-2.big {
 .animate-eff a:after {
     border-radius: 100%;
     bottom: 0;
-    color: #fff;
+    color: #000;
     content: "\f18e";
     display: block;
     font-family: material-design-iconic-font;
@@ -873,7 +889,7 @@ a.btn-def.bnt-2.big {
     visibility: hidden;
     width: 60px;
     z-index: 2;
-    border: 2px solid #fff;
+    border: 2px solid #000;
 }
 .animate-eff a:hover:after {
     opacity: 1;
@@ -1106,6 +1122,15 @@ p.error { color: red }
     height: 80px;
     line-height: 78px;
 }
+.footer-area a{
+    color: #ddd;
+}
+.footer-area a:hover{
+    color: #ff004d;
+}
+.social-area{
+    float: right;
+}
 .social-area li a {
     color: #fff;
     font-size: 20px;
@@ -1264,7 +1289,12 @@ select {
 /*----------------------------------------*/
 .total-feed .news-img { margin: 0 }
 .total-feed .single-news { padding-bottom: 0 }
-.news-img img { width: 100% }
+.news-img img { 
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 /*----------------------------------------*/
 /* 21. testimonial-02 area
 /*----------------------------------------*/
@@ -1810,6 +1840,10 @@ blockquote {
 /*----------------------------------------*/
 /* 29. sicky menu
 /*----------------------------------------*/
+.logo_hover:hover{
+    background: url('../img/logo_main_hover.png') no-repeat;
+}
+
 .logo-menu-area.stick {
     background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
     z-index: 999999999;
@@ -1921,4 +1955,9 @@ blockquote {
     background: #fff none repeat scroll 0 0;
     border-color: #ff004d;
     color: #ff004d;
+}
+.text-404{
+    border: 1px solid gray; 
+    padding: 5px;
+    border-radius: 15px;
 }

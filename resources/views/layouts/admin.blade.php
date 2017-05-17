@@ -4,6 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Admin</title>
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" type="image/x-icon" href="http://{{$_SERVER['HTTP_HOST']}}/img/favicon_admin.ico">
         <!-- BOOTSTRAP STYLES-->
         <link href="http://{{$_SERVER['HTTP_HOST']}}/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
@@ -16,6 +18,8 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
         <!-- My poup-up-->
         <link href="http://{{$_SERVER['HTTP_HOST']}}/css/poup-up.css" rel="stylesheet" />
+
+        <script src="http://{{$_SERVER['HTTP_HOST']}}/ckeditor/ckeditor.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="wrapper">
@@ -32,7 +36,7 @@
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
                      float: right;
-                     font-size: 16px;"> Сегодя : <?php echo date("d.m.Y"); ?> &nbsp;
+                     font-size: 16px;"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
                     <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust" target="_blank">На сайт</a>
                     <a href="{{ url('/logout') }}" class="btn btn-danger square-btn-adjust">Выйти</a>    
                 </div>
