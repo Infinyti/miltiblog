@@ -10,9 +10,20 @@
 <div class="well well-sm">
     <form action="{{ url('admin/cat') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
+	    <!-- Уведомление о добавлении категории -->
             @if (session('categorySuccess'))
         <div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ session('categorySuccess') }}
+	    <ul>
+	    <li>{{ session('categorySuccess') }}</li>
+	    </ul>
+        </div>
+    @endif
+     <!-- Уведомление о редактировании категории -->  
+    @if (session('categoryUpdateSuccess'))
+        <div class="alert alert-success">
+	    <ul>
+	    <li>{{ session('categoryUpdateSuccess') }}</li>
+	    </ul>
         </div>
     @endif
             <legend class="text-center">Добавление новой категории</legend>
