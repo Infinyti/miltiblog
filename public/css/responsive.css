@@ -19,6 +19,9 @@
 .event-about-are .col-lg-7 {
   width: 41.66%;
 }
+.carousel-inner {
+    height: 500px;
+}
 
 
 
