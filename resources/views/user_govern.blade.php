@@ -88,7 +88,7 @@
         </tr>
         @foreach($users as $key => $user)
         <div id="poup-post-{{ $user->id }}" class="modalDialog">
-            <div class="well well-sm">
+            <div>
                 <div>
                     <a href="#close" title="Close" class="close">X</a>
                     <div class="well well-sm">
