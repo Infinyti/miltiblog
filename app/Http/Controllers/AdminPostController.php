@@ -77,8 +77,8 @@ class AdminPostController extends Controller {
         $post->category_id = $request->category_id;
         $post->author_id = $request->author_id;
         $post->save();
-
-        return redirect('/admin/post');
+return redirect('/admin/post')->with('postSuccess', 'Пост успешно создан!');
+        
     }
 
     /**
@@ -115,8 +115,7 @@ class AdminPostController extends Controller {
         DB::table('posts')
                 ->where('id', $post->id)
                 ->update(array('title' => $post->title, 'content' => $post->content, 'category_id' => $post->category_id, 'img' => $post->img));
-       
-        return redirect('/admin/post');
+       return redirect('/admin/post')->with('postUpdateSuccess', 'Пост успешно отредактирован!');
     }
 
 }

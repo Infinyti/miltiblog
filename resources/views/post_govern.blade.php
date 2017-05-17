@@ -9,6 +9,22 @@
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
+	    <!-- Уведомление о добавлении поста -->
+	       @if (session('postSuccess'))
+        <div class="alert alert-success">
+	    <ul> 
+		<li>{{ session('postSuccess') }}</li>
+	    </ul>
+        </div>
+    @endif
+     <!-- Уведомление о редактировании постов -->  
+    @if (session('postUpdateSuccess'))
+        <div class="alert alert-success">
+	    <ul>
+	    <li>{{ session('postUpdateSuccess') }}</li>
+	    </ul>
+        </div>
+    @endif
             @include('common.errors')
             <legend class="text-center">Добавление нового поста</legend>
 
