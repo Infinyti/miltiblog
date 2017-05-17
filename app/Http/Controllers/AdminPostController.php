@@ -90,7 +90,7 @@ return redirect('/admin/post')->with('postSuccess', 'Пост успешно с�
     }
 
     public function update(Post $post, Request $request) {
-
+        $userid = Auth::id();
         $validator = Validator::make($request->all(), [
                     'newtitle' => 'required|max:255',
                     'newcontent' => 'required|min:50',
@@ -112,10 +112,20 @@ return redirect('/admin/post')->with('postSuccess', 'Пост успешно с�
         } else {
             $post->img = filter_input(INPUT_POST, 'oldimg');
         }
+        $checkAuthor = DB::table('posts')
+                ->select('author_id')
+                ->where('id', $post->id)
+                ->first();
+        $checkStatus = DB::table('users')
+                ->select('roles')
+                ->where('id', $userid)
+                ->first();
+        if ($checkAuthor->author_id == $userid || $checkStatus->roles == 1) {
         DB::table('posts')
                 ->where('id', $post->id)
                 ->update(array('title' => $post->title, 'content' => $post->content, 'category_id' => $post->category_id, 'img' => $post->img));
-       return redirect('/admin/post')->with('postUpdateSuccess', 'Пост успешно отредактирован!');
+        }
+        return redirect('/admin/post')->with('postUpdateSuccess', 'Пост успешно отредактирован!');
     }
 
 }
