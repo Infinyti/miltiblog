@@ -4,7 +4,7 @@
 
 @if($userinfo->roles == NULL)
 <div class="well well-sm">
-    <h3 style="color: #B40101">Данный раздел вам не доступен.</h3>
+    <h3 style="color: #B40101">Дождитесь окончания регистрации. Обычно это занимает не больше 60 мин.</h3>
 </div>
 @else
 <div class="well well-sm">
