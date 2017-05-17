@@ -122,11 +122,15 @@
                         <label class="col-md-3 control-label">Категория:
                         <select name="category_id" required>
                             @foreach($cats as $cat)
+<<<<<<< HEAD
+                            <option  value="{{ $cat->id }}">{{ $cat->name }}</option>
+=======
                             @if($cat->id == $post->id_cat)
                             <option value="{{ $cat->id }}" selected>{{ $cat->name }}</option>
                             @else
                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endif
+>>>>>>> ecc918522cf75dea336160d0b2a9d63121ad2c37
                             @endforeach
                         </select>
                         </label>
