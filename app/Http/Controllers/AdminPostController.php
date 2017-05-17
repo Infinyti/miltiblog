@@ -60,7 +60,7 @@ class AdminPostController extends Controller {
         }
         $validator = Validator::make($request->all(), [
                     'title' => 'required|max:255|unique:posts',
-                    'content' => 'required',
+                    'content' => 'required|min:50',
                     'category_id' => 'required',
         ]);
 
@@ -77,8 +77,8 @@ class AdminPostController extends Controller {
         $post->category_id = $request->category_id;
         $post->author_id = $request->author_id;
         $post->save();
-
-        return redirect('/admin/post');
+return redirect('/admin/post')->with('postSuccess', 'Пост успешно создан!');
+        
     }
 
     /**
@@ -93,7 +93,7 @@ class AdminPostController extends Controller {
 
         $validator = Validator::make($request->all(), [
                     'newtitle' => 'required|max:255',
-                    'newcontent' => 'required|max:500',
+                    'newcontent' => 'required|min:50',
         ]);
 
         if ($validator->fails()) {
@@ -115,8 +115,7 @@ class AdminPostController extends Controller {
         DB::table('posts')
                 ->where('id', $post->id)
                 ->update(array('title' => $post->title, 'content' => $post->content, 'category_id' => $post->category_id, 'img' => $post->img));
-       
-        return redirect('/admin/post');
+       return redirect('/admin/post')->with('postUpdateSuccess', 'Пост успешно отредактирован!');
     }
 
 }

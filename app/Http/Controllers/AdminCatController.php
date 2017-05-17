@@ -92,7 +92,8 @@ return redirect('/admin/cat')->with('categorySuccess', 'Категория ус�
                 ->where('id', $cat->id)
                 ->update(array('name' => $cat->name, 'description' => $cat->description,));
         $cat->save();
-        return redirect('/admin/cat');
+	return redirect('/admin/cat')->with('categoryUpdateSuccess', 'Категория успешно отредактирована!');
+       
     }
 
 }
