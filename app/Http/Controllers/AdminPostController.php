@@ -25,14 +25,14 @@ class AdminPostController extends Controller {
                 ->leftjoin('users', 'posts.author_id', '=', 'users.id')
                 ->leftjoin('categories', 'posts.category_id', '=', 'categories.id')
                 ->select('posts.*', 'users.name', 'categories.name as name_cat', 'categories.id as id_cat','users.name as username')
-                ->get();
+                ->paginate(10);
         }else{
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id', '=', 'users.id')
                 ->leftjoin('categories', 'posts.category_id', '=', 'categories.id')
                 ->select('posts.*', 'users.name', 'categories.name as name_cat', 'categories.id as id_cat','users.name as username')
                 ->where('posts.author_id', $userid)
-                ->get();
+                ->paginate(10);
         }
         $categories = DB::table('categories')->get();
 
