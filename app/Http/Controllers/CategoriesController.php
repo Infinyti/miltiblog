@@ -25,17 +25,14 @@ class CategoriesController extends Controller
                 ->where('category_id', $id)
                 ->leftjoin('users', 'posts.author_id','=','users.id')
                 ->select('posts.*', 'users.name','users.id as userid')
-                ->orderBy('created_at', 'desc')
-                ->paginate(10);
+                ->orderBy('created_at', 'desc');              
         $categoryName=DB::table('categories')               
-                ->where('categories.id', $id)
-                ->first();       
         return view('categories', [
             'posts' => $posts,
             'categories'=>$categories,
             'newposts' => $newposts,
             'categoryName'=>$categoryName,
-	    'title'=>$categoryName->name,
+			'title'=>$categoryName->name,
             ]);
     }
 }
