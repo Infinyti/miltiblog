@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="news-contant">
                                     <h3 class="uppercase"><a href="/post/{{ $post->id }}">{{ $post->title }}</a></h3>
-                                    <p>Post-by : <a href="#">{{ isset($post->name) ? $post->name : 'Autor' }}</a> </p>
+                                    <p>Опубликовал : <a href="/user/{{ isset($post->userid) ? $post->userid : 0 }}">{{ isset($post->name) ? $post->name : 'Autor' }}</a> </p>
                                     <div class="news-bottom shadow-box">
                                         <!--<a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a>
                                         <a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a>-->

@@ -23,6 +23,8 @@ class CategoriesController extends Controller
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         $posts = DB::table('posts')
                 ->where('category_id', $id)
+                ->leftjoin('users', 'posts.author_id','=','users.id')
+                ->select('posts.*', 'users.name','users.id as userid')
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
         $categoryName=DB::table('categories')               

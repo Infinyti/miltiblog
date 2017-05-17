@@ -23,7 +23,7 @@ class HomeController extends Controller{
         $newposts = DB::select('select * from posts ORDER BY created_at DESC LIMIT 3');
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
-                ->select('posts.*', 'users.name')
+                ->select('posts.*', 'users.name','users.id as userid')
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
         /**
