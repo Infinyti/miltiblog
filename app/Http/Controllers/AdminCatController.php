@@ -24,11 +24,11 @@ class AdminCatController extends Controller {
             $categories = DB::table('categories')
                     ->leftjoin('users', 'categories.author_id', '=', 'users.id')
                     ->select('categories.*', 'users.name as username')
-                    ->get();
+                    ->paginate(10);
         } else {
             $categories = DB::table('categories')
-                    ->where('author_id', $userid)
-                    ->get();
+                    ->where('author_id', $userid)                  
+                    ->paginate(10);
         }
         return view('cat_govern', [
             'cats' => $categories,
@@ -57,7 +57,7 @@ class AdminCatController extends Controller {
         $cat->name = $request->name;
         $cat->description = $request->description;
         $cat->author_id = $request->author_id;
-        $cat->save();
+        $cat->save();       
 return redirect('/admin/cat')->with('categorySuccess', 'Категория успешно создана!');
        
     }
@@ -91,8 +91,9 @@ return redirect('/admin/cat')->with('categorySuccess', 'Категория ус�
         DB::table('categories')
                 ->where('id', $cat->id)
                 ->update(array('name' => $cat->name, 'description' => $cat->description,));
-        $cat->save();
-        return redirect('/admin/cat');
+        $cat->save();        
+	return redirect('/admin/cat')->with('categoryUpdateSuccess', 'Категория успешно отредактирована!');
+       
     }
 
 }

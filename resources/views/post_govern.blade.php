@@ -9,6 +9,22 @@
 <div class="well well-sm">
     <form action="{{ url('admin/post') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
+	    <!-- Уведомление о добавлении поста -->
+	       @if (session('postSuccess'))
+        <div class="alert alert-success">
+	    <ul> 
+		<li>{{ session('postSuccess') }}</li>
+	    </ul>
+        </div>
+    @endif
+     <!-- Уведомление о редактировании постов -->  
+    @if (session('postUpdateSuccess'))
+        <div class="alert alert-success">
+	    <ul>
+	    <li>{{ session('postUpdateSuccess') }}</li>
+	    </ul>
+        </div>
+    @endif
             @include('common.errors')
             <legend class="text-center">Добавление нового поста</legend>
 
@@ -24,7 +40,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <textarea id="content" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
+                    <textarea id="content" minlength="50" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
                     <script>
                         // Replace the <textarea id="editor1"> with a CKEditor
                         // instance, using default configuration.
@@ -168,5 +184,6 @@
     </tr>
     @endforeach
 </table>
+{{ $posts->render() }}
 @endif
 @endsection

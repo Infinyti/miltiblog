@@ -10,11 +10,22 @@
 <div class="well well-sm">
     <form action="{{ url('admin/cat') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
+            <!-- Уведомление о добавлении категории -->
             @if (session('categorySuccess'))
-        <div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ session('categorySuccess') }}
-        </div>
-    @endif
+            <div class="alert alert-success">
+                <ul>
+                    <li>{{ session('categorySuccess') }}</li>
+                </ul>
+            </div>
+            @endif
+            <!-- Уведомление о редактировании категории -->  
+            @if (session('categoryUpdateSuccess'))
+            <div class="alert alert-success">
+                <ul>
+                    <li>{{ session('categoryUpdateSuccess') }}</li>
+                </ul>
+            </div>
+            @endif
             <legend class="text-center">Добавление новой категории</legend>
             <!-- Name input-->
             <div class="form-group">
@@ -49,7 +60,7 @@
 
 
 <table class="table table-striped">
-    
+
     <caption>
         @if($userinfo->roles ===1)
         Все категории
@@ -72,6 +83,7 @@
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <fieldset>
+		     @include('common.errors')
                     <legend class="text-center">Редактировать категорию</legend>
                     <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
                         {{ csrf_field() }}
@@ -118,7 +130,16 @@
                 </a>    
             </td>
         </tr>  
-        @endforeach
+        @endforeach  
+
 </table>
+<!--    Рендер-->
+
+<div class="col-md-12" style="margin-top: 40px">
+        {{ $cats->render() }}
+    </div>
+
 @endif
 @endsection
+
+

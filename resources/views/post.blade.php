@@ -17,7 +17,7 @@
                             <li><a href="#"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($date)) }}</a></li>
                             <!--<li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a></li>
                             <li><a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a></li>-->
-                            <li><a href="#">Post By : {{ isset($author) ? $author : 'author' }}</a></li>
+                            <li><a href="/user/{{ isset($post->userid) ? $post->userid : 0 }}">Post By : {{ isset($author) ? $author : 'author' }}</a></li>
                         </ul>
                     </div>
                     <div class="sb-text">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="social-area single-blog-social mtb50">
                         <ul>
-                            <li><a href="#"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                            <li style="margin-left: 15px;"><a href="#"><i class="zmdi zmdi-facebook-box"></i></a></li>
                             <li><a href="#"><i class="zmdi zmdi-twitter-box"></i></a></li>
                             <li><a href="#"><i class="zmdi zmdi-google-plus-box"></i></a></li>
                             <li><a href="#"><i class="zmdi zmdi-linkedin-box"></i></a></li>
