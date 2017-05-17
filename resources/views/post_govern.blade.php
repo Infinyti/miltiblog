@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Описание:</label>
                 <div class="col-md-9">
-                    <textarea id="content" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
+                    <textarea id="content" minlength="50" rows="10" cols="80" name="content" class="form-control" style="height: 120px;resize: none;"></textarea>
                     <script>
                         // Replace the <textarea id="editor1"> with a CKEditor
                         // instance, using default configuration.
