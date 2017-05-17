@@ -90,7 +90,7 @@ class AuthController extends Controller
             'name.unique:users' => 'Пользователь с таким логином уже зарегистрирован.',
             'email.required' => 'Необходимо указать ваш e-mail.',
             'email.email' => 'Некорректный e-mail.',
-            'email.unique:users' => 'Пользователь с таким e-mail уже существует зарегистрирован.',
+            'email.unique:users' => 'Пользователь с таким e-mail уже зарегистрирован.',
             'password.required' => 'Необходимо указать пароль.',
             'password.min:6' => 'Пароль должен быть не короче 6 символов.',
             'password.confirmed' => 'Пароли не совпадают.',
