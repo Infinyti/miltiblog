@@ -83,6 +83,7 @@
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <fieldset>
+		     @include('common.errors')
                     <legend class="text-center">Редактировать категорию</legend>
                     <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
                         {{ csrf_field() }}
