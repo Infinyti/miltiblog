@@ -33,7 +33,7 @@
                     </button>
                     <a class="navbar-brand" href="/admin/user">Админ панель</a> 
                 </div>
-                <div style="" class="admin-data"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
+                <div style="" class="admin-data text-center"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
                     <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust" target="_blank">На сайт</a>
                     <a href="{{ url('/logout') }}" class="btn btn-danger square-btn-adjust">Выйти</a>    
                 </div>
