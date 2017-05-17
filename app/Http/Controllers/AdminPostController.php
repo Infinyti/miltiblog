@@ -60,7 +60,7 @@ class AdminPostController extends Controller {
         }
         $validator = Validator::make($request->all(), [
                     'title' => 'required|max:255|unique:posts',
-                    'content' => 'required',
+                    'content' => 'required|min:50',
                     'category_id' => 'required',
         ]);
 
@@ -93,7 +93,7 @@ return redirect('/admin/post')->with('postSuccess', 'Пост успешно с�
 
         $validator = Validator::make($request->all(), [
                     'newtitle' => 'required|max:255',
-                    'newcontent' => 'required|max:500',
+                    'newcontent' => 'required|min:50',
         ]);
 
         if ($validator->fails()) {

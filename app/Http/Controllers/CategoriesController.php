@@ -27,13 +27,12 @@ class CategoriesController extends Controller
                 ->select('posts.*', 'users.name','users.id as userid')
                 ->orderBy('created_at', 'desc');              
         $categoryName=DB::table('categories')               
-                ->where('categories.id', $id)                
-                ->get();       
         return view('categories', [
             'posts' => $posts,
             'categories'=>$categories,
             'newposts' => $newposts,
             'categoryName'=>$categoryName,
+			'title'=>$categoryName->name,
             ]);
     }
 }

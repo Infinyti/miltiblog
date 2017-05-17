@@ -46,7 +46,7 @@
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li class="text-center">
-                            <img src="http://{{$_SERVER['HTTP_HOST']}}/img/find_user.png" class="user-image img-responsive"/>
+                            <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $userinfo->avatar }}" class="user-image img-responsive"/>
                         </li>
                         <li>
                             <a href="/admin/post"><i class="fa fa-book "></i>Посты</a>

@@ -17,7 +17,7 @@
                             <li><a href="#"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($date)) }}</a></li>
                             <!--<li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a></li>
                             <li><a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a></li>-->
-                            <li><a href="#">Post By : {{ isset($author) ? $author : 'author' }}</a></li>
+                            <li><a href="/user/{{ isset($post->userid) ? $post->userid : 0 }}">Post By : {{ isset($author) ? $author : 'author' }}</a></li>
                         </ul>
                     </div>
                     <div class="sb-text">

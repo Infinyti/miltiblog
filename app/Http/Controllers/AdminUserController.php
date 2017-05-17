@@ -34,7 +34,19 @@ class AdminUserController extends Controller {
         ]);
     }
 
-    public function update(User $user) {
+    public function update(User $user, Request $request) {
+	
+	if ($request->file('avatar') !== NULL) {
+            $img = $request->file('avatar');
+            #$img->resize(300, 200);
+            $img->move(public_path('images/avatars/'), $img->getClientOriginalName());
+            $data = $request->except(['avatar']);
+            $data['avatar'] = 'images/avatars/' . $img->getClientOriginalName();
+        } else {
+            $data = $request->except(['avatar']);
+            $data['avatar'] = 'images/avatars/find_user.png';
+        }
+	
         if (filter_input(INPUT_POST, 'newpassword') !== NULL) {
             $pass = filter_input(INPUT_POST, 'newpassword');
             $pass = Hash::make($pass);
@@ -45,11 +57,12 @@ class AdminUserController extends Controller {
         $user->name = filter_input(INPUT_POST, 'name');
         $user->email = filter_input(INPUT_POST, 'email');
         $user->password = $pass;
+	$user->avatar = $data['avatar'];
         $user->status = filter_input(INPUT_POST, 'status');
 
         DB::table('users')
                 ->where('id', $user->id)
-                ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password, 'roles' => $user->status));
+                ->update(array('name' => $user->name, 'email' => $user->email, 'password' => $user->password, 'avatar' => $user->avatar, 'roles' => $user->status));
         return redirect('/admin/user');
     }
     
