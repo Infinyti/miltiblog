@@ -22,7 +22,7 @@
                                         <!--<a href="#"><i class="zmdi zmdi-favorite-outline"></i>7 Like</a>
                                         <a href="#"><i class="zmdi zmdi-comment-text"></i>9 Comment</a>-->
                                         <a href="#"><i class="zmdi zmdi-calendar-note"></i>{{ date("M d, Y",strtotime($post->created_at)) }}</a>
-                                        <a class="read-more" href="/post/{{ $post->id }}">Read More</a>
+                                        <a class="read-more" href="/post/{{ $post->id }}">Читать подробнее</a>
                                     </div>
                                 </div>
                             </div>

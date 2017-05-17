@@ -27,7 +27,7 @@ class AdminCatController extends Controller {
                     ->paginate(10);
         } else {
             $categories = DB::table('categories')
-                    ->where('author_id', $userid)                  
+                    ->where('author_id', $userid)
                     ->paginate(10);
         }
         return view('cat_govern', [
@@ -57,9 +57,8 @@ class AdminCatController extends Controller {
         $cat->name = $request->name;
         $cat->description = $request->description;
         $cat->author_id = $request->author_id;
-        $cat->save();       
-return redirect('/admin/cat')->with('categorySuccess', 'Категория успешно создана!');
-       
+        $cat->save();
+        return redirect('/admin/cat')->with('categorySuccess', 'Категория успешно создана!');
     }
 
     /**
@@ -74,7 +73,7 @@ return redirect('/admin/cat')->with('categorySuccess', 'Категория ус�
      * Редактировать категорию
      */
     public function update(Request $request, Categories $cat) {
-
+        $userid = Auth::id();
         $validator = Validator::make($request->all(), [
                     'newname' => 'required|max:255',
                     'newdescription' => 'required|max:500',
@@ -88,12 +87,21 @@ return redirect('/admin/cat')->with('categorySuccess', 'Категория ус�
         $cat->id = filter_input(INPUT_POST, 'id');
         $cat->name = filter_input(INPUT_POST, 'newname');
         $cat->description = filter_input(INPUT_POST, 'newdescription');
-        DB::table('categories')
+        $checkAuthor = DB::table('categories')
+                ->select('author_id')
                 ->where('id', $cat->id)
-                ->update(array('name' => $cat->name, 'description' => $cat->description,));
-        $cat->save();        
-	return redirect('/admin/cat')->with('categoryUpdateSuccess', 'Категория успешно отредактирована!');
-       
+                ->first();
+        $checkStatus = DB::table('users')
+                ->select('roles')
+                ->where('id', $userid)
+                ->first();
+        if ($checkAuthor->author_id == $userid || $checkStatus->roles == 1) {
+            DB::table('categories')
+                    ->where('id', $cat->id)
+                    ->update(array('name' => $cat->name, 'description' => $cat->description,));
+            $cat->save();
+        }
+        return redirect('/admin/cat')->with('categoryUpdateSuccess', 'Категория успешно отредактирована!');
     }
 
 }
