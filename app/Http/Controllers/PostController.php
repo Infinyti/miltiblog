@@ -22,7 +22,7 @@ class PostController extends Controller
         }
         $post = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
-                ->select('posts.*', 'users.name')
+                ->select('posts.*', 'users.name','users.id as userid')
                 ->where('posts.id', $id)
                 ->first();
         $categories = DB::select('select DISTINCT(categories.id), name from categories left join posts on categories.id = posts.category_id where categories.id = posts.category_id');
@@ -34,7 +34,8 @@ class PostController extends Controller
             'img' => $post->img,
             'date' => $post->created_at,
             'categories' => $categories,
-            'newposts' => $newposts
+            'newposts' => $newposts,
+	    'post'=>$post,
         ]);
 
     }
