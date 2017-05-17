@@ -25,15 +25,15 @@ class HomeController extends Controller{
                 ->leftjoin('users', 'posts.author_id','=','users.id')
                 ->select('posts.*', 'users.name')
                 ->orderBy('created_at', 'desc')
-                ->get();
+                ->paginate(10);
         /**
          * Paginate posts and categories on home.blade
          */
-        $posts = DB::table('posts')
-                ->orderBy('created_at', 'desc')
-                ->paginate(10);
-        $categories = DB::table('categories')
-                ->paginate(10);
+//        $posts = DB::table('posts')
+//                ->orderBy('created_at', 'desc')
+//                ->paginate(10);
+//        $categories = DB::table('categories')
+//                ->paginate(10);
         return view('home', [
             'title' => 'Главная',
             'categories' => $categories,
