@@ -70,6 +70,7 @@
 </div>
 @if($userinfo->roles ===1)
 <table class="table table-striped">
+    <caption>Пользователи сайта</caption>
     <tr>
         <th>Имя</th>
         <th>Статус</th>

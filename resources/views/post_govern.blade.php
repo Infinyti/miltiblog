@@ -69,6 +69,13 @@
 
 
 <table class="table table-striped">
+    <caption>
+        @if($userinfo->roles ===1)
+        Все посты
+        @else
+        Ваши посты
+        @endif
+    </caption>
     <tr>
         <th>Название</th>
         @if($userinfo->roles ===1)

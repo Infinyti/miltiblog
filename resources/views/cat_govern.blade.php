@@ -49,6 +49,14 @@
 
 
 <table class="table table-striped">
+    
+    <caption>
+        @if($userinfo->roles ===1)
+        Все категории
+        @else
+        Ваши категории
+        @endif
+    </caption>
     <tr>
         <th>Название</th>
         @if($userinfo->roles ===1)
