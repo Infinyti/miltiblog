@@ -63,6 +63,12 @@ p {
     line-height:25px;
     padding-top:20px;
 }
+.admin-data{
+    color: white;
+    padding: 15px 50px 5px 50px;
+    float: right;
+    font-size: 15px;
+}
 /*==============================================
    DASHBOARD STYLES    
     =============================================*/
@@ -361,25 +367,29 @@ line-height: 1.428571429;
     MEDIA QUERIES     
     =============================================*/
  
- @media(min-width:768px) {
-     #page-wrapper{
-               margin: 0 0 0 260px;
+@media(min-width:768px) {
+    #page-wrapper{
+        margin: 0 0 0 260px;
         padding: 15px 30px;
         min-height: 1200px;
-		
+
     }
-	
-	
+
     .navbar-side {
         z-index: 1;
         position: absolute;
         width: 260px;
     }
 
-   .navbar {
- border-radius: 0px; 
-}
-   
+    .navbar {
+        border-radius: 0px; 
+    }
+    
+
 }
 
+@media only screen and (min-width: 480px) and (max-width: 767px){
 
+    
+
+}
