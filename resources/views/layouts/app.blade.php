@@ -272,7 +272,7 @@
                             <h3 class="aside-title uppercase">Недавние посты</h3>
                             @foreach($newposts as $newpost)
                             <div class="rec-blog-content hidden-md">
-                                <img class="img-responsive" src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt="">
+                                <a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}"><img class="img-responsive" src="http://{{$_SERVER['HTTP_HOST']}}/{{ $newpost->img }}" alt=""></a>
                                 <h4>
                                     <a href="http://{{$_SERVER['HTTP_HOST']}}/post/{{ $newpost->id }}">{{ $newpost->title }}</a>
                                 </h4>
