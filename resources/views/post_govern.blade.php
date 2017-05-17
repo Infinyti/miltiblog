@@ -115,7 +115,7 @@
 
                             <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
                             <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                            <textarea class="form-control" id="newdescription{{ $post->id }}" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
+                            <textarea class="form-control" id="newdescription{{ $post->id }}" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea><br>
                             <script>
                                 // Replace the <textarea id="newdescription"> with a CKEditor
                                 // instance, using default configuration.
@@ -133,21 +133,22 @@
                                 </select>
                             </label>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">
+                                <label class="col-md-12 control-label">
                                     Картинка:
+                                    <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
                                 </label>
-                                <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
-                                <br>
                                 <div class="col-md-9">
                                     <input type="file" name="img">
                                 </div>
                             </div>
-                            <br><br>
                             <!--<input type="file" name="new_img">-->
                             <input type="hidden" name="oldimg" value="{{ $post->img }}"/>
-                            <button type="submit" id="save" class="btn " >
-                                <i class="fa fa-"></i> сохранить
-                            </button>
+                            <div class="col-md-12">
+                                <br>
+                                <button type="submit" id="save" class="btn " >
+                                    <i class="fa fa-"></i> Сохранить
+                                </button>
+                            </div>
                         </form>
                     </fieldset>
                 </div>
