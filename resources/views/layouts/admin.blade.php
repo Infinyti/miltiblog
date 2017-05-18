@@ -31,12 +31,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Админ панель</a> 
+                    <a class="navbar-brand" href="/admin/user">Админ панель</a> 
                 </div>
-                <div style="color: white;
-                     padding: 15px 50px 5px 50px;
-                     float: right;
-                     font-size: 16px;"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
+                <div style="" class="admin-data text-center"> Сегодня : <?php echo date("d.m.Y"); ?> &nbsp;
                     <a href="{{ url('/') }}" class="btn btn-danger square-btn-adjust" target="_blank">На сайт</a>
                     <a href="{{ url('/logout') }}" class="btn btn-danger square-btn-adjust">Выйти</a>    
                 </div>
@@ -75,13 +72,13 @@
                     <!-- /. ROW  -->
                     <hr />
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-6"></div>
-                        <div class="col-md-6 col-sm-6 col-xs-6">           
+                        <div class="col-md-1 col-sm-1 col-lg-3"></div>
+                        <div class="col-md-10 col-sm-10 col-xs-12 col-lg-6">           
                             <div class="panel panel-back noti-box">
                                 @yield('content')<!-- подключает блок контент -->
                             </div>
                         </div> 
-                        <div class="col-md-3 col-sm-6 col-xs-6"></div>
+                        <div class="col-md-1 col-sm-1 col-lg-3"></div>
                     </div>          
                 </div>
 

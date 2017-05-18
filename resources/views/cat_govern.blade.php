@@ -4,7 +4,7 @@
 
 @if($userinfo->roles == NULL)
 <div class="well well-sm">
-    <h3 style="color: #B40101">Данный раздел вам не доступен.</h3>
+    <h3 style="color: #B40101">Дождитесь окончания регистрации. Обычно это занимает не больше 60 мин.</h3>
 </div>
 @else
 <div class="well well-sm">
@@ -58,81 +58,82 @@
 
 <br><br>
 
+<div class="table-responsive">
+    <table class="table table-striped">
 
-<table class="table table-striped">
-
-    <caption>
-        @if($userinfo->roles ===1)
-        Все категории
-        @else
-        Ваши категории
-        @endif
-    </caption>
-    <tr>
-        <th>Название</th>
-        @if($userinfo->roles ===1)
-        <th>Создатель</th>
-        @else
-        <th>Описание</th>
-        @endif        
-        <th>Действие</th>
-    </tr>
-    @foreach($cats as $cat)
-    <div id="poup-cat-{{ $cat->id }}" class="modalDialog">
-        <div class="well well-sm">
-            <div>
-                <a href="#close" title="Close" class="close">X</a>
-                <fieldset>
-		     @include('common.errors')
-                    <legend class="text-center">Редактировать категорию</legend>
-                    <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
-                        {{ csrf_field() }}
-                        {{ method_field('POST') }}
-
-
-                        <input class="form-control" type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
-                        <input type="hidden" value="{{ $cat->id }}" name="id"><br>
-
-                        <input type="text" class="form-control" value="{{ $cat->description }}" id="newdescription" name="newdescription"><br>
-
-                        <button type="submit" id="save" class="btn  ">
-                            <i class="fa fa-"></i> сохранить
-                        </button>        
-                    </form>
-                </fieldset>
-            </div>
-        </div>
+        <caption>
+            @if($userinfo->roles ===1)
+            Все категории
+            @else
+            Ваши категории
+            @endif
+        </caption>
         <tr>
-            <td class="table-text">
-                <div>{{ $cat->name }}</div>
-            </td>
-            <td class="table-text">
-                @if($userinfo->roles ===1)
-                <div>{{ $cat->username }}</div>
-                @else
-                <div>{{ $cat->description }}</div>
-                @endif
-            </td>
-            <td class="table-text">
-                <form action="{{ url('admin/cat/del/'.$cat->id) }}" method="POST" class="table_delete">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+            <th>Название</th>
+            @if($userinfo->roles ===1)
+            <th>Создатель</th>
+            @else
+            <th>Описание</th>
+            @endif        
+            <th>Действие</th>
+        </tr>
+        @foreach($cats as $cat)
+        <div id="poup-cat-{{ $cat->id }}" class="modalDialog">
+            <div class="well well-sm">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <fieldset>
+                        @include('common.errors')
+                        <legend class="text-center">Редактировать категорию</legend>
+                        <form action="{{ url('admin/cat/update/'.$cat->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('POST') }}
 
-                    <button type="submit" class="btn btn-danger" title="Удалить">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </form>
 
-                <a href="#poup-cat-{{ $cat->id }}" class="table_edit" title="Редактировать">
-                    <button type="submit" class="btn">
-                        <i class="fa fa-pencil"></i>
-                    </button>
-                </a>    
-            </td>
-        </tr>  
-        @endforeach  
+                            <input class="form-control" type="text" value="{{ $cat->name }}" id="newname" name="newname"><br>
+                            <input type="hidden" value="{{ $cat->id }}" name="id"><br>
 
-</table>
+                            <input type="text" class="form-control" value="{{ $cat->description }}" id="newdescription" name="newdescription"><br>
+
+                            <button type="submit" id="save" class="btn  ">
+                                <i class="fa fa-"></i> сохранить
+                            </button>        
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+            <tr>
+                <td class="table-text">
+                    <div>{{ $cat->name }}</div>
+                </td>
+                <td class="table-text">
+                    @if($userinfo->roles ===1)
+                    <div>{{ $cat->username }}</div>
+                    @else
+                    <div>{{ $cat->description }}</div>
+                    @endif
+                </td>
+                <td class="table-text">
+                    <form action="{{ url('admin/cat/del/'.$cat->id) }}" method="POST" class="table_delete">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
+                        <button type="submit" class="btn btn-danger" title="Удалить">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form>
+
+                    <a href="#poup-cat-{{ $cat->id }}" class="table_edit" title="Редактировать">
+                        <button type="submit" class="btn">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                    </a>    
+                </td>
+            </tr>  
+            @endforeach  
+
+    </table>
+</div>
 <!--    Рендер-->
 
 <div class="col-md-12" style="margin-top: 40px">

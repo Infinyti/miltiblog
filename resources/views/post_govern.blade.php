@@ -3,7 +3,7 @@
 @section('content') 
 @if($userinfo->roles == NULL)
 <div class="well well-sm">
-    <h3 style="color: #B40101">Данный раздел вам не доступен.</h3>
+    <h3 style="color: #B40101">Дождитесь окончания регистрации. Обычно это занимает не больше 60 мин.</h3>
 </div>
 @else
 <div class="well well-sm">
@@ -83,109 +83,111 @@
 
 <br><br>
 
+<div class="table-responsive">
+    <table class="table table-striped">
+        <caption>
+            @if($userinfo->roles ===1)
+            Все посты
+            @else
+            Ваши посты
+            @endif
+        </caption>
+        <tr>
+            <th>Название</th>
+            @if($userinfo->roles ===1)
+            <th>Автор</th>
+            @endif     
+            <th>Категория</th>
+            <th>Действие</th>
+        </tr>
+        @foreach($posts as $key => $post)
+        <div id="poup-post-{{ $post->id }}" class="modalDialog">
+            <div class="well well-sm">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <fieldset>
+                        @include('common.errors')
+                        <legend class="text-center">Редактировать пост</legend>
+                        <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            {{ method_field('POST') }}
 
-<table class="table table-striped">
-    <caption>
-        @if($userinfo->roles ===1)
-        Все посты
-        @else
-        Ваши посты
-        @endif
-    </caption>
-    <tr>
-        <th>Название</th>
-        @if($userinfo->roles ===1)
-        <th>Автор</th>
-        @endif     
-        <th>Категория</th>
-        <th>Действие</th>
-    </tr>
-    @foreach($posts as $key => $post)
-    <div id="poup-post-{{ $post->id }}" class="modalDialog">
-        <div class="well well-sm">
-            <div>
-                <a href="#close" title="Close" class="close">X</a>
-                <fieldset>
-                    @include('common.errors')
-                    <legend class="text-center">Редактировать пост</legend>
-                    <form action="{{ url('admin/post/update/'.$post->id) }}" method="POST" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        {{ method_field('POST') }}
 
-
-                        <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
-                        <input type="hidden" value="{{ $post->id }}" name="id"><br>
-                        <textarea class="form-control" id="newdescription{{ $post->id }}" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea>
-                        <script>
-                            // Replace the <textarea id="newdescription"> with a CKEditor
-                            // instance, using default configuration.
-                            CKEDITOR.replace('newdescription{{ $post->id }}');
-                        </script>
-                        <label class="col-md-3 control-label">Категория:
-                            <select name="category_id" required>
-                                @foreach($cats as $cat)
-                                @if($cat->id == $post->id_cat)
-                                <option value="{{ $cat->id }}" selected>{{ $cat->name }}</option>
-                                @else
-                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                                @endif
-                                @endforeach
-                            </select>
-                        </label>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">
-                                Картинка:
+                            <input class="form-control" type="text" value="{{ $post->title }}" id="newname" name="newtitle"><br>
+                            <input type="hidden" value="{{ $post->id }}" name="id"><br>
+                            <textarea class="form-control" id="newdescription{{ $post->id }}" name="newcontent" style="height: 80px;resize: none;">{{ $post->content }}</textarea><br>
+                            <script>
+                                // Replace the <textarea id="newdescription"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace('newdescription{{ $post->id }}');
+                            </script>
+                            <label class="col-md-3 control-label">Категория:
+                                <select name="category_id" required>
+                                    @foreach($cats as $cat)
+                                    @if($cat->id == $post->id_cat)
+                                    <option value="{{ $cat->id }}" selected>{{ $cat->name }}</option>
+                                    @else
+                                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </label>
-                            <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
-                            <br>
-                            <div class="col-md-9">
-                                <input type="file" name="img">
+                            <div class="form-group">
+                                <label class="col-md-12 control-label">
+                                    Картинка:
+                                    <img src="http://{{$_SERVER['HTTP_HOST']}}/{{ $post->img }}" width="100"/>
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="file" name="img">
+                                </div>
                             </div>
-                        </div>
-                        <br><br>
-                        <!--<input type="file" name="new_img">-->
-                        <input type="hidden" name="oldimg" value="{{ $post->img }}"/>
-                        <button type="submit" id="save" class="btn " >
-                            <i class="fa fa-"></i> сохранить
-                        </button>
-                    </form>
-                </fieldset>
+                            <!--<input type="file" name="new_img">-->
+                            <input type="hidden" name="oldimg" value="{{ $post->img }}"/>
+                            <div class="col-md-12">
+                                <br>
+                                <button type="submit" id="save" class="btn " >
+                                    <i class="fa fa-"></i> Сохранить
+                                </button>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
             </div>
         </div>
-    </div>
 
-    <tr>
-        <td class="table-text">
-            <div>{{ $post->title }}</div>
-        </td>
-        @if($userinfo->roles ===1)
-        <td class="table-text">
-            <div>{{ $post->username }}</div>
-        </td>
-        @endif
-        <td class="table-text">
-            <div>{{ $post->name_cat }}</div>
-        </td>
-        <td class="table-text">
-            <form action="{{ url('admin/post/del/'.$post->id) }}" method="POST" class="table_delete">
+        <tr>
+            <td class="table-text">
+                <div>{{ $post->title }}</div>
+            </td>
+            @if($userinfo->roles ===1)
+            <td class="table-text">
+                <div>{{ $post->username }}</div>
+            </td>
+            @endif
+            <td class="table-text">
+                <div>{{ $post->name_cat }}</div>
+            </td>
+            <td class="table-text">
+                <form action="{{ url('admin/post/del/'.$post->id) }}" method="POST" class="table_delete">
 
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
 
-                <button type="submit" class="btn btn-danger" title="Удалить">
-                    <i class="fa fa-trash"></i>
-                </button>
+                    <button type="submit" class="btn btn-danger" title="Удалить">
+                        <i class="fa fa-trash"></i>
+                    </button>
 
-            </form>
-            <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
-                <button type="submit" class="btn">
-                    <i class="fa fa-pencil"></i>
-                </button>
-            </a>
-        </td>
-    </tr>
-    @endforeach
-</table>
+                </form>
+                <a href="#poup-post-{{ $post->id }}" class="table_edit" title="Редактировать">
+                    <button type="submit" class="btn">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                </a>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+</div>
 <div class="col-md-12" style="margin-top: 40px">
     {{ $posts->render() }}
 </div>

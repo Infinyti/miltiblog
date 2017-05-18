@@ -110,9 +110,11 @@
                                             <nav id="dropdown">
                                                 <ul>
                                                     <li><a href="/">Главная</a></li>
+                                                    <li><a href="#categories_mob">Категории</a></li>
+                                                    <li><a href="#resent_posts_mob">Недавние посты</a></li>
                                                     <li><a href="/authors">О нас</a></li>
                                                     <li><a href="/contact">Контакты</a></li>
-
+                                                  
                                                     <li>
                                                         <!--Authentication Links-->
                                                         @if (Auth::guest())
@@ -125,8 +127,8 @@
                                                         </a>
 
                                                         <ul class="dropdown-menu nav" role="menu">
-                                                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
                                                             <li><a href="{{ url('/admin/user') }}"><i class="fa fa-btn fa-sign-in"></i> Панель</a></li>
+                                                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
                                                         </ul>
                                                     </li>
                                                     @endif
@@ -258,7 +260,8 @@
                                 </div>
                             </form>
                         </div>-->
-                        <div class="single-widget catagory-widget">
+                        
+                        <div class="single-widget catagory-widget" id="categories_mob"><br/><br/>
                             <h3 class="aside-title uppercase">Категории</h3>
                             <ul>
                                 @foreach($categories as $key => $category)
@@ -268,7 +271,8 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="single-widget recent-post mt100">
+                        
+                        <div class="single-widget recent-post mt100" id="resent_posts_mob"><br/><br/>
                             <h3 class="aside-title uppercase">Недавние посты</h3>
                             @foreach($newposts as $newpost)
                             <div class="rec-blog-content hidden-md">

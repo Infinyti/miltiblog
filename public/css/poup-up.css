@@ -30,9 +30,10 @@ and open the template in the editor.
 }
  
 .modalDialog > div {
- width: 400px;
+ min-width: 200px;
+ max-width: 400px;
  position: relative;
- margin: 10px auto;
+ margin: 100px auto;
  /*padding: 5px 20px 13px 20px;*/
  border-radius: 10px;
  background: #fff;

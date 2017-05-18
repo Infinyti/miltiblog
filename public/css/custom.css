@@ -63,6 +63,12 @@ p {
     line-height:25px;
     padding-top:20px;
 }
+.admin-data{
+    color: white;
+    padding: 15px 50px 5px 50px;
+    float: right;
+    font-size: 15px;
+}
 /*==============================================
    DASHBOARD STYLES    
     =============================================*/
@@ -328,7 +334,7 @@ border:0px solid black;
      
 }
 .navbar-header {
-    background: #A70303;
+    background: #C90000;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 background-color: #B40101;
@@ -360,26 +366,51 @@ line-height: 1.428571429;
 /*==============================================
     MEDIA QUERIES     
     =============================================*/
- 
- @media(min-width:768px) {
-     #page-wrapper{
-               margin: 0 0 0 260px;
+
+@media (min-width:  1400px){
+    
+} 
+/*General desktop :1366px. */
+@media (min-width: 1170px) and (max-width: 1400px){
+    
+} 
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px){
+    
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px){
+    
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px){
+    
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    
+}
+
+@media(min-width:768px) {
+    #page-wrapper{
+        margin: 0 0 0 260px;
         padding: 15px 30px;
         min-height: 1200px;
-		
+
     }
-	
-	
+
     .navbar-side {
         z-index: 1;
         position: absolute;
         width: 260px;
     }
 
-   .navbar {
- border-radius: 0px; 
-}
-   
-}
+    .navbar {
+        border-radius: 0px; 
+    }
 
-
+}
