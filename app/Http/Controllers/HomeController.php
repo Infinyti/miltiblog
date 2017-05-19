@@ -24,7 +24,7 @@ class HomeController extends Controller{
         $posts = DB::table('posts')
                 ->leftjoin('users', 'posts.author_id','=','users.id')
                 ->select('posts.*', 'users.name','users.id as userid')
-                ->orderBy('created_at', 'desc')
+                ->orderBy('updated_at', 'desc')
                 ->paginate(10);        
         return view('home', [
             'title' => 'Главная',

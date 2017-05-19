@@ -14,6 +14,7 @@ Route::get('/categories/{id}', 'CategoriesController@index');
 Route::get('/contact', 'ContactController@index');
 
 Route::get('/user/{id}', 'UserController@index');
+Route::get('/date/{date}', 'DateController@index');
 
 Route::get('/admin/post', 'AdminPostController@index');
 Route::post('/admin/post', 'AdminPostController@add');

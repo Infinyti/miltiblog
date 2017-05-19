@@ -24,7 +24,7 @@ class UserController extends Controller
                 ->where('author_id', $id)
                 ->leftjoin('users', 'posts.author_id','=','users.id')
                 ->select('posts.*', 'users.name')
-                ->orderBy('created_at', 'desc')
+                ->orderBy('updated_at', 'desc')
                 ->paginate(10);
         $userinfo=DB::table('users')
                 ->where('users.id', $id)
