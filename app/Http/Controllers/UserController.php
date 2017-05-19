@@ -26,9 +26,9 @@ class UserController extends Controller
                 ->select('posts.*', 'users.name')
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
-        $userinfo=DB::table('users')               
+        $userinfo=DB::table('users')
                 ->where('users.id', $id)
-                ->first();       
+                ->first();
         return view('user', [
             'posts' => $posts,
             'categories'=>$categories,
