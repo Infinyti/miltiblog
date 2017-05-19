@@ -336,18 +336,17 @@
                 ©2017  |  Designed by <a href="/authors">DROSEL TEAM</a>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                <!--LiveInternet counter-->
-                <script type="text/javascript">
- document.write("<a href='/'><img src='//counter.yadro.ru/hit?t53.6;r"+
- escape(document.referrer)+((typeof(screen)=="undefined")?"":
- ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
- screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
- ";"+Math.random()+
- "' alt='' title='Показано число просмотров и"+
- " посетителей за 24 часа' "+
- "border='0' width='88' height='31'><\/a>")
-                </script>
-                <!--/LiveInternet-->
+                <!--LiveInternet counter--><script type="text/javascript">
+document.write("<a href='/'><img src='//counter.yadro.ru/hit?t12.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,80))+";"+Math.random()+
+"' alt='' title='Показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+</script><!--/LiveInternet-->
+
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <ul class="social-area">
