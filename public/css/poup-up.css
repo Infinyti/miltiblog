@@ -31,11 +31,11 @@ and open the template in the editor.
  
 .modalDialog > div {
  min-width: 200px;
- max-width: 400px;
+ max-width: 50%;
  position: relative;
  margin: 50px auto;
  /*padding: 5px 20px 13px 20px;*/
- border-radius: 10px;
+ border-radius: 5px;
  background: #fff;
  background: -moz-linear-gradient(#fff, #999);
  background: -webkit-linear-gradient(#fff, #999);
