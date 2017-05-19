@@ -8,7 +8,7 @@
                 <div class="blog-body">
                     <div class="row">
                         
-                        {{--<h1> {{ isset($date) ? $date : '' }}</h1>--}}
+                        <h1> {{ date("M d, Y",strtotime($posts[0]->updated_at)) }}</h1>
                         
                         @foreach($posts as $post)
                         <div class="col-md-6 col-sm-12 col-xs-12">
