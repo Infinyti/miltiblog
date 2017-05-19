@@ -332,10 +332,24 @@
 <div class="footer-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-9 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 ©2017  |  Designed by <a href="/authors">DROSEL TEAM</a>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                <!--LiveInternet counter-->
+                <script type="text/javascript">
+ document.write("<a href='/'><img src='//counter.yadro.ru/hit?t53.6;r"+
+ escape(document.referrer)+((typeof(screen)=="undefined")?"":
+ ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+ ";"+Math.random()+
+ "' alt='' title='Показано число просмотров и"+
+ " посетителей за 24 часа' "+
+ "border='0' width='88' height='31'><\/a>")
+                </script>
+                <!--/LiveInternet-->
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <ul class="social-area">
                     <li><a href="https://www.facebook.com"><i class="zmdi zmdi-facebook"></i></a></li>
                     <li><a href="https://www.google.com.ua"><i class="zmdi zmdi-google"></i></a></li>
